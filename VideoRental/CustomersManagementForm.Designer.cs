@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "CustomersManagementForm";
-            this.Text = "CustomersManagementForm";
+            this.Text = "Video rental - customers managment";
             this.ResumeLayout(false);
 
         }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VideoRental
 {
-    public partial class StorageManagementForm : ManagementForm
+    public partial class StorageManagementForm : Form
     {
         public StorageManagementForm()
         {

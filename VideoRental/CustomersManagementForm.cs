@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VideoRental
 {
-    public partial class CustomersManagementForm : ManagementForm
+    public partial class CustomersManagementForm : Form
     {
         public CustomersManagementForm()
         {

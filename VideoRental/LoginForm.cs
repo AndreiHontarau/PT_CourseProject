@@ -20,17 +20,15 @@ namespace VideoRental
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
-            ManagementForm managementForm;
-
             switch (this.UserNameTextBox.Text)
             {
                 case "Receptionist":
-                    managementForm = new CustomersManagementForm();
-                    managementForm.ShowDialog();
+                    CustomersManagementForm customersManagementForm = new CustomersManagementForm();
+                    customersManagementForm.ShowDialog();
                     break;
                 case "Manager":
-                    managementForm = new StorageManagementForm();
-                    managementForm.ShowDialog();
+                    StorageManagementForm storageManagementForm = new StorageManagementForm();
+                    storageManagementForm.ShowDialog();
                     break;
                 default:
                     break;

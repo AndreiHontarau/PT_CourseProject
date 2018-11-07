@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "StorageManagementForm";
-            this.Text = "StorageManagementForm";
+            this.Text = "Video rental - storage managment";
             this.ResumeLayout(false);
 
         }
