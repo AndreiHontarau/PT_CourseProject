@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,43 +47,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomersManagementForm.cs">
+    <Compile Include="Forms\CategoryRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersManagementForm.Designer.cs">
+    <Compile Include="Forms\CategoryRegistration.Designer.cs">
+      <DependentUpon>CategoryRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilmRegistration.Designer.cs">
+      <DependentUpon>FilmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerRegistration.Designer.cs">
+      <DependentUpon>CustomerRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomersManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomersManagementForm.Designer.cs">
       <DependentUpon>CustomersManagementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StorageManagementForm.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StorageManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StorageManagementForm.Designer.cs">
+    <Compile Include="Forms\StorageManagementForm.Designer.cs">
       <DependentUpon>StorageManagementForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomersManagementForm.resx">
+    <Compile Include="Forms\RentsManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentsManagment.Designer.cs">
+      <DependentUpon>RentsManagment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\CategoryRegistration.resx">
+      <DependentUpon>CategoryRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerRegistration.resx">
+      <DependentUpon>CustomerRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomersManagementForm.resx">
       <DependentUpon>CustomersManagementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\FilmRegistration.resx">
+      <DependentUpon>FilmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentsManagment.resx">
+      <DependentUpon>RentsManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="StorageManagementForm.resx">
+    <EmbeddedResource Include="Forms\StorageManagementForm.resx">
       <DependentUpon>StorageManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -99,10 +136,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\men-of-harlect.jpg" />
+    <None Include="Resources\videocassette-tap-vhs-video-38097.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Toasty.wav" />
+    <None Include="Resources\VideoRentals[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UploadImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

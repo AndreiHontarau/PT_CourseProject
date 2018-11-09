@@ -117,14 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ApplicationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\videocassette-tap-vhs-video-38097.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="UploadScreenlistButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABH9JREFUeF7t
+        2l+IbVMcwPGZMcOd/LmkeBLKA0n5kzxcknRLkX8RpfvgT5TrgTci/8JNioREeSIvyBMiypPyP4XwQJF0
+        kfyN/P9+z/zWWLNnzTlnZvbZ+5xj/+ozZ2bv31prr985+5y915mZLrrooosuJjgWFxdnZmdnT8Ax8PfY
+        8z+Iubk5J3wKPsLbON4CaOojm/yH+Ce8iekvwhqTz4twHKazCAMmn0xnEWJCgyafTNfpMOQzXzUdRdjg
+        5JPJLsImJ5+8hckrQk2TT8pFiA374XRciitweQMc52Lsizia/6LmySerTwd+OQRP4heUGo3SFzgMSwcT
+        MaLJJys/IvnxMP5CKXnUVhVgxJNPlovgYF/FxjasKMDCwoLHcxo+Rim/Tt47nOyAf2cbm1Z9BezJ75fg
+        Tty+httwL75FqU99hrtQap/cgR0WoNRBU4rvAf3CXBwM7wBLfepl7IVotTo81TStBXgFWxCt+kTWqOo3
+        vISn8PQIPINHcBDiaAaHuWikALtxdOTMjVBvUsNG5DdWgKMQmeMRHg+6AqDdArgdCzgJV+MqHIs9EFn1
+        h32j3QK4DQ5wI76B+V5PfImdpMzzuJRcc9gvxqIA5+MnVNtZkFMR2fWG/aL1U8B378cir2RXXNNHen1h
+        n2i9AJ77Xh+U2ukhk3jsJa83bAdPo96tct5P/O21Q3sFiGf3psir+hNXIrLXH7bFGbgPi3lfsa/dArgN
+        h+M1VNs9D1+ikb2+sB2OgCs4P8JCxN4xKYARr4Ij8QA82NdxNw5FLyce/bFl6c/+B+R+uDr1BNJxPIu9
+        ked4atwKL6Vdz8g9imvhadpr0zdIyied61sAw33wc39/bGUTt1dLEfu0DY/jxLStFLHdvq7H70jH8TPO
+        QS+v9sgGqhpYgLXCNvEK8ePwA9jfe9jWuwUtBPt0FtJ1Re4FbEVk1xjZIFUbKoD5Mfnt+AR5n5632yN1
+        Odgmx7JIeX7yK1xAjRY1RjZI1WZeAWfiU5T6dbXmbBhp8gfAW+RSfvIcVnwi1BLZAFUbKQDps+fhc5T6
+        TLxk9hn1fPC89w3tD5RyE99o6z8NsgGq1lsArw4vgpMr9Vf1NS6DhfgutvVjAfyEiOFqimyAqqEK4H44
+        +R2wTamvtXyPYdssvwLgqeCXKzfAT42cN2gWdbi7UpJKg2lgAdwHB/JbntK7d51cxk4FOBDvo5SnF+EK
+        cxxpn8gaVfUtgNvhxcZODPMS3qzxKYDb4ADX4QeU2tftHbRfAP+Ga+6eb6X1gFFpvwD+Dt+AbkHTX6a+
+        i/YKEI/78OhXTl6ZldqMUnsFEOEd2D3wCxPX//xGuSkej6eAN13tFAAOei4uxAUNc0zvLXq3uGjnPWAc
+        wuNBYwVwwSMyxyM8HjRSABciHsTN8F1/nLjy5BNUOm7VUoBJ1hUAXQEQs+wTJPm5XupkkrmSPNz3kyS9
+        Go2mhStL16y1+LoqSHbZ+g2kK65J5p3p/ehdMg8V8/PzFsEvM1zU8F/Hdk0oV4f8H8P6F0676KKLLqYz
+        Zmb+BVBmJuer1AgsAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="UploadImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UploadImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VideoRentals_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VideoRentals[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="UploadScreenlistDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

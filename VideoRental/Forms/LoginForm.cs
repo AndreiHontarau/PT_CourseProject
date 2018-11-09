@@ -22,11 +22,11 @@ namespace VideoRental
             Hide();
             switch (this.UserNameTextBox.Text)
             {
-                case "Receptionist":
+                case "R":
                     CustomersManagementForm customersManagementForm = new CustomersManagementForm();
                     customersManagementForm.ShowDialog();
                     break;
-                case "Manager":
+                case "M":
                     StorageManagementForm storageManagementForm = new StorageManagementForm();
                     storageManagementForm.ShowDialog();
                     break;
