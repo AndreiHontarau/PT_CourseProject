@@ -77,7 +77,6 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,6 +95,7 @@
     <Compile Include="Forms\RentsManagment.Designer.cs">
       <DependentUpon>RentsManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="VideoRental.cs" />
     <EmbeddedResource Include="Forms\CategoryRegistration.resx">
       <DependentUpon>CategoryRegistration.cs</DependentUpon>
     </EmbeddedResource>
