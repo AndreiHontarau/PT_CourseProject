@@ -1,4 +1,4 @@
-﻿namespace VideoRental
+﻿namespace UI
 {
     partial class StorageManagementForm
     {
@@ -37,17 +37,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.AddFilmButton = new System.Windows.Forms.Button();
             this.AddCategoryButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryNane = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReleaseYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AmountOfCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MediaType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -134,6 +129,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.ExitButton, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.AddFilmButton, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.AddCategoryButton, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.DeleteButton, 0, 1);
@@ -145,6 +141,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(515, 63);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExitButton.Location = new System.Drawing.Point(260, 34);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(252, 26);
+            this.ExitButton.TabIndex = 4;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
             // 
             // AddFilmButton
             // 
@@ -196,51 +202,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.CategoryNane,
-            this.FilmName,
-            this.ReleaseYear,
-            this.AmountOfCopies,
-            this.MediaType});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(515, 408);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // CategoryNane
-            // 
-            this.CategoryNane.HeaderText = "Category";
-            this.CategoryNane.Name = "CategoryNane";
-            // 
-            // FilmName
-            // 
-            this.FilmName.HeaderText = "Film";
-            this.FilmName.Name = "FilmName";
-            this.FilmName.ReadOnly = true;
-            // 
-            // ReleaseYear
-            // 
-            this.ReleaseYear.HeaderText = "Premiere year";
-            this.ReleaseYear.Name = "ReleaseYear";
-            // 
-            // AmountOfCopies
-            // 
-            this.AmountOfCopies.HeaderText = "Amount of copies";
-            this.AmountOfCopies.Name = "AmountOfCopies";
-            // 
-            // MediaType
-            // 
-            this.MediaType.HeaderText = "Media type";
-            this.MediaType.Name = "MediaType";
             // 
             // tableLayoutPanel5
             // 
@@ -309,12 +280,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfFilmsLabel;
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfCustomersLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryNane;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReleaseYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AmountOfCopies;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MediaType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button AddFilmButton;
@@ -324,5 +289,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

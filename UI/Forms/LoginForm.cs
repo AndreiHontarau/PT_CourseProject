@@ -8,32 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VideoRental
+namespace UI
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : Form, Presentation.ILoginView
     {
-        public LoginForm()
+        private readonly ApplicationContext _context;
+        public event Action Login;
+
+        public string UserName => tbUserName.Text;
+        public string Password => tbPassword.Text;
+
+        public LoginForm(ApplicationContext context)
         {
+            _context = context;
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void ShowError(string massage)
         {
-            Hide();
-            switch (this.UserNameTextBox.Text)
-            {
-                case "R":
-                    CustomersManagementForm customersManagementForm = new CustomersManagementForm();
-                    customersManagementForm.ShowDialog();
-                    break;
-                case "M":
-                    StorageManagementForm storageManagementForm = new StorageManagementForm();
-                    storageManagementForm.ShowDialog();
-                    break;
-                default:
-                    break;
-            }
-            Close();
+            lblError.Text = massage;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+            Login?.Invoke();
+        }
+
+        public new void Show()
+        {
+            _context.MainForm = this;
+            base.Show();
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using Ninject;
+using Presentation;
+using Model;
 
-namespace VideoRental
+namespace UI
 {
     static class VideoRental
     {
@@ -11,9 +14,17 @@ namespace VideoRental
         [STAThread]
         static void Main()
         {
+            StandardKernel kernel = new StandardKernel();
+            kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
+            kernel.Bind<ILoginView>().To<LoginForm>();
+            kernel.Bind<LoginPresenter>().ToSelf();
+            kernel.Bind<ILoginService>().To<LoginService>();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            kernel.Get<LoginPresenter>().Run();
+            Application.Run(kernel.Get<ApplicationContext>());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace VideoRental
+﻿namespace UI
 {
     partial class FilmRegistration
     {

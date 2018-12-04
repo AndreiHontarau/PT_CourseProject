@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VideoRental
+namespace UI
 {
     public partial class StorageManagementForm : Form
     {
@@ -25,7 +25,7 @@ namespace VideoRental
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
         {
-            CategoryRegistration categoryRegistration = new CategoryRegistration();
+            CategoryRegistrationForm categoryRegistration = new CategoryRegistrationForm();
             categoryRegistration.ShowDialog();
         }
 

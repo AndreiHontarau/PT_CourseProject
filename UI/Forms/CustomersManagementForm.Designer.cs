@@ -1,4 +1,4 @@
-﻿namespace VideoRental
+﻿namespace UI
 {
     partial class CustomersManagementForm
     {
@@ -40,12 +40,9 @@
             this.RegistrateButton = new System.Windows.Forms.Button();
             this.ManageRentsButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AmountOfRents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -135,6 +132,7 @@
             this.tableLayoutPanel3.Controls.Add(this.RegistrateButton, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.ManageRentsButton, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.DeleteButton, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.ExitButton, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 372);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -177,6 +175,16 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExitButton.Location = new System.Drawing.Point(286, 33);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(278, 24);
+            this.ExitButton.TabIndex = 3;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -194,38 +202,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.Surname,
-            this.Age,
-            this.AmountOfRents});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(567, 385);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // Surname
-            // 
-            this.Surname.HeaderText = "Surname";
-            this.Surname.Name = "Surname";
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            // 
-            // AmountOfRents
-            // 
-            this.AmountOfRents.HeaderText = "AmountOfRents";
-            this.AmountOfRents.Name = "AmountOfRents";
             // 
             // tableLayoutPanel5
             // 
@@ -302,10 +288,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AmountOfRents;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

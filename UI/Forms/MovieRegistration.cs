@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VideoRental
+namespace UI
 {
-    public partial class CategoryRegistration : Form
+    public partial class FilmRegistration : Form
     {
-        public CategoryRegistration()
+        public FilmRegistration()
         {
             InitializeComponent();
         }
