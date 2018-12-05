@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VideoRental
+namespace UI
 {
     public partial class RentsManagment : Form
     {

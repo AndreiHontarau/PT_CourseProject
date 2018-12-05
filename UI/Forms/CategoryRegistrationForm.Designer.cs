@@ -1,6 +1,6 @@
-﻿namespace VideoRental
+﻿namespace UI
 {
-    partial class CategoryRegistration
+    partial class CategoryRegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddCategoryButton = new System.Windows.Forms.Button();
+            this.buttonAddCategory = new System.Windows.Forms.Button();
             this.CategoryNameTextBox = new System.Windows.Forms.TextBox();
             this.CategoryCodeTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -39,7 +39,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.AddCategoryButton, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.buttonAddCategory, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.CategoryNameTextBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.CategoryCodeTextBox, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -52,15 +52,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(282, 203);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // AddCategoryButton
+            // buttonAddCategory
             // 
-            this.AddCategoryButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.AddCategoryButton.Location = new System.Drawing.Point(103, 177);
-            this.AddCategoryButton.Name = "AddCategoryButton";
-            this.AddCategoryButton.Size = new System.Drawing.Size(75, 23);
-            this.AddCategoryButton.TabIndex = 0;
-            this.AddCategoryButton.Text = "Add category";
-            this.AddCategoryButton.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAddCategory.Location = new System.Drawing.Point(103, 177);
+            this.buttonAddCategory.Name = "buttonAddCategory";
+            this.buttonAddCategory.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddCategory.TabIndex = 0;
+            this.buttonAddCategory.Text = "Add category";
+            this.buttonAddCategory.UseVisualStyleBackColor = true;
             // 
             // CategoryNameTextBox
             // 
@@ -80,14 +80,14 @@
             this.CategoryCodeTextBox.TabIndex = 2;
             this.CategoryCodeTextBox.Text = "Category code";
             // 
-            // CategoryRegistration
+            // CategoryRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 203);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "CategoryRegistration";
+            this.Name = "CategoryRegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryRegistration";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -99,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button AddCategoryButton;
+        private System.Windows.Forms.Button buttonAddCategory;
         private System.Windows.Forms.TextBox CategoryNameTextBox;
         private System.Windows.Forms.TextBox CategoryCodeTextBox;
     }

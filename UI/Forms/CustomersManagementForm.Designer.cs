@@ -1,4 +1,4 @@
-﻿namespace VideoRental
+﻿namespace UI
 {
     partial class CustomersManagementForm
     {
@@ -37,18 +37,15 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.RegistrateButton = new System.Windows.Forms.Button();
-            this.ManageRentsButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.btnRegistrate = new System.Windows.Forms.Button();
+            this.btnManageRents = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AmountOfRents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.tbSewarchRequest = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.StatusBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -132,9 +129,10 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.RegistrateButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ManageRentsButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.DeleteButton, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnRegistrate, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnManageRents, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDelete, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnExit, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 372);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -144,38 +142,49 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(567, 60);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // RegistrateButton
+            // btnRegistrate
             // 
-            this.RegistrateButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegistrateButton.Location = new System.Drawing.Point(3, 3);
-            this.RegistrateButton.Name = "RegistrateButton";
-            this.RegistrateButton.Size = new System.Drawing.Size(277, 24);
-            this.RegistrateButton.TabIndex = 0;
-            this.RegistrateButton.Text = "Registrate";
-            this.RegistrateButton.UseVisualStyleBackColor = true;
-            this.RegistrateButton.Click += new System.EventHandler(this.RegistrateButton_Click);
+            this.btnRegistrate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRegistrate.Location = new System.Drawing.Point(3, 3);
+            this.btnRegistrate.Name = "btnRegistrate";
+            this.btnRegistrate.Size = new System.Drawing.Size(277, 24);
+            this.btnRegistrate.TabIndex = 0;
+            this.btnRegistrate.Text = "Registrate";
+            this.btnRegistrate.UseVisualStyleBackColor = true;
+            this.btnRegistrate.Click += new System.EventHandler(this.btnRegistrate_Click);
             // 
-            // ManageRentsButton
+            // btnManageRents
             // 
-            this.ManageRentsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManageRentsButton.Location = new System.Drawing.Point(286, 3);
-            this.ManageRentsButton.Name = "ManageRentsButton";
-            this.ManageRentsButton.Size = new System.Drawing.Size(278, 24);
-            this.ManageRentsButton.TabIndex = 1;
-            this.ManageRentsButton.Text = "Manage rents";
-            this.ManageRentsButton.UseVisualStyleBackColor = true;
-            this.ManageRentsButton.Click += new System.EventHandler(this.ManageRentsButton_Click);
+            this.btnManageRents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManageRents.Location = new System.Drawing.Point(286, 3);
+            this.btnManageRents.Name = "btnManageRents";
+            this.btnManageRents.Size = new System.Drawing.Size(278, 24);
+            this.btnManageRents.TabIndex = 1;
+            this.btnManageRents.Text = "Manage rents";
+            this.btnManageRents.UseVisualStyleBackColor = true;
+            this.btnManageRents.Click += new System.EventHandler(this.btnManageRents_Click);
             // 
-            // DeleteButton
+            // btnDelete
             // 
-            this.DeleteButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteButton.Location = new System.Drawing.Point(3, 33);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(277, 24);
-            this.DeleteButton.TabIndex = 2;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Location = new System.Drawing.Point(3, 33);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(277, 24);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExit.Location = new System.Drawing.Point(286, 33);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(278, 24);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -194,46 +203,24 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.Surname,
-            this.Age,
-            this.AmountOfRents});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(567, 385);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // Surname
-            // 
-            this.Surname.HeaderText = "Surname";
-            this.Surname.Name = "Surname";
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            // 
-            // AmountOfRents
-            // 
-            this.AmountOfRents.HeaderText = "AmountOfRents";
-            this.AmountOfRents.Name = "AmountOfRents";
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.button5, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbSewarchRequest, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnSearch, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 394);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -242,23 +229,24 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(567, 38);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // textBox1
+            // tbSewarchRequest
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(447, 22);
-            this.textBox1.TabIndex = 0;
+            this.tbSewarchRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSewarchRequest.Location = new System.Drawing.Point(3, 3);
+            this.tbSewarchRequest.Name = "tbSewarchRequest";
+            this.tbSewarchRequest.Size = new System.Drawing.Size(447, 22);
+            this.tbSewarchRequest.TabIndex = 0;
             // 
-            // button5
+            // btnSearch
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(456, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 32);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch.Location = new System.Drawing.Point(456, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(108, 32);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // CustomersManagementForm
             // 
@@ -295,17 +283,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button RegistrateButton;
-        private System.Windows.Forms.Button ManageRentsButton;
-        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button btnRegistrate;
+        private System.Windows.Forms.Button btnManageRents;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AmountOfRents;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox tbSewarchRequest;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnExit;
     }
 }
