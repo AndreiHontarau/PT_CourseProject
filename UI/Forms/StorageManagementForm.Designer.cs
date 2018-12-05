@@ -37,15 +37,15 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.AddFilmButton = new System.Windows.Forms.Button();
-            this.AddCategoryButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnAddFilm = new System.Windows.Forms.Button();
+            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SearchButton = new System.Windows.Forms.Button();
+            this.tbSearchRequest = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.StatusBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -122,17 +122,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(521, 460);
             this.tableLayoutPanel1.TabIndex = 6;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.ExitButton, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.AddFilmButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.AddCategoryButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.DeleteButton, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnExit, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddFilm, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddCategory, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDelete, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 394);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -142,48 +141,49 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(515, 63);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // ExitButton
+            // btnExit
             // 
-            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ExitButton.Location = new System.Drawing.Point(260, 34);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(252, 26);
-            this.ExitButton.TabIndex = 4;
-            this.ExitButton.Text = "Exit";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExit.Location = new System.Drawing.Point(260, 34);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(252, 26);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // AddFilmButton
+            // btnAddFilm
             // 
-            this.AddFilmButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddFilmButton.Location = new System.Drawing.Point(3, 3);
-            this.AddFilmButton.Name = "AddFilmButton";
-            this.AddFilmButton.Size = new System.Drawing.Size(251, 25);
-            this.AddFilmButton.TabIndex = 0;
-            this.AddFilmButton.Text = "Add new film";
-            this.AddFilmButton.UseVisualStyleBackColor = true;
-            this.AddFilmButton.Click += new System.EventHandler(this.AddFilmButton_Click);
+            this.btnAddFilm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddFilm.Location = new System.Drawing.Point(3, 3);
+            this.btnAddFilm.Name = "btnAddFilm";
+            this.btnAddFilm.Size = new System.Drawing.Size(251, 25);
+            this.btnAddFilm.TabIndex = 0;
+            this.btnAddFilm.Text = "Add film";
+            this.btnAddFilm.UseVisualStyleBackColor = true;
+            this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
-            // AddCategoryButton
+            // btnAddCategory
             // 
-            this.AddCategoryButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddCategoryButton.Location = new System.Drawing.Point(260, 3);
-            this.AddCategoryButton.Name = "AddCategoryButton";
-            this.AddCategoryButton.Size = new System.Drawing.Size(252, 25);
-            this.AddCategoryButton.TabIndex = 1;
-            this.AddCategoryButton.Text = "Add new category";
-            this.AddCategoryButton.UseVisualStyleBackColor = true;
-            this.AddCategoryButton.Click += new System.EventHandler(this.AddCategoryButton_Click);
+            this.btnAddCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddCategory.Location = new System.Drawing.Point(260, 3);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(252, 25);
+            this.btnAddCategory.TabIndex = 1;
+            this.btnAddCategory.Text = "Add new category";
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
-            // DeleteButton
+            // btnDelete
             // 
-            this.DeleteButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteButton.Location = new System.Drawing.Point(3, 34);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(251, 26);
-            this.DeleteButton.TabIndex = 2;
-            this.DeleteButton.Text = "Delete film";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Location = new System.Drawing.Point(3, 34);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(251, 26);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete film";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -218,8 +218,8 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.SearchButton, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbSearchRequest, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnSearch, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 417);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -228,23 +228,24 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(515, 40);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // textBox1
+            // tbSearchRequest
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(406, 22);
-            this.textBox1.TabIndex = 0;
+            this.tbSearchRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSearchRequest.Location = new System.Drawing.Point(3, 3);
+            this.tbSearchRequest.Name = "tbSearchRequest";
+            this.tbSearchRequest.Size = new System.Drawing.Size(406, 22);
+            this.tbSearchRequest.TabIndex = 0;
             // 
-            // SearchButton
+            // btnSearch
             // 
-            this.SearchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchButton.Location = new System.Drawing.Point(415, 3);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(97, 34);
-            this.SearchButton.TabIndex = 1;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch.Location = new System.Drawing.Point(415, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 34);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // StorageManagementForm
             // 
@@ -282,13 +283,13 @@
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfCustomersLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button AddFilmButton;
-        private System.Windows.Forms.Button AddCategoryButton;
-        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button btnAddFilm;
+        private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.TextBox tbSearchRequest;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnExit;
     }
 }

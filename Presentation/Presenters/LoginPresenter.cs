@@ -20,6 +20,11 @@ namespace Presentation
             _view.Login += () => Login(_view.UserName, _view.Password);
         }
 
+        /// <summary>
+        /// Decides wich view to open next basing on login service's response
+        /// </summary>
+        /// <param name="UserName">User name</param>
+        /// <param name="Password">Password</param>
         private void Login(string UserName, string Password)
         {
             try
@@ -28,15 +33,15 @@ namespace Presentation
                 {
                     case UserType.Admin:
                         _view.ShowError("Admin");
-                        //_kernel.Get<>().Run();
+                        _kernel.Get<UsersManagementPresenter>().Run();
                         break;
                     case UserType.Manager:
                         _view.ShowError("Manager");
-                        //_kernel.Get<>().Run();
+                        _kernel.Get<StorageManagementPresenter>().Run();
                         break;
                     case UserType.Receptionist:
-                        _view.ShowError("Reseptionist");
-                        //_kernel.Get<>().Run();
+                        _view.ShowError("Receptionist");
+                        _kernel.Get<CustomersManagementPresenter>().Run();
                         break;
                     default:
                         break;
@@ -48,7 +53,7 @@ namespace Presentation
                 return;
             }
 
-            //_view.Close();
+            _view.Close();
         }
 
         public void Run()

@@ -8,6 +8,9 @@ using static Model.UserTypeEnum;
 
 namespace Model
 {
+    /// <summary>
+    /// Best login sevrice ever
+    /// </summary>
     public class LoginService : ILoginService
     {
         public UserType Login(string UserName, string Password)

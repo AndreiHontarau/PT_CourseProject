@@ -7,45 +7,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presentation;
 
 namespace UI
 {
-    public partial class StorageManagementForm : Form
+    public partial class StorageManagementForm : Form, IStorageManagementView
     {
-        public StorageManagementForm()
+        private readonly ApplicationContext _context;
+        public event Action AddMovie;
+        public event Action DeleteMovie;
+        public event Action AddCategory;
+        public event Action Search;
+        public event Action Exit;
+
+        public string SearchRequest => tbSearchRequest.Text;
+
+        public StorageManagementForm(ApplicationContext context)
         {
+            _context = context;
             InitializeComponent();
         }
 
-        private void AddFilmButton_Click(object sender, EventArgs e)
+        private void btnAddFilm_Click(object sender, EventArgs e)
         {
-            FilmRegistration filmRegistration = new FilmRegistration();
-            filmRegistration.ShowDialog();
+            AddMovie?.Invoke();
         }
 
-        private void AddCategoryButton_Click(object sender, EventArgs e)
+        private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            CategoryRegistrationForm categoryRegistration = new CategoryRegistrationForm();
-            categoryRegistration.ShowDialog();
+            AddCategory?.Invoke();
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult confirmation = MessageBox.Show("Are you sure?", "Confirm delete of %filmname%", MessageBoxButtons.YesNo);
-
-            if (confirmation == DialogResult.Yes)
-            {
-                
-            }
-            else
-            {
-                
-            }
+            DeleteMovie?.Invoke();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
+            Search?.Invoke();
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Exit?.Invoke();
+        }
+
+        public new void Show()
+        {
+            _context.MainForm = this;
+            base.Show();
         }
     }
 }
