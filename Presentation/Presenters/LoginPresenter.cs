@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Authentication;
 using Model;
 using Ninject;
 using static Model.UserTypeEnum;
@@ -47,7 +48,7 @@ namespace Presentation
                         break;
                 }
             }
-            catch (Exception e)
+            catch (AuthenticationException e)
             {
                 _view.ShowError(e.Message);
                 return;

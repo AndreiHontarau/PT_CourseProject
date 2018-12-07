@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Ninject;
+using static Model.UserTypeEnum;
 
 namespace Presentation
 {
@@ -19,6 +20,21 @@ namespace Presentation
             _kernel = kernel;
             _view = view;
             _service = service;
+
+            _view.Registrate += () => Registrate();
+        }
+
+        private void Registrate()
+        {
+            try
+            {
+                UserRecord newUser = new UserRecord(_view.userName, _view.password, _view.userType);
+                _service.Registrate(newUser);
+            }
+            catch(ArgumentNullException e)
+            {
+                _view.ShowError(e.Message);
+            }
         }
 
         public void Run()

@@ -37,6 +37,8 @@ namespace UI
             kernel.Bind<UserRegistrationPresenter>().ToSelf();
             kernel.Bind<IUserRegistrationService>().To<UserRegistrationService>();
 
+            kernel.Bind<IUsersRepository>().To<UsersDBManager>();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

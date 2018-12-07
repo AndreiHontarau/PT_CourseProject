@@ -13,18 +13,24 @@ namespace Model
     /// </summary>
     public class LoginService : ILoginService
     {
+        private IUsersRepository _repository;
+
+        public LoginService(IUsersRepository repository)
+        {
+            _repository = repository;
+        }
+
         public UserType Login(string UserName, string Password)
         {
-            switch (UserName)
+            UserRecord user = _repository.ReadUser(UserName);
+
+            if (HashService.VerifyHashedPassword(user.Password, Password))
             {
-                case "R":
-                    return UserType.Receptionist;
-                case "M":
-                    return UserType.Manager;
-                case "A":
-                    return UserType.Admin;
-                default:
-                    throw new AuthenticationException("Wrong User name or Password");
+                return (UserType) user.Type;
+            }
+            else
+            {
+                throw new AuthenticationException("Wrong User name or Password");
             }
         }
     }
