@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Ninject;
+using static Model.UserTypeEnum;
 
 namespace Presentation
 {
-    public class UserRegistrationPresenter : IPresenter
+    public class UserRegistrationPresenter : Presenter<IUserRegistrationView>
     {
         private readonly IKernel _kernel;
         private readonly IUserRegistrationView _view;
@@ -19,9 +20,25 @@ namespace Presentation
             _kernel = kernel;
             _view = view;
             _service = service;
+
+            _view.Registrate += () => Registrate();
         }
 
-        public void Run()
+        private void Registrate()
+        {
+            try
+            {
+                UserRecord newUser = new UserRecord(_view.userName, _view.password, _view.userType);
+                _service.Registrate(newUser);
+            }
+            catch(ArgumentNullException e)
+            {
+                _view.ShowError(e.Message);
+            }
+            _view.Close();
+        }
+
+        public override void Run()
         {
             _view.Show();
         }

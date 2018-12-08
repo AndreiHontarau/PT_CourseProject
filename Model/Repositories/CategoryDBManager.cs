@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Model.DBManagers
+namespace Model
 {
     class CategoryDBManager : DBManager
     {
@@ -14,7 +14,7 @@ namespace Model.DBManagers
 
         }
 
-        public void AddCategory(Records.CategoryRecord newCategory)
+        public void AddCategory(CategoryRecord newCategory)
         {
             SqlCommand insertCommand = new SqlCommand("INSERT INTO [Categories] (name, symbolic_code, amount_of_movies)" +
                                                 "VALUES(@Name, @SymbolicCode, @AmountOfMovies)", this.sqlConnection);

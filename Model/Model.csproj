@@ -63,6 +63,7 @@
       <HintPath>..\packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -91,14 +92,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBManagers\CategoryDBManager.cs" />
-    <Compile Include="DBManagers\DBManager.cs" />
-    <Compile Include="DBManagers\MovieDBManager.cs" />
+    <Compile Include="Records\UserRecord.cs" />
+    <Compile Include="Repositories\CategoryDBManager.cs" />
+    <Compile Include="Repositories\DBManager.cs" />
+    <Compile Include="Repositories\IUsersRepository.cs" />
+    <Compile Include="Repositories\MovieDBManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Records\CategoryRecord.cs" />
     <Compile Include="Records\MovieRecord.cs" />
     <Compile Include="Records\Record.cs" />
+    <Compile Include="Repositories\UsersDBManager.cs" />
     <Compile Include="Services\CustomersManagementService.cs" />
+    <Compile Include="Services\HashService.cs" />
     <Compile Include="Services\IAddCategoryService.cs" />
     <Compile Include="Services\ICustomersManagementService.cs" />
     <Compile Include="Services\ILoginService.cs" />
@@ -109,7 +114,7 @@
     <Compile Include="Services\StorageManagementService.cs" />
     <Compile Include="Services\UserRegistrationService.cs" />
     <Compile Include="Services\UsersManagementService.cs" />
-    <Compile Include="Services\UserTypeEnum.cs" />
+    <Compile Include="UserTypeEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="VideoRentalDB.mdf">
@@ -136,5 +141,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presentation
 {
-    public interface ICategoryRegistrationView
+    public interface ICategoryRegistrationView : IView
     {
         string CategoryName { get; }
         string SymbolicCode { get; }

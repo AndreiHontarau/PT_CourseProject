@@ -4,27 +4,32 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Records;
 using Model;
 
 namespace Presentation
 {
-    class CategoryRegistrationPresenter
+    class CategoryRegistrationPresenter : Presenter<ICategoryRegistrationView>
     {
-        private ICategoryRegistrationView view { get; set; }
-        private IAddCategoryService service { get; set; }
+        private readonly ICategoryRegistrationView _view;
+        private readonly IAddCategoryService _service;
 
         public CategoryRegistrationPresenter(ICategoryRegistrationView view, IAddCategoryService service)
         {
-            this.view = view;
-            this.service = service;
+            _view = view;
+            _service = service;
 
             view.AddCategory += () => AddCategory(view.CategoryName);
         }
 
-        private void AddCategory(string categoryName)
+
+            private void AddCategory(string categoryName)
         {
             CategoryRecord record = new CategoryRecord(categoryName, 0);
+        }
+
+        public override void Run()
+        {
+            _view.Show();
         }
     }
 }

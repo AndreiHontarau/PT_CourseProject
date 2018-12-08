@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Security.Authentication;
 using Model;
 using Ninject;
 using static Model.UserTypeEnum;
 
 namespace Presentation
 {
-    public class LoginPresenter : IPresenter
+    public class LoginPresenter : Presenter<ILoginView>
     {
         private readonly IKernel _kernel;
         private readonly ILoginView _view;
@@ -29,7 +30,12 @@ namespace Presentation
         {
             try
             {
-                switch(_service.Login(UserName, Password))
+                if (_view.UserName == "" || _view.Password == "")
+                {
+                    throw new AuthenticationException("Wrong User name or Password");
+                }
+
+                switch (_service.Login(UserName, Password))
                 {
                     case UserType.Admin:
                         _view.ShowError("Admin");
@@ -47,7 +53,7 @@ namespace Presentation
                         break;
                 }
             }
-            catch (Exception e)
+            catch (AuthenticationException e)
             {
                 _view.ShowError(e.Message);
                 return;
@@ -56,7 +62,7 @@ namespace Presentation
             _view.Close();
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }
