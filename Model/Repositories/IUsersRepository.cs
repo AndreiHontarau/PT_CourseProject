@@ -11,5 +11,7 @@ namespace Model
         void AddRecord(UserRecord record);
         List<UserRecord> ReadAllUsers();
         UserRecord ReadUser(string userName);
+        UserRecord ReadLastUser();
+        bool DeleteUser(string userName);
     }
 }

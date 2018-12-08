@@ -23,7 +23,7 @@ namespace Model
 
             if (HashService.VerifyHashedPassword(user.Password, Password))
             {
-                return (UserType) user.Type;
+                return user.Type;
             }
             else
             {

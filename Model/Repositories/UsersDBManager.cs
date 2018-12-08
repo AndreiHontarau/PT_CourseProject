@@ -32,9 +32,11 @@ namespace Model
 
             while (sqlReader.Read())
             {
-                usersList.Add(new UserRecord(Convert.ToString(sqlReader["user_name"]), Convert.ToString(sqlReader["password"]),
+                usersList.Add(new UserRecord(Convert.ToString(sqlReader["user_name"]), null,
                     (UserType)Convert.ToInt32(sqlReader["type"])));
             }
+
+            sqlReader?.Close();
 
             return usersList;
         }
@@ -51,6 +53,31 @@ namespace Model
             sqlReader?.Close();
 
             return record;
+        }
+
+        public UserRecord ReadLastUser()
+        {
+            SqlCommand command = new SqlCommand("SELECT TOP 1 * FROM Users ORDER BY Id DESC", sqlConnection);
+
+            sqlReader = command.ExecuteReader();
+            sqlReader.Read();
+
+            UserRecord record = new UserRecord(Convert.ToString(sqlReader["user_name"]), null,
+                (UserType)Convert.ToInt32(sqlReader["type"]));
+
+            sqlReader?.Close();
+
+            return record;
+
+        }
+
+        public bool DeleteUser(string userName)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE user_name ='" + userName + "'", sqlConnection);
+
+            command.ExecuteNonQuery();
+
+            return true;
         }
     }
 }

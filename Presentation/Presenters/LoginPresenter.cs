@@ -30,7 +30,12 @@ namespace Presentation
         {
             try
             {
-                switch(_service.Login(UserName, Password))
+                if (_view.UserName == "" || _view.Password == "")
+                {
+                    throw new AuthenticationException("Wrong User name or Password");
+                }
+
+                switch (_service.Login(UserName, Password))
                 {
                     case UserType.Admin:
                         _view.ShowError("Admin");

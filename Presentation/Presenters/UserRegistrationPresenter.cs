@@ -35,6 +35,7 @@ namespace Presentation
             {
                 _view.ShowError(e.Message);
             }
+            _view.Close();
         }
 
         public void Run()

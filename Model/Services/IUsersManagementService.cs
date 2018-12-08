@@ -8,5 +8,8 @@ namespace Model
 {
     public interface IUsersManagementService
     {
+        List<UserRecord> LoadTable();
+        UserRecord LoadLastUser();
+        bool DeleteUser(string userName);
     }
 }
