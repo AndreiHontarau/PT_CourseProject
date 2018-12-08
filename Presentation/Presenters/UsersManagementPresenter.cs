@@ -8,7 +8,7 @@ using Ninject;
 
 namespace Presentation
 {
-    public class UsersManagementPresenter : IPresenter
+    public class UsersManagementPresenter : Presenter<IUsersManagementView>
     {
         private readonly IKernel _kernel;
         private readonly IUsersManagementView _view;
@@ -62,7 +62,7 @@ namespace Presentation
             _view.Close();
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }

@@ -6,7 +6,7 @@ using static Model.UserTypeEnum;
 
 namespace Presentation
 {
-    public class LoginPresenter : IPresenter
+    public class LoginPresenter : Presenter<ILoginView>
     {
         private readonly IKernel _kernel;
         private readonly ILoginView _view;
@@ -62,7 +62,7 @@ namespace Presentation
             _view.Close();
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }

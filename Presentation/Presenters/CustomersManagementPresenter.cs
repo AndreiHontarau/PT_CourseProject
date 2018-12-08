@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using Model;
 
 namespace Presentation
 {
-    public class CustomersManagementPresenter : IPresenter
+    public class CustomersManagementPresenter : Presenter<ICustomersManagementView>
     {
         private readonly IKernel _kernel;
         private readonly ICustomersManagementView _view;
@@ -57,7 +58,7 @@ namespace Presentation
 
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }

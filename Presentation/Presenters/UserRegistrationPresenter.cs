@@ -9,7 +9,7 @@ using static Model.UserTypeEnum;
 
 namespace Presentation
 {
-    public class UserRegistrationPresenter : IPresenter
+    public class UserRegistrationPresenter : Presenter<IUserRegistrationView>
     {
         private readonly IKernel _kernel;
         private readonly IUserRegistrationView _view;
@@ -38,7 +38,7 @@ namespace Presentation
             _view.Close();
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }

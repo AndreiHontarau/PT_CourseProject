@@ -8,7 +8,7 @@ using Model;
 
 namespace Presentation
 {
-    public class StorageManagementPresenter : IPresenter
+    public class StorageManagementPresenter : Presenter<IStorageManagementView>
     {
         private readonly IKernel _kernel;
         private readonly IStorageManagementView _view;
@@ -63,7 +63,7 @@ namespace Presentation
 
         }
 
-        public void Run()
+        public override void Run()
         {
             _view.Show();
         }
