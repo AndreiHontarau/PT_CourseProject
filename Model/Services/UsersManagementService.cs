@@ -29,5 +29,10 @@ namespace Model
         {
             return _repository.DeleteUser(userName);
         }
+
+        public bool CheckForPresence(string userName)
+        {
+            return _repository.CheckForPresence(userName);
+        }
     }
 }

@@ -30,12 +30,16 @@ namespace Presentation
             {
                 UserRecord newUser = new UserRecord(_view.userName, _view.password, _view.userType);
                 _service.Registrate(newUser);
+                _view.Close();
             }
-            catch(ArgumentNullException e)
+            catch (ArgumentNullException e)
             {
                 _view.ShowError(e.Message);
             }
-            _view.Close();
+            catch(ArgumentException e)
+            {
+                _view.ShowError(e.Message);
+            }
         }
 
         public override void Run()

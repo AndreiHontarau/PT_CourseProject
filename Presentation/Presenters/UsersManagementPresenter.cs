@@ -28,8 +28,9 @@ namespace Presentation
 
         private void RegistrateUser()
         {
-            _kernel.Get<UserRegistrationPresenter>().Run();
-            LoadUser();
+                _kernel.Get<UserRegistrationPresenter>().Run();
+                LoadUser();
+
         }
 
         private void LoadTable()

@@ -55,6 +55,18 @@ namespace Model
             return record;
         }
 
+        public bool CheckForPresence(string userName)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE user_name = '" + userName + "'", sqlConnection);
+            sqlReader = command.ExecuteReader();
+
+            bool IsPresent = (bool)sqlReader?.Read();
+
+            sqlReader?.Close();
+
+            return IsPresent;
+        }
+
         public UserRecord ReadLastUser()
         {
             SqlCommand command = new SqlCommand("SELECT TOP 1 * FROM Users ORDER BY Id DESC", sqlConnection);
