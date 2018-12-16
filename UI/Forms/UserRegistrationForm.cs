@@ -57,7 +57,7 @@ namespace UI
         public new void Show()
         {
 
-            base.ShowDialog();
+            ShowDialog();
         }
 
         private void btnRegistrate_Click(object sender, EventArgs e)

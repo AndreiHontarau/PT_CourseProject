@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using  System.Data.SqlClient;
 using static Model.UserTypeEnum;
+using System.Security.Authentication;
 
 namespace Model
 {
@@ -36,7 +33,7 @@ namespace Model
                     (UserType)Convert.ToInt32(sqlReader["type"])));
             }
 
-            sqlReader?.Close();
+            sqlReader.Close();
 
             return usersList;
         }
@@ -45,12 +42,16 @@ namespace Model
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE user_name = '" + userName + "'", sqlConnection);
             sqlReader = command.ExecuteReader();
-            sqlReader.Read();
+            if (!sqlReader.Read())
+            {
+                sqlReader.Close();
+                throw new AuthenticationException("Wrong User name or Password");
+            }
 
             UserRecord record = new UserRecord(Convert.ToString(sqlReader["user_name"]), Convert.ToString(sqlReader["password"]),
                 (UserType)Convert.ToInt32(sqlReader["type"]));
 
-            sqlReader?.Close();
+            sqlReader.Close();
 
             return record;
         }
@@ -62,7 +63,7 @@ namespace Model
 
             bool IsPresent = (bool)sqlReader?.Read();
 
-            sqlReader?.Close();
+            sqlReader.Close();
 
             return IsPresent;
         }
@@ -77,7 +78,7 @@ namespace Model
             UserRecord record = new UserRecord(Convert.ToString(sqlReader["user_name"]), null,
                 (UserType)Convert.ToInt32(sqlReader["type"]));
 
-            sqlReader?.Close();
+            sqlReader.Close();
 
             return record;
 

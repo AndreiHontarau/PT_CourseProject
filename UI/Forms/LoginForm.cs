@@ -25,7 +25,14 @@ namespace UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
-            Login?.Invoke();
+            if (tbUserName.Text.Length == 0 || tbPassword.Text.Length == 0)
+            {
+                ShowError("Wrong User name or Password");
+            }
+            else
+            {
+                Login?.Invoke();
+            }
         }
 
         public new void Show()

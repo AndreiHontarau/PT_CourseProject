@@ -60,13 +60,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 453);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbPassword
             // 
             this.tbPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbPassword.Location = new System.Drawing.Point(340, 183);
+            this.tbPassword.Location = new System.Drawing.Point(341, 183);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(120, 22);
             this.tbPassword.TabIndex = 2;
@@ -75,7 +75,7 @@
             // tbUserName
             // 
             this.tbUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbUserName.Location = new System.Drawing.Point(337, 93);
+            this.tbUserName.Location = new System.Drawing.Point(338, 93);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(126, 22);
             this.tbUserName.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNotification.AutoSize = true;
-            this.lblNotification.Location = new System.Drawing.Point(324, 0);
+            this.lblNotification.Location = new System.Drawing.Point(325, 0);
             this.lblNotification.Name = "lblNotification";
             this.lblNotification.Size = new System.Drawing.Size(152, 17);
             this.lblNotification.TabIndex = 3;
@@ -94,7 +94,7 @@
             // btnRegistrate
             // 
             this.btnRegistrate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnRegistrate.Location = new System.Drawing.Point(340, 407);
+            this.btnRegistrate.Location = new System.Drawing.Point(341, 410);
             this.btnRegistrate.Name = "btnRegistrate";
             this.btnRegistrate.Size = new System.Drawing.Size(120, 40);
             this.btnRegistrate.TabIndex = 0;
@@ -116,14 +116,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 84);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 84);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // rbtnManager
             // 
             this.rbtnManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.rbtnManager.AutoSize = true;
-            this.rbtnManager.Location = new System.Drawing.Point(89, 3);
+            this.rbtnManager.Location = new System.Drawing.Point(90, 3);
             this.rbtnManager.Name = "rbtnManager";
             this.rbtnManager.Size = new System.Drawing.Size(85, 78);
             this.rbtnManager.TabIndex = 1;
@@ -135,7 +135,7 @@
             // 
             this.rbtnReceptionist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.rbtnReceptionist.AutoSize = true;
-            this.rbtnReceptionist.Location = new System.Drawing.Point(342, 3);
+            this.rbtnReceptionist.Location = new System.Drawing.Point(344, 3);
             this.rbtnReceptionist.Name = "rbtnReceptionist";
             this.rbtnReceptionist.Size = new System.Drawing.Size(107, 78);
             this.rbtnReceptionist.TabIndex = 2;
@@ -147,7 +147,7 @@
             // 
             this.rbtnAdministrator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.rbtnAdministrator.AutoSize = true;
-            this.rbtnAdministrator.Location = new System.Drawing.Point(605, 3);
+            this.rbtnAdministrator.Location = new System.Drawing.Point(607, 3);
             this.rbtnAdministrator.Name = "rbtnAdministrator";
             this.rbtnAdministrator.Size = new System.Drawing.Size(112, 78);
             this.rbtnAdministrator.TabIndex = 3;
@@ -159,10 +159,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 453);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserRegistrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New user registration";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
