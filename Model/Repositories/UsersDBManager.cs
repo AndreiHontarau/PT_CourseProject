@@ -92,5 +92,12 @@ namespace Model
 
             return true;
         }
+
+        public int GetAmountOfUsers()
+        {
+            SqlCommand command = new SqlCommand("SELECT COUNT (*) FROM Users", sqlConnection);
+
+            return (int)command.ExecuteScalar();
+        }
     }
 }

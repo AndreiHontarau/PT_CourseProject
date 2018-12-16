@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Model
 {
@@ -14,5 +10,6 @@ namespace Model
         UserRecord ReadLastUser();
         bool CheckForPresence(string userName);
         bool DeleteUser(string userName);
+        int GetAmountOfUsers();
     }
 }

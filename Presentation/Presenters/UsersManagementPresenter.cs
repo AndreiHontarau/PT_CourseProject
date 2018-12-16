@@ -28,9 +28,11 @@ namespace Presentation
 
         private void RegistrateUser()
         {
-                _kernel.Get<UserRegistrationPresenter>().Run();
-                LoadUser();
-
+            _kernel.Get<UserRegistrationPresenter>().Run();
+            if (_service.CheckRegistrationSuccess())
+            {
+                LoadLastUser();
+            }
         }
 
         private void LoadTable()
@@ -43,7 +45,7 @@ namespace Presentation
             }
         }
 
-        private void LoadUser()
+        private void LoadLastUser()
         {
             UserRecord user = _service.LoadLastUser();
             _view.DisplayRecord(user.UserName, UserTypeEnum.UserTypeToStringDictionary[user.Type]);
