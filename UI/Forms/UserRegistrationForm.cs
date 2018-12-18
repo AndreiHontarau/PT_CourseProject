@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Presentation;
 using static Model.UserTypeEnum;
+using System.ComponentModel;
+using System.Runtime.Remoting.Channels;
 
 namespace UI
 {
@@ -14,6 +16,57 @@ namespace UI
         public string userName => tbUserName.Text;
         public string password => tbPassword.Text;
         public UserType userType => UserTypeSelection();
+
+        public UserRegistrationForm(ApplicationContext context)
+        {
+            _context = context;
+            InitializeComponent();
+            tbPassword.Validating += ValidatePassword;
+            tbUserName.Validating += ValidateUserName;
+            rbtnManager.CheckedChanged += ValidateUserType;
+            rbtnReceptionist.CheckedChanged += ValidateUserType;
+            rbtnAdministrator.CheckedChanged += ValidateUserType;
+        }
+
+        private void ValidateUserType(object sender, EventArgs e)
+        {
+            if (!rbtnManager.Checked && !rbtnReceptionist.Checked && !rbtnAdministrator.Checked)
+            {
+                btnRegistrate.Enabled = false;
+            }
+            else
+            {
+                btnRegistrate.Enabled = true;
+            }
+        }
+
+        private void ValidatePassword(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbPassword.Text))
+            {
+                epPassword.SetError(tbPassword, "Enter password");
+                btnRegistrate.Enabled = false;
+            }
+            else
+            {
+                epPassword.Clear();
+                btnRegistrate.Enabled = true;
+            }
+        }
+
+        private void ValidateUserName(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbUserName.Text))
+            {
+                epUserName.SetError(tbUserName, "Enter name");
+                btnRegistrate.Enabled = false;
+            }
+            else
+            {
+                epUserName.Clear();
+                btnRegistrate.Enabled = true;
+            }
+        }
 
         private UserType UserTypeSelection()
         {
@@ -41,12 +94,6 @@ namespace UI
             lblNotification.ForeColor = Color.Red;
         }
 
-        public UserRegistrationForm(ApplicationContext context)
-        {
-            _context = context;
-            InitializeComponent();
-        }
-
         public new void Show()
         {
             ShowDialog();
@@ -54,8 +101,6 @@ namespace UI
 
         private void btnRegistrate_Click(object sender, EventArgs e)
         {
-            lblNotification.Text = "Enter user information:";
-            lblNotification.ForeColor = Color.Black;
             Registrate?.Invoke();
         }
     }

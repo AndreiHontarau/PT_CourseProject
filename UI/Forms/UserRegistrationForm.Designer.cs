@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserRegistrationForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -38,8 +39,14 @@
             this.rbtnManager = new System.Windows.Forms.RadioButton();
             this.rbtnReceptionist = new System.Windows.Forms.RadioButton();
             this.rbtnAdministrator = new System.Windows.Forms.RadioButton();
+            this.epUserName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUserType = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserType)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,6 +101,7 @@
             // btnRegistrate
             // 
             this.btnRegistrate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnRegistrate.Enabled = false;
             this.btnRegistrate.Location = new System.Drawing.Point(341, 410);
             this.btnRegistrate.Name = "btnRegistrate";
             this.btnRegistrate.Size = new System.Drawing.Size(120, 40);
@@ -155,6 +163,20 @@
             this.rbtnAdministrator.Text = "Administrator";
             this.rbtnAdministrator.UseVisualStyleBackColor = true;
             // 
+            // epUserName
+            // 
+            this.epUserName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epUserName.ContainerControl = this;
+            // 
+            // epPassword
+            // 
+            this.epPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epPassword.ContainerControl = this;
+            // 
+            // epUserType
+            // 
+            this.epUserType.ContainerControl = this;
+            // 
             // UserRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,6 +191,9 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +209,8 @@
         private System.Windows.Forms.RadioButton rbtnManager;
         private System.Windows.Forms.RadioButton rbtnReceptionist;
         private System.Windows.Forms.RadioButton rbtnAdministrator;
+        private System.Windows.Forms.ErrorProvider epUserName;
+        private System.Windows.Forms.ErrorProvider epPassword;
+        private System.Windows.Forms.ErrorProvider epUserType;
     }
 }
