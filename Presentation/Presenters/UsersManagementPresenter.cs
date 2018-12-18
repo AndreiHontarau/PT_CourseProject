@@ -20,10 +20,10 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            _view.RegistrateUser += () => RegistrateUser();
-            _view.UpdateTable += () => LoadTable();
-            _view.DeleteUser += (string userNsme) => DeleteUser(userNsme);
-            _view.Exit += () => Exit();
+            _view.RegistrateUser += (object sender, EventArgs e) => RegistrateUser();
+            _view.UpdateTable += (object sender, EventArgs e) => LoadTable();
+            _view.DeleteUser += (object sender, string userName) => DeleteUser(userName);
+            _view.Exit += (object sender, EventArgs e) => Exit();
         }
 
         private void RegistrateUser()

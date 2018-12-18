@@ -18,7 +18,7 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            _view.Login += () => Login(_view.UserName, _view.Password);
+            _view.Login += (object sender, EventArgs e) => Login(_view.UserName, _view.Password);
         }
 
         /// <summary>

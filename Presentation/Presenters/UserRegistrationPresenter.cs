@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 using Ninject;
-using static Model.UserTypeEnum;
 
 namespace Presentation
 {
@@ -21,7 +16,7 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            _view.Registrate += () => Registrate();
+            _view.Registrate += (object sender, EventArgs e) => Registrate();
         }
 
         private void Registrate()

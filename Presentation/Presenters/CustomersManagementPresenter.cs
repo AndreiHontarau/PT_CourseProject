@@ -21,11 +21,11 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            _view.RegistrateCustomer += () => RegistrateCustomer();
-            _view.DeleteCustomer += () => DeleteCustomer();
-            _view.ManageRents += () => ManageRents();
-            _view.Search += () => Search();
-            _view.Exit += () => Exit();
+            _view.RegistrateCustomer += (object sender, EventArgs e) => RegistrateCustomer();
+            _view.DeleteCustomer += (object sender, EventArgs e) => DeleteCustomer();
+            _view.ManageRents += (object sender, EventArgs e) => ManageRents();
+            _view.Search += (object sender, EventArgs e) => Search();
+            _view.Exit += (object sender, EventArgs e) => Exit();
         }
 
         private void RegistrateCustomer()

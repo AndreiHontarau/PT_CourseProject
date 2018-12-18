@@ -20,11 +20,11 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            _view.AddMovie += () => AddMovie();
-            _view.DeleteMovie += () => DeleteMovie();
-            _view.AddCategory += () => AddCategory();
-            _view.Search += () => Search();
-            _view.Exit += () => Exit();
+            _view.AddMovie += (object sender, EventArgs e) => AddMovie();
+            _view.DeleteMovie += (object sender, EventArgs e) => DeleteMovie();
+            _view.AddCategory += (object sender, EventArgs e) => AddCategory();
+            _view.Search += (object sender, EventArgs e) => Search();
+            _view.Exit += (object sender, EventArgs e) => Exit();
         }
 
         private void AddMovie()

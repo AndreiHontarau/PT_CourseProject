@@ -4,14 +4,13 @@ using System.Windows.Forms;
 using Presentation;
 using static Model.UserTypeEnum;
 using System.ComponentModel;
-using System.Runtime.Remoting.Channels;
 
 namespace UI
 {
     public partial class UserRegistrationForm : Form, IUserRegistrationView
     {
         private readonly ApplicationContext _context;
-        public event Action Registrate;
+        public event EventHandler Registrate;
 
         public string userName => tbUserName.Text;
         public string password => tbPassword.Text;
@@ -101,7 +100,7 @@ namespace UI
 
         private void btnRegistrate_Click(object sender, EventArgs e)
         {
-            Registrate?.Invoke();
+            Registrate.Invoke(sender, e);
         }
     }
 }

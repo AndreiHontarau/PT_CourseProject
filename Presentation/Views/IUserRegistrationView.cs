@@ -8,7 +8,7 @@ namespace Presentation
         string userName { get; }
         string password { get; }
         UserType userType { get; }
-        event Action Registrate;
+        event EventHandler Registrate;
 
         void ShowError(string Massege);
     }

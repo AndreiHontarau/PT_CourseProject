@@ -6,7 +6,7 @@ namespace UI
     public partial class LoginForm : Form, Presentation.ILoginView
     {
         private readonly ApplicationContext _context;
-        public event Action Login;
+        public event EventHandler Login;
 
         public string UserName => tbUserName.Text;
         public string Password => tbPassword.Text;
@@ -31,7 +31,7 @@ namespace UI
             }
             else
             {
-                Login?.Invoke();
+                Login?.Invoke(sender, e);
             }
         }
 

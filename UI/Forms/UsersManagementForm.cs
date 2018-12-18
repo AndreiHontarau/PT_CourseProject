@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation;
 
@@ -15,10 +12,10 @@ namespace UI
     {
         private readonly ApplicationContext _context;
 
-        public event Action RegistrateUser;
-        public event Action<string> DeleteUser;
-        public event Action UpdateTable;
-        public event Action Exit;
+        public event EventHandler RegistrateUser;
+        public event EventHandler<string> DeleteUser;
+        public event EventHandler UpdateTable;
+        public event EventHandler Exit;
 
         public UsersManagementForm(ApplicationContext context)
         {
@@ -38,7 +35,7 @@ namespace UI
             datagvUsers.Columns[0].Name = "User name";
             datagvUsers.Columns[1].Name = "User type";
 
-            UpdateTable?.Invoke();
+            UpdateTable?.Invoke(sender, e);
         }
 
         public void ClearTable()
@@ -58,17 +55,17 @@ namespace UI
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            RegistrateUser?.Invoke();
+            RegistrateUser?.Invoke(sender, e);
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            DeleteUser?.Invoke(datagvUsers.Rows[datagvUsers.SelectedRows[0].Index].Cells[0].Value.ToString());
+           DeleteUser?.Invoke(sender, datagvUsers.Rows[datagvUsers.SelectedRows[0].Index].Cells[0].Value.ToString());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Exit?.Invoke();
+            Exit?.Invoke(sender, e);
         }
     }
 }

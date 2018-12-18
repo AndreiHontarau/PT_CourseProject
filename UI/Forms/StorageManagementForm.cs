@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation;
 
@@ -14,11 +7,11 @@ namespace UI
     public partial class StorageManagementForm : Form, IStorageManagementView
     {
         private readonly ApplicationContext _context;
-        public event Action AddMovie;
-        public event Action DeleteMovie;
-        public event Action AddCategory;
-        public event Action Search;
-        public event Action Exit;
+        public event EventHandler AddMovie;
+        public event EventHandler DeleteMovie;
+        public event EventHandler AddCategory;
+        public event EventHandler Search;
+        public event EventHandler Exit;
 
         public string SearchRequest => tbSearchRequest.Text;
 
@@ -30,27 +23,27 @@ namespace UI
 
         private void btnAddFilm_Click(object sender, EventArgs e)
         {
-            AddMovie?.Invoke();
+            AddMovie?.Invoke(sender, e);
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            AddCategory?.Invoke();
+            AddCategory?.Invoke(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DeleteMovie?.Invoke();
+            DeleteMovie?.Invoke(sender, e);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Search?.Invoke();
+            Search?.Invoke(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Exit?.Invoke();
+            Exit?.Invoke(sender, e);
         }
 
         public new void Show()

@@ -6,7 +6,7 @@ namespace Presentation
     {
         string UserName { get; }
         string Password { get; }
-        event Action Login;
+        event EventHandler Login;
         void ShowError(string message);
     }
 }

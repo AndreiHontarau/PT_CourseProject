@@ -10,6 +10,6 @@ namespace Presentation
     {
         string CategoryName { get; }
         string SymbolicCode { get; }
-        event Action AddCategory;
+        event EventHandler AddCategory;
     }
 }

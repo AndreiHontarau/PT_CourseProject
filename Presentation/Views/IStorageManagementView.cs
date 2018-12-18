@@ -6,10 +6,10 @@ namespace Presentation
     {
         string SearchRequest { get; }
 
-        event Action AddMovie;
-        event Action DeleteMovie;
-        event Action AddCategory;
-        event Action Search;
-        event Action Exit;
+        event EventHandler AddMovie;
+        event EventHandler DeleteMovie;
+        event EventHandler AddCategory;
+        event EventHandler Search;
+        event EventHandler Exit;
     }
 }

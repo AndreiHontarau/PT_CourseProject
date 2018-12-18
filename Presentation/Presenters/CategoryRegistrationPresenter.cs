@@ -18,7 +18,7 @@ namespace Presentation
             _view = view;
             _service = service;
 
-            view.AddCategory += () => AddCategory(view.CategoryName);
+            view.AddCategory += (object sender, EventArgs e) => AddCategory(view.CategoryName);
         }
 
 

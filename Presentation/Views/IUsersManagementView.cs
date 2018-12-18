@@ -4,10 +4,10 @@ namespace Presentation
 {
     public interface IUsersManagementView : IView
     {
-        event Action RegistrateUser;
-        event Action<string> DeleteUser;
-        event Action UpdateTable;
-        event Action Exit;
+        event EventHandler RegistrateUser;
+        event EventHandler<string> DeleteUser;
+        event EventHandler UpdateTable;
+        event EventHandler Exit;
 
         void ClearTable();
         void DisplayRecord(string UserName, string UserType);
