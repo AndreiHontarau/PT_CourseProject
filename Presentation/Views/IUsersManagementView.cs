@@ -11,6 +11,6 @@ namespace Presentation
 
         void ClearTable();
         void DisplayRecord(string UserName, string UserType);
-        void ClearUser();
+        void ClearUsers();
     }
 }

@@ -55,7 +55,7 @@ namespace Presentation
         {
             if (_service.DeleteUser(userName))
             {
-                _view.ClearUser();
+                _view.ClearUsers();
             }
         }
 

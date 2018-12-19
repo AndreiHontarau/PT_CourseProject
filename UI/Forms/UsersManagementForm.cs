@@ -43,9 +43,12 @@ namespace UI
             datagvUsers.Rows.Clear();
         }
 
-        public void ClearUser()
+        public void ClearUsers()
         {
-            datagvUsers.Rows.RemoveAt(datagvUsers.SelectedRows[0].Index);
+            foreach (var row in datagvUsers.SelectedRows)
+            {
+                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
+            }
         }
 
         public void DisplayRecord(string UserName, string UserType)
@@ -60,7 +63,10 @@ namespace UI
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-           DeleteUser?.Invoke(sender, datagvUsers.Rows[datagvUsers.SelectedRows[0].Index].Cells[0].Value.ToString());
+            foreach (var row in datagvUsers.SelectedRows)
+            {
+                DeleteUser?.Invoke(sender, (row as DataGridViewRow).Cells[0].Value.ToString());
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
