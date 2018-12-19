@@ -9,7 +9,7 @@ namespace Model
 {
     class CategoryDBManager : DBManager
     {
-        public CategoryDBManager(string connectionString) : base(connectionString)
+        public CategoryDBManager() : base()
         {
 
         }

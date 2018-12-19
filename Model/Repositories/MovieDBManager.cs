@@ -8,7 +8,7 @@ namespace Model
 {
     class MovieDBManager : DBManager
     {
-        public MovieDBManager(string connectionString) : base(connectionString)
+        public MovieDBManager() : base()
         {
             
         }
