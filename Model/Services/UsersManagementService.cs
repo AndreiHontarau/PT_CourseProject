@@ -46,6 +46,7 @@ namespace Model
         {
             if (_repository.GetAmountOfUsers() == AmountOfUsers + 1)
             {
+                AmountOfUsers++;
                 return true;
             }
             else
