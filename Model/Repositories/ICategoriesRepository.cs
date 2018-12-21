@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class MovieDBManager : DBManager
+    public interface ICategoriesRepository
     {
-        public MovieDBManager() : base()
-        {
-            
-        }
+        int GetAmountOfCategories();
     }
 }

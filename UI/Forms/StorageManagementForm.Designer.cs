@@ -42,7 +42,7 @@
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMovies = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tbSearchRequest = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,7 +189,7 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dgvMovies, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -200,18 +200,18 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(521, 460);
             this.tableLayoutPanel4.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgvMovies
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(515, 408);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvMovies.AllowUserToAddRows = false;
+            this.dgvMovies.AllowUserToDeleteRows = false;
+            this.dgvMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMovies.Location = new System.Drawing.Point(3, 3);
+            this.dgvMovies.Name = "dgvMovies";
+            this.dgvMovies.ReadOnly = true;
+            this.dgvMovies.RowTemplate.Height = 24;
+            this.dgvMovies.Size = new System.Drawing.Size(515, 408);
+            this.dgvMovies.TabIndex = 7;
             // 
             // tableLayoutPanel5
             // 
@@ -259,13 +259,14 @@
             this.Name = "StorageManagementForm";
             this.Text = "Video rental - Storage managment";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.StorageManagementForm_Load);
             this.StatusBar.ResumeLayout(false);
             this.StatusBar.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
@@ -278,7 +279,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMovies;
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfFilmsLabel;
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfCustomersLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

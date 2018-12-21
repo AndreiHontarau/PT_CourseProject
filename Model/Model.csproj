@@ -92,11 +92,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Records\MovieRecordExtended.cs" />
     <Compile Include="Records\UserRecord.cs" />
     <Compile Include="Repositories\CategoryDBManager.cs" />
     <Compile Include="Repositories\DBManager.cs" />
+    <Compile Include="Repositories\ICategoriesRepository.cs" />
+    <Compile Include="Repositories\IMoviesRepository.cs" />
     <Compile Include="Repositories\IUsersRepository.cs" />
-    <Compile Include="Repositories\MovieDBManager.cs" />
+    <Compile Include="Repositories\MoviesDBManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Records\CategoryRecord.cs" />
     <Compile Include="Records\MovieRecord.cs" />

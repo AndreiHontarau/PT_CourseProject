@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Presenters\CategoryRegistrationPresenter.cs" />
     <Compile Include="Presenters\CustomersManagementPresenter.cs" />
+    <Compile Include="Presenters\MovieRegistrationPresenter.cs" />
     <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\StorageManagementPresenter.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Views\ICategoryRegistrationView.cs" />
     <Compile Include="Views\ICustomersManagementView.cs" />
     <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IMovieRegistrationView.cs" />
     <Compile Include="Views\IStorageManagementView.cs" />
     <Compile Include="Views\IUserRegistrationView.cs" />
     <Compile Include="Views\IUsersManagementView.cs" />

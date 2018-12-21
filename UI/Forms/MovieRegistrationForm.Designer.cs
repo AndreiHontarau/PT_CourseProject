@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FilmRegistration
+    partial class MovieRegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilmRegistration));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieRegistrationForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AgeRestrictionCheckBox = new System.Windows.Forms.CheckBox();
             this.LanguageTextBox = new System.Windows.Forms.TextBox();
@@ -246,7 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 708);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Name = "FilmRegistration";
+            this.Name = "MovieRegistrationForm";
             this.Text = "FilmRegistration";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

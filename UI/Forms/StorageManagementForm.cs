@@ -7,8 +7,9 @@ namespace UI
     public partial class StorageManagementForm : Form, IStorageManagementView
     {
         private readonly ApplicationContext _context;
+        public event EventHandler UpdateTable;
         public event EventHandler AddMovie;
-        public event EventHandler DeleteMovie;
+        public event EventHandler<string> DeleteMovie;
         public event EventHandler AddCategory;
         public event EventHandler Search;
         public event EventHandler Exit;
@@ -19,6 +20,27 @@ namespace UI
         {
             _context = context;
             InitializeComponent();
+        }
+
+        public new void Show()
+        {
+            _context.MainForm = this;
+            base.Show();
+        }
+
+        private void StorageManagementForm_Load(object sender, EventArgs e)
+        {
+            dgvMovies.ColumnCount = 6;
+
+            dgvMovies.Columns[0].Name = "MovieID";
+            dgvMovies.Columns[1].Name = "Category";
+            dgvMovies.Columns[2].Name = "Title";
+            dgvMovies.Columns[3].Name = "Year";
+            dgvMovies.Columns[4].Name = "Producer";
+            dgvMovies.Columns[5].Name = "Carrier";
+            dgvMovies.Columns[6].Name = "Copies";
+
+            UpdateTable?.Invoke(sender, e);
         }
 
         private void btnAddFilm_Click(object sender, EventArgs e)
@@ -33,7 +55,10 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DeleteMovie?.Invoke(sender, e);
+            foreach (var row in dgvMovies.SelectedRows)
+            {
+                DeleteMovie?.Invoke(sender, (row as DataGridViewRow).Cells[0].Value.ToString());
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -46,10 +71,17 @@ namespace UI
             Exit?.Invoke(sender, e);
         }
 
-        public new void Show()
+        public void ClearMovies()
         {
-            _context.MainForm = this;
-            base.Show();
+            foreach (var row in dgvMovies.SelectedRows)
+            {
+                dgvMovies.Rows.RemoveAt((row as DataGridViewRow).Index);
+            }
+        }
+
+        public void DisplayRecord()
+        {
+            dgvMovies.Rows.Add();
         }
     }
 }

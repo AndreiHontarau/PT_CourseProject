@@ -27,6 +27,42 @@ namespace UI
             rbtnAdministrator.CheckedChanged += ValidateUserType;
         }
 
+        public new void Show()
+        {
+            ShowDialog();
+        }
+
+        private void btnRegistrate_Click(object sender, EventArgs e)
+        {
+            Registrate.Invoke(sender, e);
+        }
+
+        private UserType UserTypeSelection()
+        {
+                if (rbtnManager.Checked)
+                {
+                    return UserType.Manager;
+                }
+                else if (rbtnReceptionist.Checked)
+                {
+                    return UserType.Receptionist;
+                }
+                else if (rbtnAdministrator.Checked)
+                {
+                    return UserType.Admin;
+                }
+                else
+                {
+                    throw new ArgumentNullException("You shold choose type of the user.");
+                }
+        }
+
+        public void ShowError(string massege)
+        {
+            lblNotification.Text = massege;
+            lblNotification.ForeColor = Color.Red;
+        }
+
         private void ValidateUserType(object sender, EventArgs e)
         {
             if (!rbtnManager.Checked && !rbtnReceptionist.Checked && !rbtnAdministrator.Checked)
@@ -65,42 +101,6 @@ namespace UI
                 epUserName.Clear();
                 btnRegistrate.Enabled = true;
             }
-        }
-
-        private UserType UserTypeSelection()
-        {
-                if (rbtnManager.Checked)
-                {
-                    return UserType.Manager;
-                }
-                else if (rbtnReceptionist.Checked)
-                {
-                    return UserType.Receptionist;
-                }
-                else if (rbtnAdministrator.Checked)
-                {
-                    return UserType.Admin;
-                }
-                else
-                {
-                    throw new ArgumentNullException("You shold choose type of the user.");
-                }
-        }
-
-        public void ShowError(string massege)
-        {
-            lblNotification.Text = massege;
-            lblNotification.ForeColor = Color.Red;
-        }
-
-        public new void Show()
-        {
-            ShowDialog();
-        }
-
-        private void btnRegistrate_Click(object sender, EventArgs e)
-        {
-            Registrate.Invoke(sender, e);
         }
     }
 }

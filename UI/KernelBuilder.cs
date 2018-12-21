@@ -27,6 +27,10 @@ namespace UI
             _kernel.Bind<StorageManagementPresenter>().ToSelf();
             _kernel.Bind<IStorageManagementService>().To<StorageManagementService>();
 
+            _kernel.Bind<IMovieRegistrationView>().To<MovieRegistrationForm>();
+            _kernel.Bind<MovieRegistrationPresenter>().ToSelf();
+            //_kernel.Bind<IMovieRegistrationService>().To<MovieRegistrationService>();
+
             _kernel.Bind<ICustomersManagementView>().To<CustomersManagementForm>();
             _kernel.Bind<CustomersManagementPresenter>().ToSelf();
             _kernel.Bind<ICustomersManagementService>().To<CustomersManagementService>();
@@ -40,6 +44,8 @@ namespace UI
             _kernel.Bind<IUserRegistrationService>().To<UserRegistrationService>();
 
             _kernel.Bind<IUsersRepository>().To<UsersDBManager>();
+            _kernel.Bind<IMoviesRepository>().To<MoviesDBManager>();
+            //_kernel.Bind<ICategoriesRepository>().To<CategoriesDBManager>();
         }
     }
 }

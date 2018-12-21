@@ -58,12 +58,11 @@ namespace Model
 
         public bool CheckForPresence(string userName)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE user_name = '" + userName + "'", sqlConnection);
-            sqlReader = command.ExecuteReader();
+            bool IsPresent = false;
 
-            bool IsPresent = (bool)sqlReader?.Read();
-
-            sqlReader.Close();
+            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Users WHERE user_name like @UserName", sqlConnection);
+            command.Parameters.AddWithValue("UserName", userName);
+            IsPresent = (int)command.ExecuteScalar() == 0? false : true;
 
             return IsPresent;
         }
@@ -86,7 +85,8 @@ namespace Model
 
         public bool DeleteUser(string userName)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE user_name ='" + userName + "'", sqlConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE user_name like @UserName", sqlConnection);
+            command.Parameters.AddWithValue("UserName", userName);
 
             command.ExecuteNonQuery();
 

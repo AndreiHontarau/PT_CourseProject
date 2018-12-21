@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using  Presentation;
 
 namespace UI
 {
-    public partial class FilmRegistration : Form
+    public partial class MovieRegistrationForm : Form, IMovieRegistrationView
     {
-        public FilmRegistration()
+        public MovieRegistrationForm()
         {
             InitializeComponent();
+        }
+
+        public new void Show()
+        {
+            ShowDialog();
         }
     }
 }

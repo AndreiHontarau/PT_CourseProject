@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 using Presentation;
 
@@ -38,24 +34,6 @@ namespace UI
             UpdateTable?.Invoke(sender, e);
         }
 
-        public void ClearTable()
-        {
-            datagvUsers.Rows.Clear();
-        }
-
-        public void ClearUsers()
-        {
-            foreach (var row in datagvUsers.SelectedRows)
-            {
-                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
-            }
-        }
-
-        public void DisplayRecord(string UserName, string UserType)
-        {
-            datagvUsers.Rows.Add(UserName, UserType);
-        }
-
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             RegistrateUser?.Invoke(sender, e);
@@ -72,6 +50,24 @@ namespace UI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Exit?.Invoke(sender, e);
+        }
+
+        public void ClearTable()
+        {
+            datagvUsers.Rows.Clear();
+        }
+
+        public void ClearUsers()
+        {
+            foreach (var row in datagvUsers.SelectedRows)
+            {
+                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
+            }
+        }
+
+        public void DisplayRecord(string UserName, string UserType)
+        {
+            datagvUsers.Rows.Add(UserName, UserType);
         }
     }
 }

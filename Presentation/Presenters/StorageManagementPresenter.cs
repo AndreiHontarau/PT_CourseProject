@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ninject;
 using Model;
 
@@ -20,8 +17,9 @@ namespace Presentation
             _view = view;
             _service = service;
 
+            _view.UpdateTable += (object sendr, EventArgs e) => LoadTable();
             _view.AddMovie += (object sender, EventArgs e) => AddMovie();
-            _view.DeleteMovie += (object sender, EventArgs e) => DeleteMovie();
+            _view.DeleteMovie += (object sender, string e) => DeleteMovie(e);
             _view.AddCategory += (object sender, EventArgs e) => AddCategory();
             _view.Search += (object sender, EventArgs e) => Search();
             _view.Exit += (object sender, EventArgs e) => Exit();
@@ -29,28 +27,44 @@ namespace Presentation
 
         private void AddMovie()
         {
-            //FilmRegistration filmRegistration = new FilmRegistration();
-            //filmRegistration.ShowDialog();
+            _kernel.Get<MovieRegistrationPresenter>().Run();
+            if (_service.CheckMovieRegistrationSuccess())
+            {
+                LoadLastMovie();
+            }
         }
 
-        private void DeleteMovie()
+        private void LoadTable()
         {
-            //_view.DialogResult confirmation = MessageBox.Show("Are you sure?", "Confirm delete of %filmname%", MessageBoxButtons.YesNo);
+            List<MovieRecord> movies = _service.LoadTable();
 
-            //if (confirmation == DialogResult.Yes)
-            //{
+            foreach (MovieRecord movie in movies)
+            {
+                _view.DisplayRecord();
+            }
+        }
 
-            //}
-            //else
-            //{
+        private void LoadLastMovie()
+        {
+            MovieRecord user = _service.LoadLastMovie();
+            _view.DisplayRecord();
+        }
 
-            //}
+        private void DeleteMovie(string movieID)
+        {
+            if (_service.DeleteMovie(movieID))
+            {
+                _view.ClearMovies();
+            }
         }
 
         private void AddCategory()
         {
-            //CategoryRegistrationForm categoryRegistration = new CategoryRegistrationForm();
-            //categoryRegistration.ShowDialog();
+            //_kernel.Get<CategoryRegistrationPresenter>().Run();
+            //if (_service.CheckCategoryRegistrationSuccess())
+            //{
+            //    LoadLastCategory();
+            //}
         }
 
         private void Search()
@@ -60,7 +74,8 @@ namespace Presentation
 
         private void Exit()
         {
-
+            _kernel.Get<LoginPresenter>().Run();
+            _view.Close();
         }
 
         public override void Run()
