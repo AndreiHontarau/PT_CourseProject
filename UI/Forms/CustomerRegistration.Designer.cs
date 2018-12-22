@@ -119,7 +119,7 @@
             this.SexTextBox.Name = "SexTextBox";
             this.SexTextBox.Size = new System.Drawing.Size(150, 22);
             this.SexTextBox.TabIndex = 9;
-            this.SexTextBox.Text = "Sex";
+            this.SexTextBox.Text = "Gender";
             // 
             // RegistrateButton
             // 

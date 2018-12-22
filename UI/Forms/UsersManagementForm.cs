@@ -10,7 +10,7 @@ namespace UI
 
         public event EventHandler RegistrateUser;
         public event EventHandler<string> DeleteUser;
-        public event EventHandler UpdateTable;
+        public event EventHandler LoadTable;
         public event EventHandler Exit;
 
         public UsersManagementForm(ApplicationContext context)
@@ -31,7 +31,7 @@ namespace UI
             datagvUsers.Columns[0].Name = "User name";
             datagvUsers.Columns[1].Name = "User type";
 
-            UpdateTable?.Invoke(sender, e);
+            LoadTable?.Invoke(sender, e);
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -44,6 +44,8 @@ namespace UI
             foreach (var row in datagvUsers.SelectedRows)
             {
                 DeleteUser?.Invoke(sender, (row as DataGridViewRow).Cells[0].Value.ToString());
+
+                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
             }
         }
 
@@ -55,14 +57,6 @@ namespace UI
         public void ClearTable()
         {
             datagvUsers.Rows.Clear();
-        }
-
-        public void ClearUsers()
-        {
-            foreach (var row in datagvUsers.SelectedRows)
-            {
-                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
-            }
         }
 
         public void DisplayRecord(string UserName, string UserType)

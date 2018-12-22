@@ -6,11 +6,10 @@ namespace Presentation
     {
         event EventHandler RegistrateUser;
         event EventHandler<string> DeleteUser;
-        event EventHandler UpdateTable;
+        event EventHandler LoadTable;
         event EventHandler Exit;
 
         void ClearTable();
         void DisplayRecord(string UserName, string UserType);
-        void ClearUsers();
     }
 }

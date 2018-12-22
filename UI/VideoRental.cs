@@ -14,13 +14,20 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            var kernel = KernelBuilder.GetKernel();
+            try
+            {
+                var kernel = KernelBuilder.GetKernel();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-            kernel.Get<LoginPresenter>().Run();
-            Application.Run(kernel.Get<ApplicationContext>());
+                kernel.Get<StorageManagementPresenter>().Run();
+                Application.Run(kernel.Get<ApplicationContext>());
+            }
+            catch (Exception e)
+            {
+                
+            }
         }
     }
 }

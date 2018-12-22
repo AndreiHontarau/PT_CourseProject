@@ -30,7 +30,7 @@ namespace UI
 
         private void StorageManagementForm_Load(object sender, EventArgs e)
         {
-            dgvMovies.ColumnCount = 6;
+            dgvMovies.ColumnCount = 7;
 
             dgvMovies.Columns[0].Name = "MovieID";
             dgvMovies.Columns[1].Name = "Category";

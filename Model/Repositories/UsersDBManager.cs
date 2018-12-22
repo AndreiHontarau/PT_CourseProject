@@ -80,7 +80,6 @@ namespace Model
             sqlReader.Close();
 
             return record;
-
         }
 
         public bool DeleteUser(string userName)

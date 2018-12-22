@@ -60,11 +60,7 @@ namespace Presentation
 
         private void AddCategory()
         {
-            //_kernel.Get<CategoryRegistrationPresenter>().Run();
-            //if (_service.CheckCategoryRegistrationSuccess())
-            //{
-            //    LoadLastCategory();
-            //}
+            _kernel.Get<CategoriesManagementPresenter>().Run();
         }
 
         private void Search()

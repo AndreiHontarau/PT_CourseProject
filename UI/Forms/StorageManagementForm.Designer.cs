@@ -39,7 +39,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddFilm = new System.Windows.Forms.Button();
-            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.btnManageCategories = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMovies = new System.Windows.Forms.DataGridView();
@@ -130,7 +130,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnExit, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnAddFilm, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnAddCategory, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnManageCategories, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnDelete, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 394);
@@ -163,16 +163,16 @@
             this.btnAddFilm.UseVisualStyleBackColor = true;
             this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
-            // btnAddCategory
+            // btnManageCategories
             // 
-            this.btnAddCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCategory.Location = new System.Drawing.Point(260, 3);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(252, 25);
-            this.btnAddCategory.TabIndex = 1;
-            this.btnAddCategory.Text = "Add new category";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            this.btnManageCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManageCategories.Location = new System.Drawing.Point(260, 3);
+            this.btnManageCategories.Name = "btnManageCategories";
+            this.btnManageCategories.Size = new System.Drawing.Size(252, 25);
+            this.btnManageCategories.TabIndex = 1;
+            this.btnManageCategories.Text = "Manage categories";
+            this.btnManageCategories.UseVisualStyleBackColor = true;
+            this.btnManageCategories.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // btnDelete
             // 
@@ -285,7 +285,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnAddFilm;
-        private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.Button btnManageCategories;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

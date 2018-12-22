@@ -18,7 +18,7 @@ namespace Presentation
             _service = service;
 
             _view.RegistrateUser += (object sender, EventArgs e) => RegistrateUser();
-            _view.UpdateTable += (object sender, EventArgs e) => LoadTable();
+            _view.LoadTable += (object sender, EventArgs e) => LoadTable();
             _view.DeleteUser += (object sender, string userName) => DeleteUser(userName);
             _view.Exit += (object sender, EventArgs e) => Exit();
         }
@@ -50,10 +50,7 @@ namespace Presentation
 
         private void DeleteUser(string userName)
         {
-            if (_service.DeleteUser(userName))
-            {
-                _view.ClearUsers();
-            }
+            _service.DeleteUser(userName);
         }
 
         private void Exit()

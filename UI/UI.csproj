@@ -86,11 +86,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CategoryRegistrationForm.cs">
+    <Compile Include="Forms\CategoriesManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CategoryRegistrationForm.Designer.cs">
-      <DependentUpon>CategoryRegistrationForm.cs</DependentUpon>
+    <Compile Include="Forms\CategoriesManagementForm.Designer.cs">
+      <DependentUpon>CategoriesManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MovieRegistrationForm.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
       <DependentUpon>RentsManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="VideoRental.cs" />
-    <EmbeddedResource Include="Forms\CategoryRegistrationForm.resx">
-      <DependentUpon>CategoryRegistrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CategoriesManagementForm.resx">
+      <DependentUpon>CategoriesManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerRegistration.resx">
       <DependentUpon>CustomerRegistration.cs</DependentUpon>
