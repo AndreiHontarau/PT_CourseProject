@@ -29,7 +29,7 @@ namespace UI
 
             _kernel.Bind<IMovieRegistrationView>().To<MovieRegistrationForm>();
             _kernel.Bind<MovieRegistrationPresenter>().ToSelf();
-            //_kernel.Bind<IMovieRegistrationService>().To<MovieRegistrationService>();
+            _kernel.Bind<IMovieRegistrationService>().To<MovieRegistrationService>();
 
             _kernel.Bind<ICategoriesManagementView>().To<CategoriesManagementForm>();
             _kernel.Bind<CategoriesManagementPresenter>().ToSelf();

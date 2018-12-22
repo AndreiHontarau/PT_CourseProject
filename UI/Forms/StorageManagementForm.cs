@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Model;
 using Presentation;
 
 namespace UI
@@ -7,6 +8,7 @@ namespace UI
     public partial class StorageManagementForm : Form, IStorageManagementView
     {
         private readonly ApplicationContext _context;
+
         public event EventHandler UpdateTable;
         public event EventHandler AddMovie;
         public event EventHandler<string> DeleteMovie;
@@ -79,9 +81,9 @@ namespace UI
             }
         }
 
-        public void DisplayRecord()
+        public void DisplayRecord(MovieRecord record)
         {
-            dgvMovies.Rows.Add();
+            dgvMovies.Rows.Add(record.MovieID, record.Category, record.Title, record.Year, record.Producer, record.Carrier, record.AmountOfCopies);
         }
     }
 }

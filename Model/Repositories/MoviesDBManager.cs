@@ -7,18 +7,48 @@ namespace Model
 {
     public class MoviesDBManager : DBManager, IMoviesRepository
     {
+        private int GetCategoryId(string categoryName)
+        {
+            SqlCommand getCategoryId = new SqlCommand("SELECT Id FROM Categories WHERE name like @Name", sqlConnection);
+
+            getCategoryId.Parameters.AddWithValue("Name", categoryName);
+
+            return (int)getCategoryId.ExecuteScalar();
+        }
+
+        private string GetCategoryName(int categoryId)
+        {
+            SqlCommand getCategoryNmae = new SqlCommand("SELECT name FROM Categories WHERE Id like @ID", sqlConnection);
+
+            getCategoryNmae.Parameters.AddWithValue("ID", categoryId);
+
+            return (string)getCategoryNmae.ExecuteScalar();
+        }
+
+        private string GetCategoryCode(string categoryName)
+        {
+            SqlCommand getCategoryCode = new SqlCommand("SELECT symbolic_code FROM Categories WHERE name like @Name", sqlConnection);
+
+            getCategoryCode.Parameters.AddWithValue("Name", categoryName);
+
+            return (string)getCategoryCode.ExecuteScalar();
+        }
+
         public void AddRecord(MovieRecord movieRecord, MovieRecordExtended movieRecordExtended)
         {
-            SqlCommand insertMovie = new SqlCommand("INSERT INTO [Movies] (category_id, title, producer, year, carrier, amount_of_copies)" +
-                                                "VALUES(@CategoryID, @Title, @Producer, @Year, @Carrier, @AmountOfCopies)", sqlConnection);
+            SqlCommand insertMovie = new SqlCommand("INSERT INTO [Movies] (movieID, category_id, title, producer, year, carrier, amount_of_copies, extended_record_id)" +
+                                                "VALUES(@MovieID, @CategoryID, @Title, @Producer, @Year, @Carrier, @AmountOfCopies, @ExtendedRecordId)", sqlConnection);
             SqlCommand insertMovieExtended = new SqlCommand("INSERT INTO [MoviesExtended] (actors_list, country_made, age_restriction, language, annotation)" +
                                                  "VALUES(@ActorsList, @CountryMade, @AgeRestriction, @Language, @Annotation)", sqlConnection);
 
-            insertMovie.Parameters.AddWithValue("CategoryID", movieRecord.CategoryID);
+            insertMovie.Parameters.AddWithValue("MovieID", GetCategoryCode(movieRecord.Category));
+            insertMovie.Parameters.AddWithValue("CategoryID", GetCategoryId(movieRecord.Category));
             insertMovie.Parameters.AddWithValue("Title", movieRecord.Title);
+            insertMovie.Parameters.AddWithValue("Year", movieRecord.Year);
             insertMovie.Parameters.AddWithValue("Producer", movieRecord.Producer);
             insertMovie.Parameters.AddWithValue("Carrier", movieRecord.Carrier);
             insertMovie.Parameters.AddWithValue("AmountOfCopies", movieRecord.AmountOfCopies);
+            insertMovie.Parameters.AddWithValue("ExtendedRecordId", 1 + (int)new SqlCommand("SELECT TOP 1 Id FROM MoviesExtended ORDER BY Id DESC", sqlConnection).ExecuteScalar());
 
             insertMovieExtended.Parameters.AddWithValue("ActorsList", movieRecordExtended.ActorsList);
             insertMovieExtended.Parameters.AddWithValue("CountryMade", movieRecordExtended.CountryMade);
@@ -27,6 +57,16 @@ namespace Model
             insertMovieExtended.Parameters.AddWithValue("Annotation", movieRecordExtended.Annotation);
 
             insertMovie.ExecuteNonQuery();
+
+            SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = movieID + @ID", sqlConnection);
+
+            SqlCommand getMovieID = new SqlCommand("SELECT Id FROM Movies WHERE title like @Title", sqlConnection);
+
+            getMovieID.Parameters.AddWithValue("Title", movieRecord.Title);
+
+            insertMovieID.Parameters.AddWithValue("ID", getMovieID.ExecuteScalar().ToString());
+
+            insertMovieID.ExecuteNonQuery();
             insertMovieExtended.ExecuteNonQuery();
         }
 
@@ -40,7 +80,7 @@ namespace Model
 
             while (sqlReader.Read())
             {
-                moviesList.Add(new MovieRecord(Convert.ToString(sqlReader["movieID"]), Convert.ToInt16(sqlReader["category_id"]), Convert.ToString(sqlReader["title"]),
+                moviesList.Add(new MovieRecord(Convert.ToString(sqlReader["movieID"]), GetCategoryName(Convert.ToInt16(sqlReader["category_id"])), Convert.ToString(sqlReader["title"]),
                     Convert.ToInt16(sqlReader["year"]), Convert.ToString(sqlReader["producer"]), Convert.ToString(sqlReader["carrier"]), Convert.ToInt16(sqlReader["amount_of_copies"])));
             }
 
@@ -60,7 +100,7 @@ namespace Model
                 sqlReader.Close();
             }
 
-            MovieRecord record = new MovieRecord(Convert.ToString(sqlReader["movieID"]), Convert.ToInt16(sqlReader["category_id"]), Convert.ToString(sqlReader["title"]),
+            MovieRecord record = new MovieRecord(Convert.ToString(sqlReader["movieID"]), GetCategoryName(Convert.ToInt16(sqlReader["category_id"])), Convert.ToString(sqlReader["title"]),
                 Convert.ToInt16(sqlReader["year"]), Convert.ToString(sqlReader["producer"]), Convert.ToString(sqlReader["carrier"]), Convert.ToInt16(sqlReader["amount_of_copies"]));
 
             sqlReader.Close();
@@ -108,7 +148,7 @@ namespace Model
             sqlReader = command.ExecuteReader();
             sqlReader.Read();
 
-            MovieRecord record = new MovieRecord(Convert.ToString(sqlReader["movieID"]), Convert.ToInt16(sqlReader["category_id"]), Convert.ToString(sqlReader["title"]),
+            MovieRecord record = new MovieRecord(Convert.ToString(sqlReader["movieID"]), GetCategoryName(Convert.ToInt16(sqlReader["category_id"])), Convert.ToString(sqlReader["title"]),
                 Convert.ToInt16(sqlReader["year"]), Convert.ToString(sqlReader["producer"]), Convert.ToString(sqlReader["carrier"]), Convert.ToInt16(sqlReader["amount_of_copies"]));
 
             sqlReader.Close();

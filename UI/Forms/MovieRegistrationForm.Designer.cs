@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieRegistrationForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AgeRestrictionCheckBox = new System.Windows.Forms.CheckBox();
-            this.LanguageTextBox = new System.Windows.Forms.TextBox();
-            this.AmountOfCopiesTextBox = new System.Windows.Forms.TextBox();
-            this.MediaTypeTextBox = new System.Windows.Forms.TextBox();
-            this.ActorsListTextBox = new System.Windows.Forms.TextBox();
-            this.CountryTextBox = new System.Windows.Forms.TextBox();
-            this.YearTextBox = new System.Windows.Forms.TextBox();
-            this.ProducerTextBox = new System.Windows.Forms.TextBox();
+            this.tbYear = new System.Windows.Forms.TextBox();
+            this.tbProducer = new System.Windows.Forms.TextBox();
             this.InfoLabel = new System.Windows.Forms.Label();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
-            this.AddButton = new System.Windows.Forms.Button();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cbAgeRestriction = new System.Windows.Forms.CheckBox();
+            this.tbLanguage = new System.Windows.Forms.TextBox();
+            this.tbActorsList = new System.Windows.Forms.TextBox();
+            this.tbCountry = new System.Windows.Forms.TextBox();
+            this.tbAmountOfCopies = new System.Windows.Forms.TextBox();
+            this.tbMediaType = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.DescriptionTextBox = new System.Windows.Forms.RichTextBox();
-            this.UploadScreenlistButton = new System.Windows.Forms.Button();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -55,17 +55,17 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.YearTextBox, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ProducerTextBox, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbYear, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbProducer, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.InfoLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TitleTextBox, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.AddButton, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.AgeRestrictionCheckBox, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.LanguageTextBox, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.ActorsListTextBox, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.CountryTextBox, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.AmountOfCopiesTextBox, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.MediaTypeTextBox, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbTitle, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.cbAgeRestriction, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.tbLanguage, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tbActorsList, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tbCountry, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tbAmountOfCopies, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbMediaType, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.cbCategory, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -86,79 +86,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 702);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // AgeRestrictionCheckBox
+            // tbYear
             // 
-            this.AgeRestrictionCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AgeRestrictionCheckBox.AutoSize = true;
-            this.AgeRestrictionCheckBox.Location = new System.Drawing.Point(117, 583);
-            this.AgeRestrictionCheckBox.Name = "AgeRestrictionCheckBox";
-            this.AgeRestrictionCheckBox.Size = new System.Drawing.Size(159, 21);
-            this.AgeRestrictionCheckBox.TabIndex = 0;
-            this.AgeRestrictionCheckBox.Text = "Age restriction (18+)";
-            this.AgeRestrictionCheckBox.UseVisualStyleBackColor = true;
+            this.tbYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbYear.Location = new System.Drawing.Point(122, 177);
+            this.tbYear.Name = "tbYear";
+            this.tbYear.Size = new System.Drawing.Size(150, 22);
+            this.tbYear.TabIndex = 5;
+            this.tbYear.Text = "Year of poduction";
             // 
-            // LanguageTextBox
+            // tbProducer
             // 
-            this.LanguageTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LanguageTextBox.Location = new System.Drawing.Point(122, 525);
-            this.LanguageTextBox.Name = "LanguageTextBox";
-            this.LanguageTextBox.Size = new System.Drawing.Size(150, 22);
-            this.LanguageTextBox.TabIndex = 10;
-            this.LanguageTextBox.Text = "Language";
-            // 
-            // AmountOfCopiesTextBox
-            // 
-            this.AmountOfCopiesTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AmountOfCopiesTextBox.Location = new System.Drawing.Point(122, 351);
-            this.AmountOfCopiesTextBox.Name = "AmountOfCopiesTextBox";
-            this.AmountOfCopiesTextBox.Size = new System.Drawing.Size(150, 22);
-            this.AmountOfCopiesTextBox.TabIndex = 9;
-            this.AmountOfCopiesTextBox.Text = "Amount of copies";
-            // 
-            // MediaTypeTextBox
-            // 
-            this.MediaTypeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MediaTypeTextBox.Location = new System.Drawing.Point(122, 293);
-            this.MediaTypeTextBox.Name = "MediaTypeTextBox";
-            this.MediaTypeTextBox.Size = new System.Drawing.Size(150, 22);
-            this.MediaTypeTextBox.TabIndex = 8;
-            this.MediaTypeTextBox.Text = "Media type";
-            // 
-            // ActorsListTextBox
-            // 
-            this.ActorsListTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ActorsListTextBox.Location = new System.Drawing.Point(122, 467);
-            this.ActorsListTextBox.Name = "ActorsListTextBox";
-            this.ActorsListTextBox.Size = new System.Drawing.Size(150, 22);
-            this.ActorsListTextBox.TabIndex = 7;
-            this.ActorsListTextBox.Text = "Actors list";
-            // 
-            // CountryTextBox
-            // 
-            this.CountryTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.CountryTextBox.Location = new System.Drawing.Point(122, 409);
-            this.CountryTextBox.Name = "CountryTextBox";
-            this.CountryTextBox.Size = new System.Drawing.Size(150, 22);
-            this.CountryTextBox.TabIndex = 6;
-            this.CountryTextBox.Text = "Country";
-            // 
-            // YearTextBox
-            // 
-            this.YearTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.YearTextBox.Location = new System.Drawing.Point(122, 177);
-            this.YearTextBox.Name = "YearTextBox";
-            this.YearTextBox.Size = new System.Drawing.Size(150, 22);
-            this.YearTextBox.TabIndex = 5;
-            this.YearTextBox.Text = "Year of poduction";
-            // 
-            // ProducerTextBox
-            // 
-            this.ProducerTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProducerTextBox.Location = new System.Drawing.Point(122, 119);
-            this.ProducerTextBox.Name = "ProducerTextBox";
-            this.ProducerTextBox.Size = new System.Drawing.Size(150, 22);
-            this.ProducerTextBox.TabIndex = 4;
-            this.ProducerTextBox.Text = "Producer";
+            this.tbProducer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbProducer.Location = new System.Drawing.Point(122, 119);
+            this.tbProducer.Name = "tbProducer";
+            this.tbProducer.Size = new System.Drawing.Size(150, 22);
+            this.tbProducer.TabIndex = 4;
+            this.tbProducer.Text = "Producer";
             // 
             // InfoLabel
             // 
@@ -170,24 +114,90 @@
             this.InfoLabel.TabIndex = 0;
             this.InfoLabel.Text = "Enter film information:";
             // 
-            // TitleTextBox
+            // tbTitle
             // 
-            this.TitleTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TitleTextBox.Location = new System.Drawing.Point(122, 61);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(150, 22);
-            this.TitleTextBox.TabIndex = 2;
-            this.TitleTextBox.Text = "Title";
+            this.tbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbTitle.Location = new System.Drawing.Point(122, 61);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(150, 22);
+            this.tbTitle.TabIndex = 2;
+            this.tbTitle.Text = "Title";
             // 
-            // AddButton
+            // btnAdd
             // 
-            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.AddButton.Location = new System.Drawing.Point(157, 669);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(80, 30);
-            this.AddButton.TabIndex = 3;
-            this.AddButton.Text = "Add film";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAdd.Location = new System.Drawing.Point(157, 669);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 30);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Add film";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cbAgeRestriction
+            // 
+            this.cbAgeRestriction.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbAgeRestriction.AutoSize = true;
+            this.cbAgeRestriction.Location = new System.Drawing.Point(117, 583);
+            this.cbAgeRestriction.Name = "cbAgeRestriction";
+            this.cbAgeRestriction.Size = new System.Drawing.Size(159, 21);
+            this.cbAgeRestriction.TabIndex = 0;
+            this.cbAgeRestriction.Text = "Age restriction (18+)";
+            this.cbAgeRestriction.UseVisualStyleBackColor = true;
+            // 
+            // tbLanguage
+            // 
+            this.tbLanguage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbLanguage.Location = new System.Drawing.Point(122, 525);
+            this.tbLanguage.Name = "tbLanguage";
+            this.tbLanguage.Size = new System.Drawing.Size(150, 22);
+            this.tbLanguage.TabIndex = 10;
+            this.tbLanguage.Text = "Language";
+            // 
+            // tbActorsList
+            // 
+            this.tbActorsList.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbActorsList.Location = new System.Drawing.Point(122, 467);
+            this.tbActorsList.Name = "tbActorsList";
+            this.tbActorsList.Size = new System.Drawing.Size(150, 22);
+            this.tbActorsList.TabIndex = 7;
+            this.tbActorsList.Text = "Actors list";
+            // 
+            // tbCountry
+            // 
+            this.tbCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbCountry.Location = new System.Drawing.Point(122, 409);
+            this.tbCountry.Name = "tbCountry";
+            this.tbCountry.Size = new System.Drawing.Size(150, 22);
+            this.tbCountry.TabIndex = 6;
+            this.tbCountry.Text = "Country";
+            // 
+            // tbAmountOfCopies
+            // 
+            this.tbAmountOfCopies.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbAmountOfCopies.Location = new System.Drawing.Point(122, 351);
+            this.tbAmountOfCopies.Name = "tbAmountOfCopies";
+            this.tbAmountOfCopies.Size = new System.Drawing.Size(150, 22);
+            this.tbAmountOfCopies.TabIndex = 9;
+            this.tbAmountOfCopies.Text = "Amount of copies";
+            // 
+            // tbMediaType
+            // 
+            this.tbMediaType.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMediaType.Location = new System.Drawing.Point(122, 293);
+            this.tbMediaType.Name = "tbMediaType";
+            this.tbMediaType.Size = new System.Drawing.Size(150, 22);
+            this.tbMediaType.TabIndex = 8;
+            this.tbMediaType.Text = "Media type";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(122, 235);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(150, 24);
+            this.cbCategory.TabIndex = 11;
             // 
             // tableLayoutPanel2
             // 
@@ -208,8 +218,8 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.DescriptionTextBox, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.UploadScreenlistButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rtbDescription, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnUploadImage, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(403, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -219,33 +229,25 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(394, 702);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // DescriptionTextBox
+            // rtbDescription
             // 
-            this.DescriptionTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DescriptionTextBox.Location = new System.Drawing.Point(3, 418);
-            this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(388, 281);
-            this.DescriptionTextBox.TabIndex = 0;
-            this.DescriptionTextBox.Text = "Description";
+            this.rtbDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbDescription.Location = new System.Drawing.Point(3, 418);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.Size = new System.Drawing.Size(388, 281);
+            this.rtbDescription.TabIndex = 0;
+            this.rtbDescription.Text = "Description";
             // 
-            // UploadScreenlistButton
+            // btnUploadImage
             // 
-            this.UploadScreenlistButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UploadScreenlistButton.Image = ((System.Drawing.Image)(resources.GetObject("UploadScreenlistButton.Image")));
-            this.UploadScreenlistButton.Location = new System.Drawing.Point(152, 162);
-            this.UploadScreenlistButton.Name = "UploadScreenlistButton";
-            this.UploadScreenlistButton.Size = new System.Drawing.Size(90, 90);
-            this.UploadScreenlistButton.TabIndex = 1;
-            this.UploadScreenlistButton.UseVisualStyleBackColor = true;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(122, 235);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(150, 24);
-            this.cbCategory.TabIndex = 11;
+            this.btnUploadImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUploadImage.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadImage.Image")));
+            this.btnUploadImage.Location = new System.Drawing.Point(152, 162);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(90, 90);
+            this.btnUploadImage.TabIndex = 1;
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // MovieRegistrationForm
             // 
@@ -253,8 +255,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 708);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MovieRegistrationForm";
-            this.Text = "FilmRegistration";
+            this.Text = "Movie registration";
+            this.Load += new System.EventHandler(this.MovieRegistrationForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -267,20 +271,20 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label InfoLabel;
-        private System.Windows.Forms.TextBox TitleTextBox;
-        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox LanguageTextBox;
-        private System.Windows.Forms.TextBox AmountOfCopiesTextBox;
-        private System.Windows.Forms.TextBox MediaTypeTextBox;
-        private System.Windows.Forms.TextBox ActorsListTextBox;
-        private System.Windows.Forms.TextBox CountryTextBox;
-        private System.Windows.Forms.TextBox YearTextBox;
-        private System.Windows.Forms.TextBox ProducerTextBox;
-        private System.Windows.Forms.CheckBox AgeRestrictionCheckBox;
-        private System.Windows.Forms.RichTextBox DescriptionTextBox;
-        private System.Windows.Forms.Button UploadScreenlistButton;
+        private System.Windows.Forms.TextBox tbLanguage;
+        private System.Windows.Forms.TextBox tbAmountOfCopies;
+        private System.Windows.Forms.TextBox tbMediaType;
+        private System.Windows.Forms.TextBox tbActorsList;
+        private System.Windows.Forms.TextBox tbCountry;
+        private System.Windows.Forms.TextBox tbYear;
+        private System.Windows.Forms.TextBox tbProducer;
+        private System.Windows.Forms.CheckBox cbAgeRestriction;
+        private System.Windows.Forms.RichTextBox rtbDescription;
+        private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.ComboBox cbCategory;
     }
 }

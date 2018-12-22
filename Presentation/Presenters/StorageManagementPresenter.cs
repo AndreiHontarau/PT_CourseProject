@@ -19,7 +19,7 @@ namespace Presentation
 
             _view.UpdateTable += (object sendr, EventArgs e) => LoadTable();
             _view.AddMovie += (object sender, EventArgs e) => AddMovie();
-            _view.DeleteMovie += (object sender, string e) => DeleteMovie(e);
+            _view.DeleteMovie += (object sender, string title) => DeleteMovie(title);
             _view.AddCategory += (object sender, EventArgs e) => AddCategory();
             _view.Search += (object sender, EventArgs e) => Search();
             _view.Exit += (object sender, EventArgs e) => Exit();
@@ -40,14 +40,14 @@ namespace Presentation
 
             foreach (MovieRecord movie in movies)
             {
-                _view.DisplayRecord();
+                _view.DisplayRecord(movie);
             }
         }
 
         private void LoadLastMovie()
         {
-            MovieRecord user = _service.LoadLastMovie();
-            _view.DisplayRecord();
+            MovieRecord movie = _service.LoadLastMovie();
+            _view.DisplayRecord(movie);
         }
 
         private void DeleteMovie(string movieID)

@@ -10,6 +10,7 @@ namespace UI
     public partial class UserRegistrationForm : Form, IUserRegistrationView
     {
         private readonly ApplicationContext _context;
+
         public event EventHandler Registrate;
 
         public string userName => tbUserName.Text;

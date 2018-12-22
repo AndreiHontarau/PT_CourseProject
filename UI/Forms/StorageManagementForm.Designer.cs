@@ -41,6 +41,9 @@
             this.btnAddFilm = new System.Windows.Forms.Button();
             this.btnManageCategories = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMovieInfo = new System.Windows.Forms.Label();
+            this.lblScreenlist = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMovies = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,6 +53,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -114,6 +118,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(530, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -184,6 +189,39 @@
             this.btnDelete.Text = "Delete film";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.lblMovieInfo, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblScreenlist, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(515, 385);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // lblMovieInfo
+            // 
+            this.lblMovieInfo.AutoSize = true;
+            this.lblMovieInfo.Location = new System.Drawing.Point(3, 0);
+            this.lblMovieInfo.Name = "lblMovieInfo";
+            this.lblMovieInfo.Size = new System.Drawing.Size(82, 17);
+            this.lblMovieInfo.TabIndex = 0;
+            this.lblMovieInfo.Text = "lblMovieInfo";
+            // 
+            // lblScreenlist
+            // 
+            this.lblScreenlist.AutoSize = true;
+            this.lblScreenlist.Location = new System.Drawing.Point(3, 231);
+            this.lblScreenlist.Name = "lblScreenlist";
+            this.lblScreenlist.Size = new System.Drawing.Size(84, 17);
+            this.lblScreenlist.TabIndex = 1;
+            this.lblScreenlist.Text = "lblScreenlist";
             // 
             // tableLayoutPanel4
             // 
@@ -265,6 +303,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -292,5 +332,8 @@
         private System.Windows.Forms.TextBox tbSearchRequest;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label lblMovieInfo;
+        private System.Windows.Forms.Label lblScreenlist;
     }
 }

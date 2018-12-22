@@ -9,6 +9,5 @@ namespace Model
         bool DeleteMovie(string userName);
         bool CheckForPresence(string userName);
         bool CheckMovieRegistrationSuccess();
-        bool CheckCategoryRegistrationSuccess();
     }
 }

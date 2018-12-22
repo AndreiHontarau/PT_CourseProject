@@ -11,14 +11,12 @@ namespace Model
         private IMoviesRepository _moviesRepository;
         private ICategoriesRepository _categoriesRepository;
         private int AmountOfMovies;
-        private int AmountOfCategories;
 
         public StorageManagementService(IMoviesRepository moviesRepository, ICategoriesRepository categoriesRepository)
         {
             _moviesRepository = moviesRepository;
             _categoriesRepository = categoriesRepository;
             AmountOfMovies = _moviesRepository.GetAmountOfMovies();
-            AmountOfCategories = _categoriesRepository.GetAmountOfCategories();
         }
 
         public List<MovieRecord> LoadTable()
@@ -56,20 +54,6 @@ namespace Model
             if (_moviesRepository.GetAmountOfMovies() == AmountOfMovies + 1)
             {
                 AmountOfMovies++;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        public bool CheckCategoryRegistrationSuccess()
-        {
-            if (_categoriesRepository.GetAmountOfCategories() == AmountOfCategories + 1)
-            {
-                AmountOfCategories++;
                 return true;
             }
             else

@@ -1,4 +1,5 @@
 ﻿using System;
+using Model;
 
 namespace Presentation
 {
@@ -14,6 +15,6 @@ namespace Presentation
         event EventHandler Exit;
 
         void ClearMovies();
-        void DisplayRecord();
+        void DisplayRecord(MovieRecord record);
     }
 }
