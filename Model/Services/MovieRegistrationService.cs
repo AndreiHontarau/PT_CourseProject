@@ -6,11 +6,13 @@ namespace Model
     {
         private IMoviesRepository _repositoryMovies;
         private ICategoriesRepository _repositoryCategories;
+        private IscreenshotsRepository _screenshotsRepository;
 
-        public MovieRegistrationService(IMoviesRepository repositoryMovies, ICategoriesRepository repositoryCategories)
+        public MovieRegistrationService(IMoviesRepository repositoryMovies, ICategoriesRepository repositoryCategories, IscreenshotsRepository screenshotsRepository)
         {
             _repositoryMovies = repositoryMovies;
             _repositoryCategories = repositoryCategories;
+            _screenshotsRepository = screenshotsRepository;
         }
 
         public List<CategoryRecord> ReadCategories()

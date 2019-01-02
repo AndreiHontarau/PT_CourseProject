@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Security.Authentication;
 
 namespace Model
 {
@@ -13,16 +12,16 @@ namespace Model
 
             getCategoryId.Parameters.AddWithValue("Name", categoryName);
 
-            return (int)getCategoryId.ExecuteScalar();
+            return (int)(getCategoryId.ExecuteScalar());
         }
 
         private string GetCategoryName(int categoryId)
         {
-            SqlCommand getCategoryNmae = new SqlCommand("SELECT name FROM Categories WHERE Id like @ID", sqlConnection);
+            SqlCommand getCategoryName = new SqlCommand("SELECT name FROM Categories WHERE Id like @ID", sqlConnection);
 
-            getCategoryNmae.Parameters.AddWithValue("ID", categoryId);
+            getCategoryName.Parameters.AddWithValue("ID", categoryId);
 
-            return (string)getCategoryNmae.ExecuteScalar();
+            return (string)getCategoryName.ExecuteScalar();
         }
 
         private string GetCategoryCode(string categoryName)
@@ -48,7 +47,6 @@ namespace Model
             insertMovie.Parameters.AddWithValue("Producer", movieRecord.Producer);
             insertMovie.Parameters.AddWithValue("Carrier", movieRecord.Carrier);
             insertMovie.Parameters.AddWithValue("AmountOfCopies", movieRecord.AmountOfCopies);
-            insertMovie.Parameters.AddWithValue("ExtendedRecordId", 1 + (int)new SqlCommand("SELECT TOP 1 Id FROM MoviesExtended ORDER BY Id DESC", sqlConnection).ExecuteScalar());
 
             insertMovieExtended.Parameters.AddWithValue("ActorsList", movieRecordExtended.ActorsList);
             insertMovieExtended.Parameters.AddWithValue("CountryMade", movieRecordExtended.CountryMade);
@@ -56,18 +54,23 @@ namespace Model
             insertMovieExtended.Parameters.AddWithValue("Language", movieRecordExtended.Language);
             insertMovieExtended.Parameters.AddWithValue("Annotation", movieRecordExtended.Annotation);
 
+            insertMovieExtended.ExecuteNonQuery();
+
+            insertMovie.Parameters.AddWithValue("ExtendedRecordId", (int)new SqlCommand("SELECT TOP 1 Id FROM MoviesExtended ORDER BY Id DESC", sqlConnection).ExecuteScalar());
+
             insertMovie.ExecuteNonQuery();
 
-            SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = movieID + @ID", sqlConnection);
+            SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = @movieID WHERE Id like @ID", sqlConnection);
 
-            SqlCommand getMovieID = new SqlCommand("SELECT Id FROM Movies WHERE title like @Title", sqlConnection);
+            SqlCommand getMovieID = new SqlCommand("SELECT TOP 1 Id FROM Movies ORDER BY Id DESC", sqlConnection);
 
-            getMovieID.Parameters.AddWithValue("Title", movieRecord.Title);
+            SqlCommand getMovieMovieID = new SqlCommand("SELECT TOP 1 movieID FROM Movies ORDER BY Id DESC", sqlConnection);
 
             insertMovieID.Parameters.AddWithValue("ID", getMovieID.ExecuteScalar().ToString());
 
-            insertMovieID.ExecuteNonQuery();
-            insertMovieExtended.ExecuteNonQuery();
+            insertMovieID.Parameters.AddWithValue("movieID", getMovieMovieID.ExecuteScalar().ToString().Trim() + getMovieID.ExecuteScalar().ToString());
+
+            insertMovieID.ExecuteNonQuery();    
         }
 
         public List<MovieRecord> ReadAllMovies()

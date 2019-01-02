@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 using Ninject;
 
@@ -22,7 +18,12 @@ namespace Presentation
 
             _view.Registrate += (object sender, EventArgs e) => Registrate();
             _view.LoadCategories += (object sender, EventArgs e) => LoadCategories();
-            //_view.UploadImage += (object sender, EventArgs e) => UploadImage();
+            _view.UploadImage += (object sender, EventArgs e) => UploadImage();
+        }
+
+        private void UploadImage()
+        {
+            
         }
 
         public void Registrate()

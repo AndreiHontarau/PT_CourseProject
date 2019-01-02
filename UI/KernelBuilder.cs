@@ -26,6 +26,7 @@ namespace UI
             _kernel.Bind<IStorageManagementView>().To<StorageManagementForm>();
             _kernel.Bind<StorageManagementPresenter>().ToSelf();
             _kernel.Bind<IStorageManagementService>().To<StorageManagementService>();
+            _kernel.Bind<IscreenshotsRepository>().To<ScreenshotsManager>();
 
             _kernel.Bind<IMovieRegistrationView>().To<MovieRegistrationForm>();
             _kernel.Bind<MovieRegistrationPresenter>().ToSelf();
