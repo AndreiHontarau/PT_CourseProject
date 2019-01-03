@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using  Presentation;
 using Model;
@@ -18,9 +13,10 @@ namespace UI
         private List<CategoryRecord> Categories;
 
         public event EventHandler Registrate;
-        public event EventHandler UploadImage;
         public event EventHandler LoadCategories;
 
+        public string ScreenshotPath { get; private set; }
+        public string PreviousMovieID => tbPreviousMovieID.Text;
         public string Title => tbTitle.Text;
         public string Producer => tbProducer.Text;
         public short YearOfProduction => GetYear();
@@ -91,7 +87,7 @@ namespace UI
 
         public void ShowError(string messege)
         {
-
+            MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -110,12 +106,11 @@ namespace UI
 
             if (result == DialogResult.OK)
             {
+                ScreenshotPath = dialog.FileName;
                 btnUploadImage.BackgroundImage = Image.FromFile(dialog.FileName);
                 btnUploadImage.Dock = DockStyle.Fill;
                 btnUploadImage.BackColor = Color.Transparent;
             }
-
-            UploadImage?.Invoke(sender, e);
         }
     }
 }

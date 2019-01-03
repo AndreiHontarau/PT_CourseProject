@@ -18,12 +18,6 @@ namespace Presentation
 
             _view.Registrate += (object sender, EventArgs e) => Registrate();
             _view.LoadCategories += (object sender, EventArgs e) => LoadCategories();
-            _view.UploadImage += (object sender, EventArgs e) => UploadImage();
-        }
-
-        private void UploadImage()
-        {
-            
         }
 
         public void Registrate()
@@ -31,8 +25,8 @@ namespace Presentation
             try
             {
                 MovieRecord newMovie = new MovieRecord(_view.CategoryName, _view.Title, _view.YearOfProduction, _view.Producer, _view.Carrier, _view.AmountOfCopies);
-                MovieRecordExtended newMovieExtended = new MovieRecordExtended(_view.ActorsList, _view.Country, _view.AgeRestriction, _view.Language, _view.Description);
-                _service.Registrate(newMovie, newMovieExtended);
+                MovieRecordExtended newMovieExtended = new MovieRecordExtended(_view.ActorsList, _view.Country, _view.AgeRestriction, _view.Language, _view.Description, _view.PreviousMovieID);
+                _service.Registrate(newMovie, newMovieExtended, _view.ScreenshotPath);
                 _view.Close();
             }
             catch (ArgumentNullException e)

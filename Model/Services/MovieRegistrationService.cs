@@ -6,13 +6,13 @@ namespace Model
     {
         private IMoviesRepository _repositoryMovies;
         private ICategoriesRepository _repositoryCategories;
-        private IscreenshotsRepository _screenshotsRepository;
+        private IscreenshotsRepository _repositoryScreenshots;
 
-        public MovieRegistrationService(IMoviesRepository repositoryMovies, ICategoriesRepository repositoryCategories, IscreenshotsRepository screenshotsRepository)
+        public MovieRegistrationService(IMoviesRepository repositoryMovies, ICategoriesRepository repositoryCategories, IscreenshotsRepository repositoryScreenshots)
         {
             _repositoryMovies = repositoryMovies;
             _repositoryCategories = repositoryCategories;
-            _screenshotsRepository = screenshotsRepository;
+            _repositoryScreenshots = repositoryScreenshots;
         }
 
         public List<CategoryRecord> ReadCategories()
@@ -24,9 +24,10 @@ namespace Model
             return categories;
         }
 
-        public void Registrate(MovieRecord newMovie, MovieRecordExtended newMovieExtended)
+        public void Registrate(MovieRecord newMovie, MovieRecordExtended newMovieExtended, string screenshotPath)
         {
             _repositoryMovies.AddRecord(newMovie, newMovieExtended);
+            _repositoryScreenshots.AddScreenshot(newMovie.MovieID, screenshotPath);
         }
     }
 }

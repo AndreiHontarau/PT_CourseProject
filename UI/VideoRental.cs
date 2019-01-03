@@ -14,8 +14,8 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            //try
-            //{
+            try
+            {
                 var kernel = KernelBuilder.GetKernel();
 
                 Application.EnableVisualStyles();
@@ -23,11 +23,11 @@ namespace UI
 
                 kernel.Get<StorageManagementPresenter>().Run();
                 Application.Run(kernel.Get<ApplicationContext>());
-            //}
-            //catch (Exception e)
-            //{
-                
-            //}
         }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+}
     }
 }

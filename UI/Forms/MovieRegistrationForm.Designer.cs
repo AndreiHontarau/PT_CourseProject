@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieRegistrationForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.InfoLabel = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbAgeRestriction = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,6 +63,9 @@
             this.tlpScreenlist = new System.Windows.Forms.TableLayoutPanel();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnUploadImage = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPreviousMovieID = new System.Windows.Forms.Label();
+            this.tbPreviousMovieID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -76,13 +78,13 @@
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpScreenlist.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.InfoLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.cbAgeRestriction, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
@@ -94,6 +96,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel12, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -112,16 +115,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.330277F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 702);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // InfoLabel
-            // 
-            this.InfoLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.InfoLabel.AutoSize = true;
-            this.InfoLabel.Location = new System.Drawing.Point(124, 0);
-            this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(145, 17);
-            this.InfoLabel.TabIndex = 0;
-            this.InfoLabel.Text = "Enter film information:";
             // 
             // btnAdd
             // 
@@ -490,6 +483,38 @@
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.lblPreviousMovieID, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tbPreviousMovieID, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 52);
+            this.tableLayoutPanel3.TabIndex = 22;
+            // 
+            // lblPreviousMovieID
+            // 
+            this.lblPreviousMovieID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPreviousMovieID.AutoSize = true;
+            this.lblPreviousMovieID.Location = new System.Drawing.Point(66, 0);
+            this.lblPreviousMovieID.Name = "lblPreviousMovieID";
+            this.lblPreviousMovieID.Size = new System.Drawing.Size(125, 17);
+            this.lblPreviousMovieID.TabIndex = 0;
+            this.lblPreviousMovieID.Text = "Previous Movie ID:";
+            // 
+            // tbPreviousMovieID
+            // 
+            this.tbPreviousMovieID.Location = new System.Drawing.Point(197, 3);
+            this.tbPreviousMovieID.Name = "tbPreviousMovieID";
+            this.tbPreviousMovieID.Size = new System.Drawing.Size(150, 22);
+            this.tbPreviousMovieID.TabIndex = 1;
+            // 
             // MovieRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -523,6 +548,8 @@
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tlpScreenlist.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -530,7 +557,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label InfoLabel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox tbProducer;
@@ -564,5 +590,8 @@
         private System.Windows.Forms.TableLayoutPanel tlpScreenlist;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lblPreviousMovieID;
+        private System.Windows.Forms.TextBox tbPreviousMovieID;
     }
 }

@@ -7,15 +7,19 @@
         public bool AgeRestriction { get; private set; }
         public string Language { get; private set; }
         public string Annotation { get; private set; }
+        public string PreviousMovieID { get; private set; }
+        public string ScreenshotPath { get; set; }
 
         public MovieRecordExtended(string actorsList, string countryMade, bool ageRestriction,
-            string language, string annotation)
+            string language, string annotation, string previousMovieID, string screenshotPath = null)
         {
             ActorsList = actorsList;
             CountryMade = countryMade;
             AgeRestriction = ageRestriction;
             Language = language;
             Annotation = annotation;
+            PreviousMovieID = previousMovieID;
+            ScreenshotPath = screenshotPath;
         }
     }
 }

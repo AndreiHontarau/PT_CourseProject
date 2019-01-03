@@ -17,9 +17,10 @@ namespace Presentation
         string Language { get; }
         string Description { get; }
         bool AgeRestriction { get; }
+        string PreviousMovieID { get; }
+        string ScreenshotPath { get; }
 
         event EventHandler Registrate;
-        event EventHandler UploadImage;
         event EventHandler LoadCategories;
 
         void RecieveCategories(List<CategoryRecord> categories);

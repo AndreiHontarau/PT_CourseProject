@@ -68,9 +68,13 @@ namespace Model
 
             insertMovieID.Parameters.AddWithValue("ID", getMovieID.ExecuteScalar().ToString());
 
-            insertMovieID.Parameters.AddWithValue("movieID", getMovieMovieID.ExecuteScalar().ToString().Trim() + getMovieID.ExecuteScalar().ToString());
+            string movieID = getMovieMovieID.ExecuteScalar().ToString().Trim() + getMovieID.ExecuteScalar().ToString();
 
-            insertMovieID.ExecuteNonQuery();    
+            insertMovieID.Parameters.AddWithValue("movieID", movieID);
+
+            insertMovieID.ExecuteNonQuery();
+
+            movieRecord.MovieID = movieID;
         }
 
         public List<MovieRecord> ReadAllMovies()
@@ -126,7 +130,7 @@ namespace Model
             }
 
             MovieRecordExtended record = new MovieRecordExtended(Convert.ToString(sqlReader["actors_list"]), Convert.ToString(sqlReader["country_made"]),
-                Convert.ToBoolean(sqlReader["age_restriction"]), Convert.ToString(sqlReader["language"]), Convert.ToString(sqlReader["annotation"]));
+                Convert.ToBoolean(sqlReader["age_restriction"]), Convert.ToString(sqlReader["language"]), Convert.ToString(sqlReader["annotation"]), Convert.ToString(sqlReader["previous_movie_ID"]));
 
             sqlReader.Close();
 

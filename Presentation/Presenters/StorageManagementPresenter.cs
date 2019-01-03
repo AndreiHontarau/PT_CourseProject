@@ -19,10 +19,11 @@ namespace Presentation
 
             _view.UpdateTable += (object sendr, EventArgs e) => LoadTable();
             _view.AddMovie += (object sender, EventArgs e) => AddMovie();
-            _view.DeleteMovie += (object sender, string title) => DeleteMovie(title);
+            _view.DeleteMovie += (object sender, string movieID) => DeleteMovie(movieID);
             _view.AddCategory += (object sender, EventArgs e) => AddCategory();
             _view.Search += (object sender, EventArgs e) => Search();
             _view.Exit += (object sender, EventArgs e) => Exit();
+            _view.MovieSelected += (object sender, string movieID) => ShowFullMovieInfo(movieID);
         }
 
         private void AddMovie()
@@ -30,6 +31,7 @@ namespace Presentation
             _kernel.Get<MovieRegistrationPresenter>().Run();
             if (_service.CheckMovieRegistrationSuccess())
             {
+                _view.SetAmountOfMovies(_service.GetAmountOfMovies());
                 LoadLastMovie();
             }
         }
@@ -42,6 +44,8 @@ namespace Presentation
             {
                 _view.DisplayRecord(movie);
             }
+
+            _view.SetAmountOfMovies(_service.GetAmountOfMovies());
         }
 
         private void LoadLastMovie()
@@ -56,6 +60,8 @@ namespace Presentation
             {
                 _view.ClearMovies();
             }
+
+            _view.SetAmountOfMovies(_service.GetAmountOfMovies());
         }
 
         private void AddCategory()
@@ -66,6 +72,14 @@ namespace Presentation
         private void Search()
         {
 
+        }
+
+        private void ShowFullMovieInfo(string movieID)
+        {
+            MovieRecordExtended movieRecordExtended = _service.LoadFullMovieInfo(movieID);
+
+            _view.DisplayScreenshot(movieRecordExtended.ScreenshotPath);
+            _view.DisplayExtendedInfo(movieRecordExtended);
         }
 
         private void Exit()

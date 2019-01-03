@@ -4,7 +4,7 @@ namespace Model
 {
     public class ScreenshotsManager : IscreenshotsRepository
     {
-        private const string workingDirectory = @"Screenlists\";
+        private const string workingDirectory = @"Screenshots\";
 
         public void AddScreenshot(string movieID, string uploadFromPath)
         {
@@ -20,6 +20,11 @@ namespace Model
             FileInfo screenshot = new FileInfo(workingDirectory + @"\" + movieID + @".png");
 
             screenshot.Delete();
+        }
+
+        public string GetScreenshot(string movieID)
+        {
+            return workingDirectory + @"\" + movieID + @".png";
         }
 
         private void PrepareWorkingDirectory()

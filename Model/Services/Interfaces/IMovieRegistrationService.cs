@@ -8,7 +8,7 @@ namespace Model
 {
     public interface IMovieRegistrationService
     {
-        void Registrate(MovieRecord newMovie, MovieRecordExtended newMovieExtended);
+        void Registrate(MovieRecord newMovie, MovieRecordExtended newMovieExtended, string screenshotPath);
         List<CategoryRecord> ReadCategories();
     }
 }

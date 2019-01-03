@@ -2,7 +2,7 @@
 {
     public class MovieRecord : Record
     {
-        public string MovieID { get; private set; }
+        public string MovieID { get; set; }
         public string Category { get; private set; }
         public string Title { get; private set; }
         public string Producer { get; private set; }

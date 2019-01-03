@@ -1,4 +1,6 @@
-﻿namespace UI
+﻿using System.Windows.Forms;
+
+namespace UI
 {
     partial class StorageManagementForm
     {
@@ -30,7 +32,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StorageManagementForm));
             this.StatusBar = new System.Windows.Forms.StatusStrip();
-            this.TotalAmountOfFilmsLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotalAmountOfMoviesDesc = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotalAmountOfFilms = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotalAmountOfCustomersDesc = new System.Windows.Forms.ToolStripStatusLabel();
             this.TotalAmountOfCustomersLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -43,7 +47,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMovieInfo = new System.Windows.Forms.Label();
-            this.lblScreenlist = new System.Windows.Forms.Label();
+            this.pbScreenshot = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMovies = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,6 +58,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -64,21 +69,39 @@
             this.StatusBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.StatusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TotalAmountOfFilmsLabel,
+            this.lblTotalAmountOfMoviesDesc,
+            this.lblTotalAmountOfFilms,
+            this.lblTotalAmountOfCustomersDesc,
             this.TotalAmountOfCustomersLabel});
             this.StatusBar.Location = new System.Drawing.Point(0, 0);
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(1054, 25);
             this.StatusBar.TabIndex = 5;
             // 
-            // TotalAmountOfFilmsLabel
+            // lblTotalAmountOfMoviesDesc
             // 
-            this.TotalAmountOfFilmsLabel.Name = "TotalAmountOfFilmsLabel";
-            this.TotalAmountOfFilmsLabel.Size = new System.Drawing.Size(181, 20);
-            this.TotalAmountOfFilmsLabel.Text = "TotalAmountOfFilmsLabel";
+            this.lblTotalAmountOfMoviesDesc.ForeColor = System.Drawing.Color.Aqua;
+            this.lblTotalAmountOfMoviesDesc.Name = "lblTotalAmountOfMoviesDesc";
+            this.lblTotalAmountOfMoviesDesc.Size = new System.Drawing.Size(169, 20);
+            this.lblTotalAmountOfMoviesDesc.Text = "Total amount of movies:";
+            // 
+            // lblTotalAmountOfFilms
+            // 
+            this.lblTotalAmountOfFilms.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblTotalAmountOfFilms.Name = "lblTotalAmountOfFilms";
+            this.lblTotalAmountOfFilms.Size = new System.Drawing.Size(181, 20);
+            this.lblTotalAmountOfFilms.Text = "TotalAmountOfFilmsLabel";
+            // 
+            // lblTotalAmountOfCustomersDesc
+            // 
+            this.lblTotalAmountOfCustomersDesc.ForeColor = System.Drawing.Color.Aqua;
+            this.lblTotalAmountOfCustomersDesc.Name = "lblTotalAmountOfCustomersDesc";
+            this.lblTotalAmountOfCustomersDesc.Size = new System.Drawing.Size(186, 20);
+            this.lblTotalAmountOfCustomersDesc.Text = "Total amount of customers";
             // 
             // TotalAmountOfCustomersLabel
             // 
+            this.TotalAmountOfCustomersLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.TotalAmountOfCustomersLabel.Name = "TotalAmountOfCustomersLabel";
             this.TotalAmountOfCustomersLabel.Size = new System.Drawing.Size(216, 20);
             this.TotalAmountOfCustomersLabel.Text = "TotalAmountOfCustomersLabel";
@@ -123,8 +146,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(530, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(521, 460);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
@@ -138,20 +161,20 @@
             this.tableLayoutPanel3.Controls.Add(this.btnManageCategories, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnDelete, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 394);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 325);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(515, 63);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(515, 132);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnExit
             // 
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExit.Location = new System.Drawing.Point(260, 34);
+            this.btnExit.Location = new System.Drawing.Point(260, 69);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(252, 26);
+            this.btnExit.Size = new System.Drawing.Size(252, 60);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -162,7 +185,7 @@
             this.btnAddFilm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddFilm.Location = new System.Drawing.Point(3, 3);
             this.btnAddFilm.Name = "btnAddFilm";
-            this.btnAddFilm.Size = new System.Drawing.Size(251, 25);
+            this.btnAddFilm.Size = new System.Drawing.Size(251, 60);
             this.btnAddFilm.TabIndex = 0;
             this.btnAddFilm.Text = "Add film";
             this.btnAddFilm.UseVisualStyleBackColor = true;
@@ -173,7 +196,7 @@
             this.btnManageCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnManageCategories.Location = new System.Drawing.Point(260, 3);
             this.btnManageCategories.Name = "btnManageCategories";
-            this.btnManageCategories.Size = new System.Drawing.Size(252, 25);
+            this.btnManageCategories.Size = new System.Drawing.Size(252, 60);
             this.btnManageCategories.TabIndex = 1;
             this.btnManageCategories.Text = "Manage categories";
             this.btnManageCategories.UseVisualStyleBackColor = true;
@@ -182,9 +205,9 @@
             // btnDelete
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Location = new System.Drawing.Point(3, 34);
+            this.btnDelete.Location = new System.Drawing.Point(3, 69);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(251, 26);
+            this.btnDelete.Size = new System.Drawing.Size(251, 60);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete film";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -195,33 +218,34 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.lblMovieInfo, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblScreenlist, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.pbScreenshot, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(515, 385);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(515, 316);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
             // lblMovieInfo
             // 
             this.lblMovieInfo.AutoSize = true;
+            this.lblMovieInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMovieInfo.Location = new System.Drawing.Point(3, 0);
             this.lblMovieInfo.Name = "lblMovieInfo";
-            this.lblMovieInfo.Size = new System.Drawing.Size(82, 17);
+            this.lblMovieInfo.Size = new System.Drawing.Size(509, 189);
             this.lblMovieInfo.TabIndex = 0;
-            this.lblMovieInfo.Text = "lblMovieInfo";
             // 
-            // lblScreenlist
+            // pbScreenshot
             // 
-            this.lblScreenlist.AutoSize = true;
-            this.lblScreenlist.Location = new System.Drawing.Point(3, 231);
-            this.lblScreenlist.Name = "lblScreenlist";
-            this.lblScreenlist.Size = new System.Drawing.Size(84, 17);
-            this.lblScreenlist.TabIndex = 1;
-            this.lblScreenlist.Text = "lblScreenlist";
+            this.pbScreenshot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbScreenshot.Location = new System.Drawing.Point(3, 192);
+            this.pbScreenshot.Name = "pbScreenshot";
+            this.pbScreenshot.Size = new System.Drawing.Size(509, 121);
+            this.pbScreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbScreenshot.TabIndex = 1;
+            this.pbScreenshot.TabStop = false;
             // 
             // tableLayoutPanel4
             // 
@@ -250,6 +274,7 @@
             this.dgvMovies.RowTemplate.Height = 24;
             this.dgvMovies.Size = new System.Drawing.Size(515, 408);
             this.dgvMovies.TabIndex = 7;
+            this.dgvMovies.SelectionChanged += new System.EventHandler(this.dgvMovies_SelectionChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -305,6 +330,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -320,7 +346,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgvMovies;
-        private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfFilmsLabel;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfFilms;
         private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfCustomersLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -334,6 +360,8 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label lblMovieInfo;
-        private System.Windows.Forms.Label lblScreenlist;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfMoviesDesc;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfCustomersDesc;
+        private System.Windows.Forms.PictureBox pbScreenshot;
     }
 }

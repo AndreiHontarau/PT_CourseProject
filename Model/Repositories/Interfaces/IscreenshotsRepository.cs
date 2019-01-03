@@ -4,5 +4,6 @@
     {
         void AddScreenshot(string movieID, string uploadFromPath);
         void DeleteScreenshot(string movieID);
+        string GetScreenshot(string movieID);
     }
 }
