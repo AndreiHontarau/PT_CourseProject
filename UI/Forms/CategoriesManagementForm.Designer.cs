@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriesManagementForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
@@ -44,12 +45,16 @@
             this.tbNewName = new System.Windows.Forms.TextBox();
             this.tbNewCode = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.epRegistration = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRenaming = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRenaming)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -235,6 +240,16 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // epRegistration
+            // 
+            this.epRegistration.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRegistration.ContainerControl = this;
+            // 
+            // epRenaming
+            // 
+            this.epRenaming.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRenaming.ContainerControl = this;
+            // 
             // CategoriesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,6 +270,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRenaming)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +293,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox tbNewName;
         private System.Windows.Forms.TextBox tbNewCode;
+        private System.Windows.Forms.ErrorProvider epRegistration;
+        private System.Windows.Forms.ErrorProvider epRenaming;
     }
 }

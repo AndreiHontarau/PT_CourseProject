@@ -21,7 +21,7 @@ namespace UI
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                kernel.Get<LoginPresenter>().Run();
+                kernel.Get<StorageManagementPresenter>().Run();
                 Application.Run(kernel.Get<ApplicationContext>());
             }
             catch (Exception e)

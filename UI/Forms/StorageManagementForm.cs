@@ -71,6 +71,7 @@ namespace UI
             {
                 pbScreenshot.Image.Dispose();
                 pbScreenshot.Image = null;
+                lblMovieInfo.Text = null;
             }
 
             foreach (var row in dgvMovies.SelectedRows)

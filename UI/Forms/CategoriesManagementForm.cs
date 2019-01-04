@@ -36,7 +36,14 @@ namespace UI
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            AddCategory?.Invoke(sender, e);
+            if (String.IsNullOrEmpty(tbCategoryName.Text) || String.IsNullOrEmpty(tbSymbolicCode.Text))
+            {
+                epRegistration.SetError(btnAddCategory, "Empty category name or code");
+            }
+            else
+            {
+                AddCategory?.Invoke(sender, e);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -51,10 +58,17 @@ namespace UI
 
         private void btnRename_Click(object sender, EventArgs e)
         {
-            RenameCategory?.Invoke(sender, new RenameArgs(dgvCategories.SelectedRows[0].Cells[0].Value.ToString(), tbNewName.Text, tbNewCode.Text));
+            if (String.IsNullOrEmpty(tbNewCode.Text) || String.IsNullOrEmpty(tbNewName.Text))
+            {
+                epRenaming.SetError(btnRename, "Empty category name or code");
+            }
+            else
+            {
+                RenameCategory?.Invoke(sender, new RenameArgs(dgvCategories.SelectedRows[0].Cells[0].Value.ToString(), tbNewName.Text, tbNewCode.Text));
 
-            dgvCategories.SelectedRows[0].Cells[0].Value = tbNewName.Text;
-            dgvCategories.SelectedRows[0].Cells[1].Value = tbNewCode.Text;
+                dgvCategories.SelectedRows[0].Cells[0].Value = tbNewName.Text;
+                dgvCategories.SelectedRows[0].Cells[1].Value = tbNewCode.Text;
+            }
         }
 
         public void DisplayRecord(string Name, string Code, short AmountOfMovies)

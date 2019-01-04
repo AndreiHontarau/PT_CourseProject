@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using  Presentation;
 using Model;
+using System.Linq;
 
 namespace UI
 {
@@ -92,6 +94,40 @@ namespace UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            epRegistration.Clear();
+
+            foreach (TableLayoutPanel panel in tlpMovieInfo.Controls.OfType<TableLayoutPanel>())
+            {
+                foreach (TextBox tb in panel.Controls.OfType<TextBox>())
+                {
+                    if (String.IsNullOrEmpty(tb.Text))
+                    {
+                        epRegistration.SetError(tb, "This field should not be empty");
+                        return;
+                    }
+                }
+
+                foreach (ComboBox cmb in panel.Controls.OfType<ComboBox>())
+                {
+                    if (cmb.SelectedItem == null)
+                    {
+                        epRegistration.SetError(cmb, "This field should not be empty");
+                        return;
+                    }
+                }
+
+                if (String.IsNullOrEmpty(rtbDescription.Text))
+                {
+                    epRegistration.SetError(btnAdd, "Description can't be empty");
+                    return;
+                }
+                else if (ScreenshotPath == null)
+                {
+                    epRegistration.SetError(btnUploadImage, "Upload screenshot to proceed");
+                    return;
+                }
+            }
+
             Registrate?.Invoke(sender, e);
         }
 
