@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -20,6 +21,12 @@ namespace UI
         public event EventHandler<string> MovieSelected;
 
         public string SearchRequest => tbSearchRequest.Text;
+
+        private static Dictionary<bool, string> AgeRestrictionBoolToStringDictionary = new Dictionary<bool, string>
+        {
+            [true] = "Yes",
+            [false] = "No",
+        };
 
         public StorageManagementForm(ApplicationContext context)
         {
@@ -109,12 +116,19 @@ namespace UI
         {
             StringBuilder extendedInfo = new StringBuilder();
 
-            extendedInfo.Append("   ");
+            extendedInfo.Append("    ");
             extendedInfo.Append(extendedRecord.Annotation);
-            extendedInfo.Append('\n');
+            extendedInfo.Append("\n\nActors:    ");
             extendedInfo.Append(extendedRecord.ActorsList);
+            extendedInfo.Append("\n\nCountry:    ");
+            extendedInfo.Append(extendedRecord.CountryMade);
+            extendedInfo.Append("\n\nLanguage:    ");
+            extendedInfo.Append(extendedRecord.Language);
+            extendedInfo.Append("\n\nAge restriction(18+):    ");
+            extendedInfo.Append(AgeRestrictionBoolToStringDictionary[extendedRecord.AgeRestriction]);
 
             lblMovieInfo.Text = extendedInfo.ToString();
+            lblTitle.Text = dgvMovies.SelectedRows[0].Cells[2].Value.ToString();
         }
 
         private void dgvMovies_SelectionChanged(object sender, EventArgs e)
@@ -127,6 +141,7 @@ namespace UI
             {
                 pbScreenshot.Image.Dispose();
                 pbScreenshot.Image = null;
+                lblMovieInfo.Text = null;
             }
         }
     }
