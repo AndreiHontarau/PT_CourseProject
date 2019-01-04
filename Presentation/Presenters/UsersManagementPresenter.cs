@@ -38,14 +38,14 @@ namespace Presentation
 
             foreach (UserRecord user in users)
             {
-                _view.DisplayRecord(user.UserName, UserTypeEnum.UserTypeToStringDictionary[user.Type]);
+                _view.DisplayRecord(user.Name, user.ToString());
             }
         }
 
         private void LoadLastUser()
         {
             UserRecord user = _service.LoadLastUser();
-            _view.DisplayRecord(user.UserName, UserTypeEnum.UserTypeToStringDictionary[user.Type]);
+            _view.DisplayRecord(user.Name, user.ToString());
         }
 
         private void DeleteUser(string userName)

@@ -1,5 +1,5 @@
 ﻿using System;
-using static Model.UserTypeEnum;
+using static Model.UserRecord;
 
 namespace Presentation
 {
@@ -7,7 +7,7 @@ namespace Presentation
     {
         string userName { get; }
         string password { get; }
-        UserType userType { get; }
+        UserRole userRole { get; }
         event EventHandler Registrate;
 
         void ShowError(string Massege);

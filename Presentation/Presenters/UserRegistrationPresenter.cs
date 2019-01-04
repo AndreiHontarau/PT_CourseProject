@@ -23,7 +23,7 @@ namespace Presentation
         {
             try
             {
-                UserRecord newUser = new UserRecord(_view.userName, _view.password, _view.userType);
+                UserRecord newUser = new UserRecord(_view.userName, _view.password, _view.userRole);
                 _service.Registrate(newUser);
                 _view.Close();
             }

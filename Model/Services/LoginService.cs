@@ -1,5 +1,5 @@
 ﻿using System.Security.Authentication;
-using static Model.UserTypeEnum;
+using static Model.UserRecord;
 
 namespace Model
 {
@@ -12,13 +12,13 @@ namespace Model
             _repository = repository;
         }
 
-        public UserType Login(string UserName, string Password)
+        public UserRole Login(string UserName, string Password)
         {
             UserRecord user = _repository.ReadUser(UserName);
 
             if (HashService.VerifyHashedPassword(user.Password, Password))
             {
-                return user.Type;
+                return user.Role;
             }
             else
             {

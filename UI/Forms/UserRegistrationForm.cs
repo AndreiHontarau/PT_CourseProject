@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Presentation;
-using static Model.UserTypeEnum;
+using static Model.UserRecord;
 using System.ComponentModel;
 
 namespace UI
@@ -15,7 +15,7 @@ namespace UI
 
         public string userName => tbUserName.Text;
         public string password => tbPassword.Text;
-        public UserType userType => UserTypeSelection();
+        public UserRole userRole => UserRoleSelection();
 
         public UserRegistrationForm(ApplicationContext context)
         {
@@ -23,9 +23,9 @@ namespace UI
             InitializeComponent();
             tbPassword.Validating += ValidatePassword;
             tbUserName.Validating += ValidateUserName;
-            rbtnManager.CheckedChanged += ValidateUserType;
-            rbtnReceptionist.CheckedChanged += ValidateUserType;
-            rbtnAdministrator.CheckedChanged += ValidateUserType;
+            rbtnManager.CheckedChanged += ValidateUserRole;
+            rbtnReceptionist.CheckedChanged += ValidateUserRole;
+            rbtnAdministrator.CheckedChanged += ValidateUserRole;
         }
 
         public new void Show()
@@ -35,22 +35,29 @@ namespace UI
 
         private void btnRegistrate_Click(object sender, EventArgs e)
         {
-            Registrate.Invoke(sender, e);
+            if (String.IsNullOrEmpty(tbUserName.Text) || String.IsNullOrEmpty(tbPassword.Text))
+            {
+                epRegistration.SetError(btnRegistrate, "User name or Password is empty");
+            }
+            else
+            {
+                Registrate.Invoke(sender, e);
+            }
         }
 
-        private UserType UserTypeSelection()
+        private UserRole UserRoleSelection()
         {
                 if (rbtnManager.Checked)
                 {
-                    return UserType.Manager;
+                    return UserRole.Manager;
                 }
                 else if (rbtnReceptionist.Checked)
                 {
-                    return UserType.Receptionist;
+                    return UserRole.Receptionist;
                 }
                 else if (rbtnAdministrator.Checked)
                 {
-                    return UserType.Admin;
+                    return UserRole.Admin;
                 }
                 else
                 {
@@ -64,7 +71,7 @@ namespace UI
             lblNotification.ForeColor = Color.Red;
         }
 
-        private void ValidateUserType(object sender, EventArgs e)
+        private void ValidateUserRole(object sender, EventArgs e)
         {
             if (!rbtnManager.Checked && !rbtnReceptionist.Checked && !rbtnAdministrator.Checked)
             {

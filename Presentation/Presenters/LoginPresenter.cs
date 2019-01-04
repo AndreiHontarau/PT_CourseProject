@@ -2,7 +2,7 @@
 using System.Security.Authentication;
 using Model;
 using Ninject;
-using static Model.UserTypeEnum;
+using static Model.UserRecord;
 
 namespace Presentation
 {
@@ -22,7 +22,7 @@ namespace Presentation
         }
 
         /// <summary>
-        /// Decides wich view to open next basing on login service's response
+        /// Decides wich view to open next basing on LoginService's response
         /// </summary>
         /// <param name="UserName">User name</param>
         /// <param name="Password">Password</param>
@@ -32,16 +32,13 @@ namespace Presentation
             {
                 switch (_service.Login(UserName, Password))
                 {
-                    case UserType.Admin:
-                        _view.ShowError("Admin");
+                    case UserRole.Admin:
                         _kernel.Get<UsersManagementPresenter>().Run();
                         break;
-                    case UserType.Manager:
-                        _view.ShowError("Manager");
+                    case UserRole.Manager:
                         _kernel.Get<StorageManagementPresenter>().Run();
                         break;
-                    case UserType.Receptionist:
-                        _view.ShowError("Receptionist");
+                    case UserRole.Receptionist:
                         _kernel.Get<CustomersManagementPresenter>().Run();
                         break;
                     default:

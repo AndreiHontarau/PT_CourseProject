@@ -6,10 +6,10 @@ namespace Model
     {
         void AddRecord(UserRecord record);
         List<UserRecord> ReadAllUsers();
-        UserRecord ReadUser(string userName);
+        UserRecord ReadUser(string name);
         UserRecord ReadLastUser();
-        bool CheckForPresence(string userName);
-        bool DeleteUser(string userName);
+        bool CheckForPresence(string name);
+        bool DeleteUser(string name);
         int GetAmountOfUsers();
     }
 }

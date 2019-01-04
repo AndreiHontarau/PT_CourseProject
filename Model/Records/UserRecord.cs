@@ -1,16 +1,41 @@
-﻿namespace Model
+﻿using System.Collections.Generic;
+
+namespace Model
 {
     public class UserRecord : Record
     {
-        public string UserName { get; private set; }
+        public string Name { get; private set; }
         public string Password { get; private set; }
-        public UserTypeEnum.UserType Type { get; private set; }
+        public UserRole Role { get; private set; }
 
-        public UserRecord(string userName, string password, UserTypeEnum.UserType userType)
+        public UserRecord(string name, string password, UserRole role)
         {
-            UserName = userName;
+            Name = name;
             Password = password;
-            Type = userType;
+            Role = role;
         }
+
+        public enum UserRole
+        {
+            Admin,
+            Manager,
+            Receptionist
+        }
+
+        /// <summary>
+        /// Gets string representation of User's role
+        /// </summary>
+        /// <returns>String representation of User's role</returns>
+        public override string ToString()
+        {
+            return UserRoleToStringDictionary[Role];
+        }
+
+        private static Dictionary<UserRole, string> UserRoleToStringDictionary = new Dictionary<UserRole, string>
+        {
+            [UserRole.Admin] = "Administrator",
+            [UserRole.Manager] = "Manager",
+            [UserRole.Receptionist] = "Receptionist"
+        };
     }
 }

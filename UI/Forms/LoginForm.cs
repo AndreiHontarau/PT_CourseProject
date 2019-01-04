@@ -17,20 +17,20 @@ namespace UI
             InitializeComponent();
         }
 
-        public void ShowError(string massage)
+        public void ShowError(string message)
         {
-            lblError.Text = massage;
+            epLogin.SetError(btnLogin, message);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            lblError.Text = "";
-            if (tbUserName.Text.Length == 0 || tbPassword.Text.Length == 0)
+            if (String.IsNullOrEmpty(tbUserName.Text) || String.IsNullOrEmpty(tbPassword.Text))
             {
-                ShowError("Wrong User name or Password");
+                epLogin.SetError(btnLogin, "Empty User name or Password");
             }
             else
             {
+                epLogin.Clear();
                 Login?.Invoke(sender, e);
             }
         }

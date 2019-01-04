@@ -37,22 +37,22 @@
             this.rbtnManager = new System.Windows.Forms.RadioButton();
             this.rbtnReceptionist = new System.Windows.Forms.RadioButton();
             this.rbtnAdministrator = new System.Windows.Forms.RadioButton();
-            this.epUserName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epUserType = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.epRegistration = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUserName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserType)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -151,21 +151,6 @@
             this.rbtnAdministrator.Text = "Administrator";
             this.rbtnAdministrator.UseVisualStyleBackColor = true;
             // 
-            // epUserName
-            // 
-            this.epUserName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epUserName.ContainerControl = this;
-            // 
-            // epPassword
-            // 
-            this.epPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epPassword.ContainerControl = this;
-            // 
-            // epUserType
-            // 
-            this.epUserType.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epUserType.ContainerControl = this;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -230,6 +215,21 @@
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             // 
+            // epRegistration
+            // 
+            this.epRegistration.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRegistration.ContainerControl = this;
+            // 
+            // epUserName
+            // 
+            this.epUserName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epUserName.ContainerControl = this;
+            // 
+            // epPassword
+            // 
+            this.epPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epPassword.ContainerControl = this;
+            // 
             // UserRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,13 +244,13 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserType)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUserName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,14 +264,14 @@
         private System.Windows.Forms.RadioButton rbtnManager;
         private System.Windows.Forms.RadioButton rbtnReceptionist;
         private System.Windows.Forms.RadioButton rbtnAdministrator;
-        private System.Windows.Forms.ErrorProvider epUserName;
-        private System.Windows.Forms.ErrorProvider epPassword;
-        private System.Windows.Forms.ErrorProvider epUserType;
+        private System.Windows.Forms.ErrorProvider epRegistration;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.ErrorProvider epUserName;
+        private System.Windows.Forms.ErrorProvider epPassword;
     }
 }

@@ -13,14 +13,14 @@ namespace Model
 
         public void Registrate(UserRecord newUser)
         {
-            if (_repository.CheckForPresence(newUser.UserName))
+            if (_repository.CheckForPresence(newUser.Name))
             {
                 throw new ArgumentException("User with this name is already exists.");
             }
 
             string encryptedPassword = HashService.HashPassword(newUser.Password);
 
-            UserRecord record = new UserRecord(newUser.UserName, encryptedPassword, newUser.Type);
+            UserRecord record = new UserRecord(newUser.Name, encryptedPassword, newUser.Role);
             _repository.AddRecord(record);
         }
     }
