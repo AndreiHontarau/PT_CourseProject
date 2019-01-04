@@ -60,7 +60,11 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            pbScreenshot.Image = null;
+            if (pbScreenshot.Image != null)
+            {
+                pbScreenshot.Image.Dispose();
+                pbScreenshot.Image = null;
+            }
 
             foreach (var row in dgvMovies.SelectedRows)
             {
@@ -119,8 +123,9 @@ namespace UI
             {
                 MovieSelected?.Invoke(sender, dgvMovies.SelectedRows[0].Cells[0].Value.ToString());
             }
-            else
+            else if(pbScreenshot.Image != null)
             {
+                pbScreenshot.Image.Dispose();
                 pbScreenshot.Image = null;
             }
         }

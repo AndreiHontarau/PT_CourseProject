@@ -23,11 +23,11 @@ namespace UI
 
                 kernel.Get<StorageManagementPresenter>().Run();
                 Application.Run(kernel.Get<ApplicationContext>());
-        }
+            }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
     }
 }
