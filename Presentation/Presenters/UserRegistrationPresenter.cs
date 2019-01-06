@@ -35,6 +35,17 @@ namespace Presentation
             {
                 _view.ShowError(e.Message);
             }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                {
+                    _view.ShowError("One of the field's value is too long.");
+                }
+                else
+                {
+                    throw e;
+                }
+            }
         }
 
         public override void Run()

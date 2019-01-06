@@ -29,13 +29,16 @@ namespace Presentation
                 _service.Registrate(newMovie, newMovieExtended, _view.ScreenshotPath);
                 _view.Close();
             }
-            catch (ArgumentNullException e)
+            catch (System.Data.SqlClient.SqlException e)
             {
-                _view.ShowError(e.Message);
-            }
-            catch (ArgumentException e)
-            {
-                _view.ShowError(e.Message);
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                {
+                    _view.ShowError("One of the field's value is too long.");
+                }
+                else
+                {
+                    throw e;
+                }
             }
         }
 

@@ -22,11 +22,25 @@ namespace Presentation
 
         public void LoadTable()
         {
-            List<CategoryRecord> categories = _service.LoadTable();
-
-            foreach (CategoryRecord category in categories)
+            try
             {
-                _view.DisplayRecord(category.name, category.symbolicCode, category.amountOfMovies);
+                List<CategoryRecord> categories = _service.LoadTable();
+            
+                foreach (CategoryRecord category in categories)
+                {
+                    _view.DisplayRecord(category.name, category.symbolicCode, category.amountOfMovies);
+                }
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                {
+                    _view.ShowError("One of the field's value is too long.");
+                }
+                else
+                {
+                    throw e;
+                }
             }
         }
 
@@ -35,13 +49,23 @@ namespace Presentation
             try
             {
                 _service.AddCategory(categoryName, categorySymbolicCode);
+                LoadLastCategory();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                {
+                    _view.ShowError("One of the field's value is too long.");
+                }
+                else
+                {
+                    throw e;
+                }
             }
             catch (ArgumentException e)
             {
                 _view.ShowError(e.Message);
             }
-
-            LoadLastCategory();
         }
 
         public void DeleteCategory(string name)
@@ -51,7 +75,21 @@ namespace Presentation
 
         public void RenameCategory(RenameArgs args)
         {
-            _service.RenameCategory(args.Categoryname, args.NewName, args.NewCode);
+            try
+            {
+                _service.RenameCategory(args.Categoryname, args.NewName, args.NewCode);
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                {
+                    _view.ShowError("One of the field's value is too long.");
+                }
+                else
+                {
+                    throw e;
+                }
+            }
         }
 
         private void LoadLastCategory()
