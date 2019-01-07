@@ -92,11 +92,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Records\CustomerRecord.cs" />
     <Compile Include="Records\MovieRecordExtended.cs" />
     <Compile Include="Records\UserRecord.cs" />
     <Compile Include="Repositories\CategoriesDBManager.cs" />
+    <Compile Include="Repositories\CustomersDBManager.cs" />
     <Compile Include="Repositories\DBManager.cs" />
     <Compile Include="Repositories\Interfaces\ICategoriesRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICustomersRepository.cs" />
     <Compile Include="Repositories\Interfaces\IMoviesRepository.cs" />
     <Compile Include="Repositories\Interfaces\IscreenshotsRepository.cs" />
     <Compile Include="Repositories\Interfaces\IUsersRepository.cs" />
@@ -108,9 +111,11 @@
     <Compile Include="Repositories\ScreenshotsManager.cs" />
     <Compile Include="Repositories\UsersDBManager.cs" />
     <Compile Include="Services\CategoriesManagementService.cs" />
+    <Compile Include="Services\CustomerRegistrationService.cs" />
     <Compile Include="Services\CustomersManagementService.cs" />
     <Compile Include="Services\HashService.cs" />
     <Compile Include="Services\Interfaces\ICategoriesManagementService.cs" />
+    <Compile Include="Services\Interfaces\ICustomerRegistrationService.cs" />
     <Compile Include="Services\Interfaces\ICustomersManagementService.cs" />
     <Compile Include="Services\Interfaces\ILoginService.cs" />
     <Compile Include="Services\Interfaces\IMovieRegistrationService.cs" />

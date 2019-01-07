@@ -98,11 +98,11 @@
     <Compile Include="Forms\MovieRegistrationForm.Designer.cs">
       <DependentUpon>MovieRegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CustomerRegistration.cs">
+    <Compile Include="Forms\CustomerRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerRegistration.Designer.cs">
-      <DependentUpon>CustomerRegistration.cs</DependentUpon>
+    <Compile Include="Forms\CustomerRegistrationForm.Designer.cs">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomersManagementForm.cs">
       <SubType>Form</SubType>
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="Forms\CategoriesManagementForm.resx">
       <DependentUpon>CategoriesManagementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerRegistration.resx">
-      <DependentUpon>CustomerRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CustomerRegistrationForm.resx">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomersManagementForm.resx">
       <DependentUpon>CustomersManagementForm.cs</DependentUpon>

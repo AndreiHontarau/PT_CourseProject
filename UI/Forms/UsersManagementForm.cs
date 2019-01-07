@@ -41,11 +41,11 @@ namespace UI
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            foreach (var row in datagvUsers.SelectedRows)
+            foreach (DataGridViewRow row in datagvUsers.SelectedRows)
             {
-                DeleteUser?.Invoke(sender, (row as DataGridViewRow).Cells[0].Value.ToString());
+                DeleteUser?.Invoke(sender, row.Cells[0].Value.ToString());
 
-                datagvUsers.Rows.RemoveAt((row as DataGridViewRow).Index);
+                datagvUsers.Rows.RemoveAt(row.Index);
             }
         }
 

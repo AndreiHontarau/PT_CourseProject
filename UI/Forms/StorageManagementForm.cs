@@ -54,7 +54,7 @@ namespace UI
 
             UpdateTable?.Invoke(sender, e);
         }
-
+        
         private void btnAddFilm_Click(object sender, EventArgs e)
         {
             AddMovie?.Invoke(sender, e);
@@ -105,7 +105,12 @@ namespace UI
 
         public void SetAmountOfMovies(int amount)
         {
-            lblTotalAmountOfFilms.Text = amount.ToString();
+            lblTotalAmountOfMovies.Text = amount.ToString();
+        }
+
+        public void SetAmountOfCustomers(int amount)
+        {
+            lblTotalAmountOfCustomers.Text = amount.ToString();
         }
 
         public void DisplayScreenshot(string screenshotPath)

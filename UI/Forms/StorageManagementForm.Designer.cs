@@ -33,9 +33,9 @@ namespace UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StorageManagementForm));
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.lblTotalAmountOfMoviesDesc = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTotalAmountOfFilms = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotalAmountOfMovies = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTotalAmountOfCustomersDesc = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TotalAmountOfCustomersLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotalAmountOfCustomers = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -73,9 +73,9 @@ namespace UI
             this.StatusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblTotalAmountOfMoviesDesc,
-            this.lblTotalAmountOfFilms,
+            this.lblTotalAmountOfMovies,
             this.lblTotalAmountOfCustomersDesc,
-            this.TotalAmountOfCustomersLabel});
+            this.lblTotalAmountOfCustomers});
             this.StatusBar.Location = new System.Drawing.Point(0, 0);
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(1054, 25);
@@ -88,12 +88,12 @@ namespace UI
             this.lblTotalAmountOfMoviesDesc.Size = new System.Drawing.Size(169, 20);
             this.lblTotalAmountOfMoviesDesc.Text = "Total amount of movies:";
             // 
-            // lblTotalAmountOfFilms
+            // lblTotalAmountOfMovies
             // 
-            this.lblTotalAmountOfFilms.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblTotalAmountOfFilms.Name = "lblTotalAmountOfFilms";
-            this.lblTotalAmountOfFilms.Size = new System.Drawing.Size(181, 20);
-            this.lblTotalAmountOfFilms.Text = "TotalAmountOfFilmsLabel";
+            this.lblTotalAmountOfMovies.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblTotalAmountOfMovies.Name = "lblTotalAmountOfMovies";
+            this.lblTotalAmountOfMovies.Size = new System.Drawing.Size(17, 20);
+            this.lblTotalAmountOfMovies.Text = "0";
             // 
             // lblTotalAmountOfCustomersDesc
             // 
@@ -102,12 +102,12 @@ namespace UI
             this.lblTotalAmountOfCustomersDesc.Size = new System.Drawing.Size(186, 20);
             this.lblTotalAmountOfCustomersDesc.Text = "Total amount of customers";
             // 
-            // TotalAmountOfCustomersLabel
+            // lblTotalAmountOfCustomers
             // 
-            this.TotalAmountOfCustomersLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.TotalAmountOfCustomersLabel.Name = "TotalAmountOfCustomersLabel";
-            this.TotalAmountOfCustomersLabel.Size = new System.Drawing.Size(216, 20);
-            this.TotalAmountOfCustomersLabel.Text = "TotalAmountOfCustomersLabel";
+            this.lblTotalAmountOfCustomers.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblTotalAmountOfCustomers.Name = "lblTotalAmountOfCustomers";
+            this.lblTotalAmountOfCustomers.Size = new System.Drawing.Size(17, 20);
+            this.lblTotalAmountOfCustomers.Text = "0";
             // 
             // toolStripStatusLabel1
             // 
@@ -378,8 +378,8 @@ namespace UI
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgvMovies;
-        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfFilms;
-        private System.Windows.Forms.ToolStripStatusLabel TotalAmountOfCustomersLabel;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfMovies;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotalAmountOfCustomers;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnAddFilm;

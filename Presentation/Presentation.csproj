@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\CategoriesManagementPresenter.cs" />
+    <Compile Include="Presenters\CustomerRegistrationPresenter.cs" />
     <Compile Include="Presenters\CustomersManagementPresenter.cs" />
     <Compile Include="Presenters\MovieRegistrationPresenter.cs" />
     <Compile Include="Presenters\Presenter.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Presenters\UsersManagementPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ICategoriesManagementView.cs" />
+    <Compile Include="Views\ICustomerRegistrationView.cs" />
     <Compile Include="Views\ICustomersManagementView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IMovieRegistrationView.cs" />

@@ -7,13 +7,15 @@ namespace Model
         private IMoviesRepository _moviesRepository;
         private ICategoriesRepository _categoriesRepository;
         private IscreenshotsRepository _screenshotsRepository;
+        private ICustomersRepository _customersRepository;
         private int AmountOfMovies;
 
-        public StorageManagementService(IMoviesRepository moviesRepository, ICategoriesRepository categoriesRepository, IscreenshotsRepository screenshotsRepository)
+        public StorageManagementService(IMoviesRepository moviesRepository, ICategoriesRepository categoriesRepository, IscreenshotsRepository screenshotsRepository, ICustomersRepository customersRepository)
         {
             _moviesRepository = moviesRepository;
             _categoriesRepository = categoriesRepository;
             _screenshotsRepository = screenshotsRepository;
+            _customersRepository = customersRepository;
             AmountOfMovies = _moviesRepository.GetAmountOfMovies();
         }
 
@@ -51,6 +53,11 @@ namespace Model
         public int GetAmountOfMovies()
         {
             return _moviesRepository.GetAmountOfMovies();
+        }
+
+        public int GetAmountOfCustomers()
+        {
+            return _customersRepository.GetAmountOfCustomers();
         }
 
         public bool CheckMovieRegistrationSuccess()

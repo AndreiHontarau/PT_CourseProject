@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using Ninject;
 using Presentation;
-using Model;
 
 namespace UI
 {
@@ -21,7 +20,7 @@ namespace UI
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                kernel.Get<StorageManagementPresenter>().Run();
+                kernel.Get<CustomersManagementPresenter>().Run();
                 Application.Run(kernel.Get<ApplicationContext>());
             //}
             //catch (Exception e)

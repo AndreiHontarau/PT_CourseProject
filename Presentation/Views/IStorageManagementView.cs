@@ -15,10 +15,11 @@ namespace Presentation
         event EventHandler Exit;
         event EventHandler<string> MovieSelected;
 
-        void SetAmountOfMovies(int amount);
         void ClearMovies();
         void DisplayRecord(MovieRecord record);
         void DisplayScreenshot(string screenshotPath);
         void DisplayExtendedInfo(MovieRecordExtended extendedRecord);
+        void SetAmountOfCustomers(int amount);
+        void SetAmountOfMovies(int amount);
     }
 }

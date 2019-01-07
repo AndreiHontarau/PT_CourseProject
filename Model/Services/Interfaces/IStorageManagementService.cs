@@ -11,5 +11,6 @@ namespace Model
         bool CheckForPresence(string userName);
         bool CheckMovieRegistrationSuccess();
         int GetAmountOfMovies();
+        int GetAmountOfCustomers();
     }
 }

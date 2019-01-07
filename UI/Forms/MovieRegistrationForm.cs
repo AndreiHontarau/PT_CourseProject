@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using  Presentation;
@@ -35,6 +34,14 @@ namespace UI
         {
             _context = context;
             InitializeComponent();
+
+            foreach (var category in Categories)
+            {
+                cmbCategory.Items.Add(category.name);
+            }
+
+            cmbCarrier.Items.Add("VHS");
+            cmbCarrier.Items.Add("DVD");
         }
 
         public new void Show()
@@ -45,14 +52,11 @@ namespace UI
         private void MovieRegistrationForm_Load(object sender, EventArgs e)
         {
             LoadCategories?.Invoke(sender, e);
+        }
 
-            foreach (var category in Categories)
-            {
-                cmbCategory.Items.Add(category.name);
-            }
-
-            cmbCarrier.Items.Add("VHS");
-            cmbCarrier.Items.Add("DVD");
+        public void ShowError(string messege)
+        {
+            MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public short GetYear()
@@ -85,11 +89,6 @@ namespace UI
         public void RecieveCategories(List<CategoryRecord> categories)
         {
             Categories = categories;
-        }
-
-        public void ShowError(string messege)
-        {
-            MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

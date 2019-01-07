@@ -18,7 +18,7 @@ namespace Presentation
             _service = service;
 
             _view.UpdateTable += (object sendr, EventArgs e) => LoadTable();
-            _view.AddMovie += (object sender, EventArgs e) => AddMovie();
+            _view.AddMovie += (object sender, EventArgs e) => RegistrateMovie();
             _view.DeleteMovie += (object sender, string movieID) => DeleteMovie(movieID);
             _view.AddCategory += (object sender, EventArgs e) => AddCategory();
             _view.Search += (object sender, EventArgs e) => Search();
@@ -26,7 +26,7 @@ namespace Presentation
             _view.MovieSelected += (object sender, string movieID) => ShowFullMovieInfo(movieID);
         }
 
-        private void AddMovie()
+        private void RegistrateMovie()
         {
             _kernel.Get<MovieRegistrationPresenter>().Run();
             if (_service.CheckMovieRegistrationSuccess())
@@ -46,6 +46,7 @@ namespace Presentation
             }
 
             _view.SetAmountOfMovies(_service.GetAmountOfMovies());
+            _view.SetAmountOfCustomers(_service.GetAmountOfCustomers());
         }
 
         private void LoadLastMovie()
