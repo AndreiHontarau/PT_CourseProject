@@ -59,7 +59,7 @@ namespace Model
         {
             bool IsPresent = false;
 
-            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Users WHERE name like @Name", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Users WHERE name = @Name", sqlConnection);
             command.Parameters.AddWithValue("Name", userName);
             IsPresent = (int)command.ExecuteScalar() == 0? false : true;
 
@@ -83,7 +83,7 @@ namespace Model
 
         public bool DeleteUser(string userName)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE name like @Name", sqlConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM Users WHERE name = @Name", sqlConnection);
             command.Parameters.AddWithValue("Name", userName);
 
             command.ExecuteNonQuery();

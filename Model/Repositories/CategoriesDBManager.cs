@@ -27,7 +27,7 @@ namespace Model
 
         public CategoryRecord LoadCategory(string name)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Categories WHERE name like @Name", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Categories WHERE name = @Name", sqlConnection);
 
             command.Parameters.AddWithValue("Name", name);
 
@@ -71,7 +71,7 @@ namespace Model
 
         public void DeleteCategory(string name)
         {
-            SqlCommand deleteCategory = new SqlCommand("DELETE FROM Categories WHERE name like @Name", sqlConnection);
+            SqlCommand deleteCategory = new SqlCommand("DELETE FROM Categories WHERE name = @Name", sqlConnection);
 
             deleteCategory.Parameters.AddWithValue("Name", name);
 
@@ -80,7 +80,7 @@ namespace Model
 
         public void RenameCategory(string categoryName, string newName, string newCode)
         {
-            SqlCommand command = new SqlCommand("UPDATE Categories SET name = @NewName, symbolic_code = @NewCode WHERE name like @Name", sqlConnection);
+            SqlCommand command = new SqlCommand("UPDATE Categories SET name = @NewName, symbolic_code = @NewCode WHERE name = @Name", sqlConnection);
 
             command.Parameters.AddWithValue("Name", categoryName);
             command.Parameters.AddWithValue("NewName", newName);
@@ -107,7 +107,7 @@ namespace Model
         {
             bool IsPresent = false;
 
-            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Categories WHERE name like @Name", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Categories WHERE name = @Name", sqlConnection);
             command.Parameters.AddWithValue("Name", name);
             IsPresent = (int)command.ExecuteScalar() == 0? false : true;
 

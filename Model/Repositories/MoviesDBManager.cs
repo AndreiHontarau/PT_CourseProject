@@ -8,7 +8,7 @@ namespace Model
     {
         private int GetCategoryId(string categoryName)
         {
-            SqlCommand getCategoryId = new SqlCommand("SELECT Id FROM Categories WHERE name like @Name", sqlConnection);
+            SqlCommand getCategoryId = new SqlCommand("SELECT Id FROM Categories WHERE name = @Name", sqlConnection);
 
             getCategoryId.Parameters.AddWithValue("Name", categoryName);
 
@@ -17,7 +17,7 @@ namespace Model
 
         private string GetCategoryName(int categoryId)
         {
-            SqlCommand getCategoryName = new SqlCommand("SELECT name FROM Categories WHERE Id like @ID", sqlConnection);
+            SqlCommand getCategoryName = new SqlCommand("SELECT name FROM Categories WHERE Id = @ID", sqlConnection);
 
             getCategoryName.Parameters.AddWithValue("ID", categoryId);
 
@@ -26,7 +26,7 @@ namespace Model
 
         private string GetCategoryCode(string categoryName)
         {
-            SqlCommand getCategoryCode = new SqlCommand("SELECT symbolic_code FROM Categories WHERE name like @Name", sqlConnection);
+            SqlCommand getCategoryCode = new SqlCommand("SELECT symbolic_code FROM Categories WHERE name = @Name", sqlConnection);
 
             getCategoryCode.Parameters.AddWithValue("Name", categoryName);
 
@@ -60,7 +60,7 @@ namespace Model
 
             insertMovie.ExecuteNonQuery();
 
-            SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = @movieID WHERE Id like @ID", sqlConnection);
+            SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = @movieID WHERE Id = @ID", sqlConnection);
 
             SqlCommand getMovieID = new SqlCommand("SELECT TOP 1 Id FROM Movies ORDER BY Id DESC", sqlConnection);
 
@@ -98,7 +98,7 @@ namespace Model
 
         public MovieRecord ReadMovie(string movieID)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Movies WHERE movieID like @MovieID", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Movies WHERE movieID = @MovieID", sqlConnection);
             command.Parameters.AddWithValue("MovieID", movieID);
 
             sqlReader = command.ExecuteReader();
@@ -117,8 +117,8 @@ namespace Model
 
         public MovieRecordExtended ReadMovieExtended(string movieID)
         {
-            SqlCommand selectMovieExtendedID = new SqlCommand("SELECT extended_record_id FROM Movies WHERE movieID like @MovieID", sqlConnection);
-            SqlCommand selectMovieExtended = new SqlCommand("SELECT * FROM MoviesExtended WHERE Id like @ID", sqlConnection);
+            SqlCommand selectMovieExtendedID = new SqlCommand("SELECT extended_record_id FROM Movies WHERE movieID = @MovieID", sqlConnection);
+            SqlCommand selectMovieExtended = new SqlCommand("SELECT * FROM MoviesExtended WHERE Id = @ID", sqlConnection);
 
             selectMovieExtendedID.Parameters.AddWithValue("MovieID", movieID);
             selectMovieExtended.Parameters.AddWithValue("ID", (int)selectMovieExtendedID.ExecuteScalar());
@@ -141,7 +141,7 @@ namespace Model
         {
             bool IsPresent = false;
 
-            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Movies WHERE movieID like @MovieID", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT COUNT(1) FROM Movies WHERE movieID = @MovieID", sqlConnection);
             command.Parameters.AddWithValue("MovieID", movieID);
             IsPresent = (int)command.ExecuteScalar() == 0 ? false : true;
 
@@ -165,9 +165,9 @@ namespace Model
 
         public bool DeleteMovie(string movieID)
         {
-            SqlCommand deleteMovie = new SqlCommand("DELETE FROM Movies WHERE movieID like @MovieID", sqlConnection);
-            SqlCommand selectMovieExtendedID = new SqlCommand("SELECT extended_record_id FROM Movies WHERE movieID like @MovieID", sqlConnection);
-            SqlCommand deleteMovieExtended = new SqlCommand("DELETE FROM MoviesExtended WHERE Id like @ID", sqlConnection);
+            SqlCommand deleteMovie = new SqlCommand("DELETE FROM Movies WHERE movieID = @MovieID", sqlConnection);
+            SqlCommand selectMovieExtendedID = new SqlCommand("SELECT extended_record_id FROM Movies WHERE movieID = @MovieID", sqlConnection);
+            SqlCommand deleteMovieExtended = new SqlCommand("DELETE FROM MoviesExtended WHERE Id = @ID", sqlConnection);
 
             deleteMovie.Parameters.AddWithValue("MovieID", movieID);
             selectMovieExtendedID.Parameters.AddWithValue("MovieID", movieID);
