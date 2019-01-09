@@ -24,10 +24,16 @@ namespace Presentation
         {
             try
             {
-                MovieRecord newMovie = new MovieRecord(_view.CategoryName, _view.Title, _view.YearOfProduction, _view.Producer, _view.Carrier, _view.AmountOfCopies);
-                MovieRecordExtended newMovieExtended = new MovieRecordExtended(_view.ActorsList, _view.Country, _view.AgeRestriction, _view.Language, _view.Description, _view.PreviousMovieID);
+                MovieRecord newMovie = new MovieRecord(_view.CategoryName, _view.Title, _view.YearOfProduction,
+                    _view.Producer, _view.Carrier, _view.AmountOfCopies);
+                MovieRecordExtended newMovieExtended = new MovieRecordExtended(_view.ActorsList, _view.Country,
+                    _view.AgeRestriction, _view.Language, _view.Description, _view.PreviousMovieID);
                 _service.Registrate(newMovie, newMovieExtended, _view.ScreenshotPath);
                 _view.Close();
+            }
+            catch (FormatException e)
+            {
+                _view.ShowError("\"Year of production\" or \"amount of movies\" field contains invalid data");
             }
             catch (System.Data.SqlClient.SqlException e)
             {

@@ -24,9 +24,14 @@ namespace Presentation
         {
             try
             {
-                CustomerRecord newCustomerRecord = new CustomerRecord(_view.FirstName, _view.Surname, _view.Patronymic, _view.Age, _view.Gender, _view.RegistrationDateTime);
+                CustomerRecord newCustomerRecord = new CustomerRecord(_view.FirstName, _view.Surname, _view.Patronymic,
+                    _view.Age, _view.Gender, _view.RegistrationDateTime);
                 _service.Registrate(newCustomerRecord);
                 _view.Close();
+            }
+            catch (FormatException e)
+            {
+                _view.ShowError("\"Age\" field contains invalid data");
             }
             catch (System.Data.SqlClient.SqlException e)
             {
