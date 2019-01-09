@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerRegistrationForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRegistrationData = new System.Windows.Forms.TableLayoutPanel();
             this.tbPatronymic = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
@@ -43,15 +44,17 @@
             this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.btnRegistrate = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.epRegistration = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tlpRegistrationData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tlpRegistrationData, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnRegistrate, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblInfo, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,33 +67,33 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 553);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // tlpRegistrationData
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tbPatronymic, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.tbSurname, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblSurname, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tbFirstName, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblFirstName, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblPatronymic, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblAge, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.tbAge, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.rbtnMale, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.rbtnFemale, 0, 4);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 40);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(576, 472);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tlpRegistrationData.ColumnCount = 2;
+            this.tlpRegistrationData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRegistrationData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRegistrationData.Controls.Add(this.tbPatronymic, 1, 2);
+            this.tlpRegistrationData.Controls.Add(this.tbSurname, 1, 1);
+            this.tlpRegistrationData.Controls.Add(this.lblSurname, 0, 1);
+            this.tlpRegistrationData.Controls.Add(this.tbFirstName, 1, 0);
+            this.tlpRegistrationData.Controls.Add(this.lblFirstName, 0, 0);
+            this.tlpRegistrationData.Controls.Add(this.lblPatronymic, 0, 2);
+            this.tlpRegistrationData.Controls.Add(this.lblAge, 0, 3);
+            this.tlpRegistrationData.Controls.Add(this.tbAge, 1, 3);
+            this.tlpRegistrationData.Controls.Add(this.rbtnMale, 1, 4);
+            this.tlpRegistrationData.Controls.Add(this.rbtnFemale, 0, 4);
+            this.tlpRegistrationData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRegistrationData.Location = new System.Drawing.Point(3, 40);
+            this.tlpRegistrationData.Name = "tlpRegistrationData";
+            this.tlpRegistrationData.RowCount = 5;
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpRegistrationData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationData.Size = new System.Drawing.Size(576, 472);
+            this.tlpRegistrationData.TabIndex = 0;
             // 
             // tbPatronymic
             // 
@@ -167,7 +170,6 @@
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(59, 21);
             this.rbtnMale.TabIndex = 10;
-            this.rbtnMale.TabStop = true;
             this.rbtnMale.Text = "Male";
             this.rbtnMale.UseVisualStyleBackColor = true;
             // 
@@ -175,6 +177,7 @@
             // 
             this.rbtnFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.Checked = true;
             this.rbtnFemale.Location = new System.Drawing.Point(210, 379);
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(75, 21);
@@ -204,6 +207,11 @@
             this.lblInfo.TabIndex = 2;
             this.lblInfo.Text = "Enter customer information";
             // 
+            // epRegistration
+            // 
+            this.epRegistration.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRegistration.ContainerControl = this;
+            // 
             // CustomerRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,8 +225,9 @@
             this.Text = "Customer registration";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tlpRegistrationData.ResumeLayout(false);
+            this.tlpRegistrationData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epRegistration)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,7 +235,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpRegistrationData;
         private System.Windows.Forms.TextBox tbPatronymic;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.Label lblSurname;
@@ -239,5 +248,6 @@
         private System.Windows.Forms.RadioButton rbtnMale;
         private System.Windows.Forms.RadioButton rbtnFemale;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.ErrorProvider epRegistration;
     }
 }

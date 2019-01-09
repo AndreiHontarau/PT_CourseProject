@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using  Presentation;
+using Presentation;
 using Model;
 using System.Linq;
 
@@ -20,10 +20,10 @@ namespace UI
         public string PreviousMovieID => tbPreviousMovieID.Text;
         public string Title => tbTitle.Text;
         public string Producer => tbProducer.Text;
-        public short YearOfProduction => GetYear();
+        public short YearOfProduction => Int16.Parse(tbYear.Text);
         public string CategoryName => cmbCategory.SelectedItem.ToString();
         public string Carrier => cmbCarrier.SelectedItem.ToString();
-        public short AmountOfCopies => GetCopies();
+        public short AmountOfCopies => Int16.Parse(tbAmountOfCopies.Text);
         public string Country => tbCountry.Text;
         public string ActorsList => tbActorsList.Text;
         public string Language => tbLanguage.Text;
@@ -57,33 +57,6 @@ namespace UI
         public void ShowError(string messege)
         {
             MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        public short GetYear()
-        {
-            try
-            {
-               return Int16.Parse(tbYear.Text);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return 0;
-            }
-            
-        }
-
-        public short GetCopies()
-        {
-            try
-            {
-                return Int16.Parse(tbAmountOfCopies.Text);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return 0;
-            }
         }
 
         public void RecieveCategories(List<CategoryRecord> categories)

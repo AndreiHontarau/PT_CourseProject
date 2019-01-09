@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Presentation;
+using System.Linq;
 
 namespace UI
 {
@@ -30,6 +31,16 @@ namespace UI
 
         private void btnRegistrate_Click(object sender, EventArgs e)
         {
+            epRegistration.Clear();
+
+            foreach (TextBox textBox in tlpRegistrationData.Controls.OfType<TextBox>())
+            {
+                if (String.IsNullOrEmpty(textBox.Text))
+                {
+                    epRegistration.SetError(textBox, "This field should not be empty");
+                    return;
+                }
+            }
             Registrate.Invoke(sender, e);
             _context.MainForm.DialogResult = DialogResult.OK;
         }
