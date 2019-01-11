@@ -35,16 +35,9 @@ namespace Presentation
             {
                 _view.ShowError("\"Year of production\" or \"amount of movies\" field contains invalid data");
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlDataWouldBeTruncatedException e)
             {
-                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
-                {
-                    _view.ShowError("One of the field's value is too long.");
-                }
-                else
-                {
-                    throw e;
-                }
+                _view.ShowError("One of the field's value is too long.");
             }
         }
 

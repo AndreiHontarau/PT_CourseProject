@@ -31,16 +31,9 @@ namespace Presentation
                     _view.DisplayRecord(category.name, category.symbolicCode, category.amountOfMovies);
                 }
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlDataWouldBeTruncatedException e)
             {
-                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
-                {
-                    _view.ShowError("One of the field's value is too long.");
-                }
-                else
-                {
-                    throw e;
-                }
+                _view.ShowError("One of the field's value is too long.");
             }
         }
 
@@ -51,16 +44,9 @@ namespace Presentation
                 _service.AddCategory(categoryName, categorySymbolicCode);
                 LoadLastCategory();
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlDataWouldBeTruncatedException e)
             {
-                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
-                {
-                    _view.ShowError("One of the field's value is too long.");
-                }
-                else
-                {
-                    throw e;
-                }
+                _view.ShowError("One of the field's value is too long.");
             }
             catch (ArgumentException e)
             {
@@ -79,16 +65,9 @@ namespace Presentation
             {
                 _service.RenameCategory(args.Categoryname, args.NewName, args.NewCode);
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlDataWouldBeTruncatedException e)
             {
-                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
-                {
-                    _view.ShowError("One of the field's value is too long.");
-                }
-                else
-                {
-                    throw e;
-                }
+                _view.ShowError("One of the field's value is too long.");
             }
         }
 

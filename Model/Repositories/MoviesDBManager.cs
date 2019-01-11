@@ -53,12 +53,27 @@ namespace Model
             insertMovieExtended.Parameters.AddWithValue("AgeRestriction", movieRecordExtended.AgeRestriction);
             insertMovieExtended.Parameters.AddWithValue("Language", movieRecordExtended.Language);
             insertMovieExtended.Parameters.AddWithValue("Annotation", movieRecordExtended.Annotation);
-
-            insertMovieExtended.ExecuteNonQuery();
+            try
+            {
+                insertMovieExtended.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                    throw new SqlDataWouldBeTruncatedException();
+            }
 
             insertMovie.Parameters.AddWithValue("ExtendedRecordId", (int)new SqlCommand("SELECT TOP 1 Id FROM MoviesExtended ORDER BY Id DESC", sqlConnection).ExecuteScalar());
 
-            insertMovie.ExecuteNonQuery();
+            try
+            {
+                insertMovie.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                    throw new SqlDataWouldBeTruncatedException();
+            }
 
             SqlCommand insertMovieID = new SqlCommand("UPDATE Movies SET movieID = @movieID WHERE Id = @ID", sqlConnection);
 

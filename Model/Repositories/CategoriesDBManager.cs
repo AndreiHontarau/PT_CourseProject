@@ -66,7 +66,15 @@ namespace Model
             insertCommand.Parameters.AddWithValue("SymbolicCode", newCategory.symbolicCode);
             insertCommand.Parameters.AddWithValue("AmountOfMovies", newCategory.amountOfMovies);
 
-            insertCommand.ExecuteNonQuery();
+            try
+            {
+                insertCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if(e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                throw new SqlDataWouldBeTruncatedException();
+            }
         }
 
         public void DeleteCategory(string name)
@@ -86,7 +94,15 @@ namespace Model
             command.Parameters.AddWithValue("NewName", newName);
             command.Parameters.AddWithValue("NewCode", newCode);
 
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                    throw new SqlDataWouldBeTruncatedException();
+            }
         }
 
         public void IncreaseAmountOfMovies()

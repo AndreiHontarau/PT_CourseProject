@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.IO;
+﻿using System.Data.SqlClient;
 using System.Configuration;
 
 namespace Model
@@ -13,6 +7,7 @@ namespace Model
     {
         protected SqlConnection sqlConnection;
         protected SqlDataReader sqlReader;
+        protected const string SqlExceptionDataWouldBeTruncatedMessage = "String or binary data would be truncated. The statement has been terminated.";
 
         public DBManager()
         {

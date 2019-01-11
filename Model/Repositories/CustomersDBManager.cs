@@ -21,7 +21,15 @@ namespace Model
             insertCustomer.Parameters.AddWithValue("NumberOfRents", record.NumberOfRents);
             insertCustomer.Parameters.AddWithValue("CreationDate", record.RegistrationDateTime.ToString(datetimeformat));
 
-            insertCustomer.ExecuteNonQuery();
+            try
+            {
+                insertCustomer.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                    throw new SqlDataWouldBeTruncatedException();
+            }
         }
 
         public List<CustomerRecord> ReadAllCustomers()

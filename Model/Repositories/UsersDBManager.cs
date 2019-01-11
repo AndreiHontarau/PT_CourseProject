@@ -15,7 +15,15 @@ namespace Model
             command.Parameters.AddWithValue("Password", record.Password);
             command.Parameters.AddWithValue("Role", record.Role);
 
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Message == SqlExceptionDataWouldBeTruncatedMessage)
+                    throw new SqlDataWouldBeTruncatedException();
+            }
         }
 
         public List<UserRecord> ReadAllUsers()

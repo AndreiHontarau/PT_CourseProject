@@ -119,6 +119,7 @@
     <Compile Include="Services\Interfaces\ICustomersManagementService.cs" />
     <Compile Include="Services\Interfaces\ILoginService.cs" />
     <Compile Include="Services\Interfaces\IMovieRegistrationService.cs" />
+    <Compile Include="Services\Interfaces\IRentsManagementService.cs" />
     <Compile Include="Services\Interfaces\IStorageManagementService.cs" />
     <Compile Include="Services\Interfaces\IUserRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IUsersManagementService.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Services\StorageManagementService.cs" />
     <Compile Include="Services\UserRegistrationService.cs" />
     <Compile Include="Services\UsersManagementService.cs" />
+    <Compile Include="SqlDataWouldBeTruncatedException.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

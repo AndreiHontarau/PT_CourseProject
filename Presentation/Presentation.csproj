@@ -83,6 +83,7 @@
     <Compile Include="Presenters\MovieRegistrationPresenter.cs" />
     <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\RentsManagementPresenter.cs" />
     <Compile Include="Presenters\StorageManagementPresenter.cs" />
     <Compile Include="Presenters\UserRegistrationPresenter.cs" />
     <Compile Include="Presenters\UsersManagementPresenter.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Views\ICustomersManagementView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IMovieRegistrationView.cs" />
+    <Compile Include="Views\IRentsManagementView.cs" />
     <Compile Include="Views\IStorageManagementView.cs" />
     <Compile Include="Views\IUserRegistrationView.cs" />
     <Compile Include="Views\IUsersManagementView.cs" />
