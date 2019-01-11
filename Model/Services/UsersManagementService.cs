@@ -4,7 +4,7 @@ namespace Model
 {
     public class UsersManagementService : IUsersManagementService
     {
-        private IUsersRepository _repository;
+        private readonly IUsersRepository _repository;
         private int AmountOfUsers;
 
         public UsersManagementService(IUsersRepository repository)

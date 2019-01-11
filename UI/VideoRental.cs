@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Ninject;
+using Ninject.Parameters;
 using Presentation;
 
 namespace UI

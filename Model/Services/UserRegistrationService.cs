@@ -4,7 +4,7 @@ namespace Model
 {
     public class UserRegistrationService : IUserRegistrationService
     {
-        private IUsersRepository _repository;
+        private readonly IUsersRepository _repository;
 
         public UserRegistrationService(IUsersRepository repository)
         {

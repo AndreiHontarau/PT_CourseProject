@@ -2,7 +2,7 @@
 {
     public class CustomerRegistrationService : ICustomerRegistrationService
     {
-        private ICustomersRepository _repository;
+        private readonly ICustomersRepository _repository;
 
         public CustomerRegistrationService(ICustomersRepository repository)
         {

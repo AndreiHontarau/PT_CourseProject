@@ -7,8 +7,6 @@ namespace Presentation
 {
     public class UsersManagementPresenter : Presenter<IUsersManagementView>
     {
-        private readonly IKernel _kernel;
-        private readonly IUsersManagementView _view;
         private readonly IUsersManagementService _service;
 
         public UsersManagementPresenter(IKernel kernel, IUsersManagementView view, IUsersManagementService service)

@@ -56,9 +56,11 @@ namespace UI
 
         private void btnManageRents_Click(object sender, EventArgs e)
         {
-            ManageRents?.Invoke(sender, new NameSurnamePatronymic(dgvCustomers.SelectedRows[0].Cells[0].Value.ToString(), dgvCustomers.SelectedRows[0].Cells[1].Value.ToString(), dgvCustomers.SelectedRows[0].Cells[2].Value.ToString()));
-            RentsManagment rentsManagment = new RentsManagment();
-            rentsManagment.ShowDialog();
+            if (dgvCustomers.SelectedRows.Count != 0)
+            {
+                ManageRents?.Invoke(sender, new NameSurnamePatronymic(dgvCustomers.SelectedRows[0].Cells[0].Value.ToString(),
+                    dgvCustomers.SelectedRows[0].Cells[1].Value.ToString(), dgvCustomers.SelectedRows[0].Cells[2].Value.ToString()));
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

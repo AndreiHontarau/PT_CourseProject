@@ -6,13 +6,10 @@ namespace Presentation
 {
     public class MovieRegistrationPresenter : Presenter<IMovieRegistrationView>
     {
-        private readonly IKernel _kernel;
-        private readonly IMovieRegistrationView _view;
         private readonly IMovieRegistrationService _service;
 
-        public MovieRegistrationPresenter(IKernel kernel, IMovieRegistrationView view, IMovieRegistrationService service)
+        public MovieRegistrationPresenter(IMovieRegistrationView view, IMovieRegistrationService service)
         {
-            _kernel = kernel;
             _view = view;
             _service = service;
 

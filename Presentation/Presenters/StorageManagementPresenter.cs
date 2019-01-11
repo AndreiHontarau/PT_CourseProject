@@ -7,8 +7,6 @@ namespace Presentation
 {
     public class StorageManagementPresenter : Presenter<IStorageManagementView>
     {
-        private readonly IKernel _kernel;
-        private readonly IStorageManagementView _view;
         private readonly IStorageManagementService _service;
 
         public StorageManagementPresenter(IKernel kernel, IStorageManagementView view, IStorageManagementService service)

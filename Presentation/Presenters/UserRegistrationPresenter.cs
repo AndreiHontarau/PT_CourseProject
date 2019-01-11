@@ -6,13 +6,10 @@ namespace Presentation
 {
     public class UserRegistrationPresenter : Presenter<IUserRegistrationView>
     {
-        private readonly IKernel _kernel;
-        private readonly IUserRegistrationView _view;
         private readonly IUserRegistrationService _service;
 
         public UserRegistrationPresenter(IKernel kernel, IUserRegistrationView view, IUserRegistrationService service)
         {
-            _kernel = kernel;
             _view = view;
             _service = service;
 

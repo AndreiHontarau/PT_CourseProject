@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Records\CustomerRecord.cs" />
     <Compile Include="Records\MovieRecordExtended.cs" />
+    <Compile Include="Records\RentRecord.cs" />
     <Compile Include="Records\UserRecord.cs" />
     <Compile Include="Repositories\CategoriesDBManager.cs" />
     <Compile Include="Repositories\CustomersDBManager.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Repositories\Interfaces\ICategoriesRepository.cs" />
     <Compile Include="Repositories\Interfaces\ICustomersRepository.cs" />
     <Compile Include="Repositories\Interfaces\IMoviesRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRentsRepository.cs" />
     <Compile Include="Repositories\Interfaces\IscreenshotsRepository.cs" />
     <Compile Include="Repositories\Interfaces\IUsersRepository.cs" />
     <Compile Include="Repositories\MoviesDBManager.cs" />
@@ -108,23 +110,31 @@
     <Compile Include="Records\CategoryRecord.cs" />
     <Compile Include="Records\MovieRecord.cs" />
     <Compile Include="Records\Record.cs" />
+    <Compile Include="Repositories\RentsDBManager.cs" />
     <Compile Include="Repositories\ScreenshotsManager.cs" />
     <Compile Include="Repositories\UsersDBManager.cs" />
     <Compile Include="Services\CategoriesManagementService.cs" />
+    <Compile Include="Services\CustomerCardToExcelPrintingService.cs" />
+    <Compile Include="Services\CustomerCardToWordPrintingService.cs" />
     <Compile Include="Services\CustomerRegistrationService.cs" />
     <Compile Include="Services\CustomersManagementService.cs" />
     <Compile Include="Services\HashService.cs" />
     <Compile Include="Services\Interfaces\ICategoriesManagementService.cs" />
+    <Compile Include="Services\Interfaces\ICustomerCardToExcelPrintingService.cs" />
+    <Compile Include="Services\Interfaces\ICustomerCardToWordPrintingService.cs" />
     <Compile Include="Services\Interfaces\ICustomerRegistrationService.cs" />
     <Compile Include="Services\Interfaces\ICustomersManagementService.cs" />
     <Compile Include="Services\Interfaces\ILoginService.cs" />
     <Compile Include="Services\Interfaces\IMovieRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IRentsManagementService.cs" />
+    <Compile Include="Services\Interfaces\IRentRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IStorageManagementService.cs" />
     <Compile Include="Services\Interfaces\IUserRegistrationService.cs" />
     <Compile Include="Services\Interfaces\IUsersManagementService.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\MovieRegistrationService.cs" />
+    <Compile Include="Services\RentsManagementService.cs" />
+    <Compile Include="Services\RentRegistrationService.cs" />
     <Compile Include="Services\StorageManagementService.cs" />
     <Compile Include="Services\UserRegistrationService.cs" />
     <Compile Include="Services\UsersManagementService.cs" />

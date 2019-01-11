@@ -4,7 +4,7 @@ namespace Model
 {
     public class CategoriesManagementService : ICategoriesManagementService
     {
-        private ICategoriesRepository _repository;
+        private readonly ICategoriesRepository _repository;
 
         public CategoriesManagementService(ICategoriesRepository repository)
         {

@@ -9,8 +9,8 @@ namespace Model
     public class CustomersManagementService : ICustomersManagementService
     {
         private int AmountOfCustomers;
-        private IMoviesRepository _moviesRepository;
-        private ICustomersRepository _customersRepository;
+        private readonly IMoviesRepository _moviesRepository;
+        private readonly ICustomersRepository _customersRepository;
 
         public CustomersManagementService(IMoviesRepository moviesRepository, ICustomersRepository customersRepository)
         {

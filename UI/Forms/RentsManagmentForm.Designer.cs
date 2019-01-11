@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class RentsManagment
+    partial class RentsManagmentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentsManagmentForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.FilmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,7 +173,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(153, 200);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(153, 168);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // AddRentButton
@@ -195,30 +196,34 @@
             // 
             // PrintToExelButton
             // 
-            this.PrintToExelButton.Location = new System.Drawing.Point(3, 103);
+            this.PrintToExelButton.Location = new System.Drawing.Point(3, 87);
             this.PrintToExelButton.Name = "PrintToExelButton";
-            this.PrintToExelButton.Size = new System.Drawing.Size(70, 23);
+            this.PrintToExelButton.Size = new System.Drawing.Size(70, 68);
             this.PrintToExelButton.TabIndex = 2;
             this.PrintToExelButton.Text = "Print card to Exel";
             this.PrintToExelButton.UseVisualStyleBackColor = true;
             // 
             // PrintToWordButton
             // 
-            this.PrintToWordButton.Location = new System.Drawing.Point(79, 103);
+            this.PrintToWordButton.Location = new System.Drawing.Point(79, 87);
             this.PrintToWordButton.Name = "PrintToWordButton";
-            this.PrintToWordButton.Size = new System.Drawing.Size(71, 23);
+            this.PrintToWordButton.Size = new System.Drawing.Size(71, 68);
             this.PrintToWordButton.TabIndex = 3;
             this.PrintToWordButton.Text = "Print card to Word";
             this.PrintToWordButton.UseVisualStyleBackColor = true;
             // 
-            // RentsManagment
+            // RentsManagmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "RentsManagment";
-            this.Text = "RentsManagment";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "RentsManagmentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Video Rental - Rents managment";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

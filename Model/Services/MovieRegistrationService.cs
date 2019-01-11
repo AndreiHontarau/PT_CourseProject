@@ -4,9 +4,9 @@ namespace Model
 {
     public class MovieRegistrationService : IMovieRegistrationService
     {
-        private IMoviesRepository _repositoryMovies;
-        private ICategoriesRepository _repositoryCategories;
-        private IscreenshotsRepository _repositoryScreenshots;
+        private readonly IMoviesRepository _repositoryMovies;
+        private readonly ICategoriesRepository _repositoryCategories;
+        private readonly IscreenshotsRepository _repositoryScreenshots;
 
         public MovieRegistrationService(IMoviesRepository repositoryMovies, ICategoriesRepository repositoryCategories, IscreenshotsRepository repositoryScreenshots)
         {

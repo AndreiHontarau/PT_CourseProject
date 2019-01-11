@@ -4,10 +4,10 @@ namespace Model
 {
     public class StorageManagementService : IStorageManagementService
     {
-        private IMoviesRepository _moviesRepository;
-        private ICategoriesRepository _categoriesRepository;
-        private IscreenshotsRepository _screenshotsRepository;
-        private ICustomersRepository _customersRepository;
+        private readonly IMoviesRepository _moviesRepository;
+        private readonly ICategoriesRepository _categoriesRepository;
+        private readonly IscreenshotsRepository _screenshotsRepository;
+        private readonly ICustomersRepository _customersRepository;
         private int AmountOfMovies;
 
         public StorageManagementService(IMoviesRepository moviesRepository, ICategoriesRepository categoriesRepository, IscreenshotsRepository screenshotsRepository, ICustomersRepository customersRepository)

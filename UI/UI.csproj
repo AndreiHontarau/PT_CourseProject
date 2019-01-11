@@ -116,6 +116,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RentRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentRegistrationForm.Designer.cs">
+      <DependentUpon>RentRegistrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +147,11 @@
     <Compile Include="Forms\StorageManagementForm.Designer.cs">
       <DependentUpon>StorageManagementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RentsManagment.cs">
+    <Compile Include="Forms\RentsManagmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RentsManagment.Designer.cs">
-      <DependentUpon>RentsManagment.cs</DependentUpon>
+    <Compile Include="Forms\RentsManagmentForm.Designer.cs">
+      <DependentUpon>RentsManagmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VideoRental.cs" />
     <EmbeddedResource Include="Forms\CategoriesManagementForm.resx">
@@ -163,8 +169,8 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RentsManagment.resx">
-      <DependentUpon>RentsManagment.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RentsManagmentForm.resx">
+      <DependentUpon>RentsManagmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserRegistrationForm.resx">
       <DependentUpon>UserRegistrationForm.cs</DependentUpon>

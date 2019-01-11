@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using Ninject;
 using Model;
+using Ninject.Parameters;
 
 namespace Presentation
 {
     public class CustomersManagementPresenter : Presenter<ICustomersManagementView>
     {
-        private readonly IKernel _kernel;
-        private readonly ICustomersManagementView _view;
         private readonly ICustomersManagementService _service;
 
         public CustomersManagementPresenter(IKernel kernel, ICustomersManagementView view, ICustomersManagementService service)
@@ -66,7 +65,8 @@ namespace Presentation
 
         private void ManageRents(NameSurnamePatronymic args)
         {
-
+            _kernel.Get<RentsManagementPresenter>(new ConstructorArgument("customerNameSurnamePatronymic", args)).Run();
+            _view.Close();
         }
 
         private void Search()

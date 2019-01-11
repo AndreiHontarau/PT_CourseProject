@@ -8,8 +8,6 @@ namespace Presentation
 {
     public class LoginPresenter : Presenter<ILoginView>
     {
-        private readonly IKernel _kernel;
-        private readonly ILoginView _view;
         private readonly ILoginService _service;
 
         public LoginPresenter(IKernel kernel, ILoginView view, ILoginService service)

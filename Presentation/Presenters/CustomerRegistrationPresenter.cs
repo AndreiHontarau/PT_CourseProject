@@ -6,13 +6,10 @@ namespace Presentation
 {
     public class CustomerRegistrationPresenter : Presenter<ICustomerRegistrationView>
     {
-        private readonly IKernel _kernel;
-        private readonly ICustomerRegistrationView _view;
         private readonly ICustomerRegistrationService _service;
 
-        public CustomerRegistrationPresenter(IKernel kernel, ICustomerRegistrationView view, ICustomerRegistrationService service)
+        public CustomerRegistrationPresenter(ICustomerRegistrationView view, ICustomerRegistrationService service)
         {
-            _kernel = kernel;
             _view = view;
             _service = service;
 

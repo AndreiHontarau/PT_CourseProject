@@ -6,7 +6,6 @@ namespace Presentation
 {
     public class CategoriesManagementPresenter : Presenter<ICategoriesManagementView>
     {
-        private readonly ICategoriesManagementView _view;
         private readonly ICategoriesManagementService _service;
 
         public CategoriesManagementPresenter(ICategoriesManagementView view, ICategoriesManagementService service)

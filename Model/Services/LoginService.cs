@@ -5,7 +5,7 @@ namespace Model
 {
     public class LoginService : ILoginService
     {
-        private IUsersRepository _repository;
+        private readonly IUsersRepository _repository;
 
         public LoginService(IUsersRepository repository)
         {
